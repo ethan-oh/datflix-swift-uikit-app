@@ -53,10 +53,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2C69642ABBEA32003C9A1E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				325191FC2ABBD3940027028E /* HomeViewController.swift */,
+				325191FE2ABBD3B60027028E /* RecommendViewController.swift */,
+				325192002ABBD3C50027028E /* TheaterViewController.swift */,
+				325192022ABBD3D20027028E /* UserViewController.swift */,
+				320D82C92ABADECA00D556F1 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		1A2C69652ABBEA55003C9A1E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4E9F27592ABAC8F7003263FC /* Main.storyboard */,
+				325191F42ABBD0DA0027028E /* Home.storyboard */,
+				325191F62ABBD0E70027028E /* Recommend.storyboard */,
+				325191F82ABBD0FA0027028E /* Theater.storyboard */,
+				325191FA2ABBD1050027028E /* User.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1A2C69672ABBEB4C003C9A1E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		4E9F27472ABAC8F7003263FC = {
 			isa = PBXGroup;
 			children = (
-				320D82C92ABADECA00D556F1 /* MainViewController.swift */,
 				4E9F27522ABAC8F7003263FC /* season4_mainproject */,
 				4E9F27512ABAC8F7003263FC /* Products */,
 			);
@@ -73,17 +103,11 @@
 		4E9F27522ABAC8F7003263FC /* season4_mainproject */ = {
 			isa = PBXGroup;
 			children = (
+				1A2C69672ABBEB4C003C9A1E /* Service */,
 				4E9F27532ABAC8F7003263FC /* AppDelegate.swift */,
 				4E9F27552ABAC8F7003263FC /* SceneDelegate.swift */,
-				4E9F27592ABAC8F7003263FC /* Main.storyboard */,
-				325191F42ABBD0DA0027028E /* Home.storyboard */,
-				325191F62ABBD0E70027028E /* Recommend.storyboard */,
-				325191F82ABBD0FA0027028E /* Theater.storyboard */,
-				325191FA2ABBD1050027028E /* User.storyboard */,
-				325191FC2ABBD3940027028E /* HomeViewController.swift */,
-				325191FE2ABBD3B60027028E /* RecommendViewController.swift */,
-				325192002ABBD3C50027028E /* TheaterViewController.swift */,
-				325192022ABBD3D20027028E /* UserViewController.swift */,
+				1A2C69642ABBEA32003C9A1E /* ViewController */,
+				1A2C69652ABBEA55003C9A1E /* Storyboard */,
 				4E9F275C2ABAC8F8003263FC /* Assets.xcassets */,
 				4E9F275E2ABAC8F8003263FC /* LaunchScreen.storyboard */,
 				4E9F27612ABAC8F8003263FC /* Info.plist */,
