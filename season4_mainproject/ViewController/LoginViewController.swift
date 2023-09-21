@@ -1,5 +1,5 @@
 //
-//  UserViewController.swift
+//  LoginViewController.swift
 //  season4_mainproject
 //
 //  Created by TJ on 2023/09/21.
@@ -7,14 +7,11 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
-    let PORT = Bundle.main.object(forInfoDictionaryKey: "PORT") as? String ?? ""
-    let HOST = Bundle.main.object(forInfoDictionaryKey: "HOST") as? String ?? ""
-    @IBOutlet weak var tfUser: UILabel!
+class LoginViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = UIColor.black
-//        tfUser.text = HOST + PORT + "/user/user"
+
         // Do any additional setup after loading the view.
     }
     

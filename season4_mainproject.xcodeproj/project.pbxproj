@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A43919C2ABC04EE00563E89 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1A43919B2ABC04EE00563E89 /* Config.xcconfig */; };
+		27CAE61F5BD3634CDCA44C64 /* Pods_season4_mainproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2F241DB758A7944842A569 /* Pods_season4_mainproject.framework */; };
 		320D82CA2ABADECA00D556F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D82C92ABADECA00D556F1 /* MainViewController.swift */; };
 		325191F52ABBD0DA0027028E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F42ABBD0DA0027028E /* Home.storyboard */; };
 		325191F72ABBD0E70027028E /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F62ABBD0E70027028E /* Recommend.storyboard */; };
@@ -17,6 +18,11 @@
 		325191FF2ABBD3B60027028E /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325191FE2ABBD3B60027028E /* RecommendViewController.swift */; };
 		325192012ABBD3C50027028E /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192002ABBD3C50027028E /* TheaterViewController.swift */; };
 		325192032ABBD3D20027028E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192022ABBD3D20027028E /* UserViewController.swift */; };
+		325192052ABC0F8E0027028E /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192042ABC0F8E0027028E /* UserTableViewController.swift */; };
+		325192092ABC31750027028E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192082ABC31750027028E /* RegisterViewController.swift */; };
+		3251920B2ABC31960027028E /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251920A2ABC31960027028E /* UserEditViewController.swift */; };
+		32EB063B2ABC343F00AECA3A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB063A2ABC343F00AECA3A /* UserData.swift */; };
+		32EB063F2ABC65F000AECA3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB063E2ABC65F000AECA3A /* LoginViewController.swift */; };
 		4E9F27542ABAC8F7003263FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9F27532ABAC8F7003263FC /* AppDelegate.swift */; };
 		4E9F27562ABAC8F7003263FC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9F27552ABAC8F7003263FC /* SceneDelegate.swift */; };
 		4E9F275B2ABAC8F7003263FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9F27592ABAC8F7003263FC /* Main.storyboard */; };
@@ -26,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		1A43919B2ABC04EE00563E89 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		242FDEAD0B174A98F80534D6 /* Pods-season4_mainproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season4_mainproject.release.xcconfig"; path = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject.release.xcconfig"; sourceTree = "<group>"; };
 		320D82C92ABADECA00D556F1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		325191F42ABBD0DA0027028E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		325191F62ABBD0E70027028E /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
@@ -35,6 +42,12 @@
 		325191FE2ABBD3B60027028E /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		325192002ABBD3C50027028E /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		325192022ABBD3D20027028E /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		325192042ABC0F8E0027028E /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
+		325192082ABC31750027028E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3251920A2ABC31960027028E /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
+		32EB063A2ABC343F00AECA3A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		32EB063E2ABC65F000AECA3A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		400DA166D0374A563B038BB2 /* Pods-season4_mainproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season4_mainproject.debug.xcconfig"; path = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject.debug.xcconfig"; sourceTree = "<group>"; };
 		4E9F27502ABAC8F7003263FC /* season4_mainproject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = season4_mainproject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E9F27532ABAC8F7003263FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E9F27552ABAC8F7003263FC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +55,7 @@
 		4E9F275C2ABAC8F8003263FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E9F275F2ABAC8F8003263FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E9F27612ABAC8F8003263FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2F241DB758A7944842A569 /* Pods_season4_mainproject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_season4_mainproject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27CAE61F5BD3634CDCA44C64 /* Pods_season4_mainproject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,10 @@
 				325192002ABBD3C50027028E /* TheaterViewController.swift */,
 				325192022ABBD3D20027028E /* UserViewController.swift */,
 				320D82C92ABADECA00D556F1 /* MainViewController.swift */,
+				325192042ABC0F8E0027028E /* UserTableViewController.swift */,
+				325192082ABC31750027028E /* RegisterViewController.swift */,
+				3251920A2ABC31960027028E /* UserEditViewController.swift */,
+				32EB063E2ABC65F000AECA3A /* LoginViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -86,11 +105,21 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		32EB06392ABC341100AECA3A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				32EB063A2ABC343F00AECA3A /* UserData.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		4E9F27472ABAC8F7003263FC = {
 			isa = PBXGroup;
 			children = (
 				4E9F27522ABAC8F7003263FC /* season4_mainproject */,
 				4E9F27512ABAC8F7003263FC /* Products */,
+				C005D7924B83331FDFBAA6A0 /* Pods */,
+				F40427C55B3F0F8DEB3DC976 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +134,7 @@
 		4E9F27522ABAC8F7003263FC /* season4_mainproject */ = {
 			isa = PBXGroup;
 			children = (
+				32EB06392ABC341100AECA3A /* User */,
 				1A43919B2ABC04EE00563E89 /* Config.xcconfig */,
 				1A2C69672ABBEB4C003C9A1E /* Service */,
 				4E9F27532ABAC8F7003263FC /* AppDelegate.swift */,
@@ -118,6 +148,23 @@
 			path = season4_mainproject;
 			sourceTree = "<group>";
 		};
+		C005D7924B83331FDFBAA6A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				400DA166D0374A563B038BB2 /* Pods-season4_mainproject.debug.xcconfig */,
+				242FDEAD0B174A98F80534D6 /* Pods-season4_mainproject.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F40427C55B3F0F8DEB3DC976 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD2F241DB758A7944842A569 /* Pods_season4_mainproject.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,9 +172,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E9F27642ABAC8F8003263FC /* Build configuration list for PBXNativeTarget "season4_mainproject" */;
 			buildPhases = (
+				EB1AA62BAA00B7704786F955 /* [CP] Check Pods Manifest.lock */,
 				4E9F274C2ABAC8F7003263FC /* Sources */,
 				4E9F274D2ABAC8F7003263FC /* Frameworks */,
 				4E9F274E2ABAC8F7003263FC /* Resources */,
+				446649A2C7DDE61A6363091B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,18 +238,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		446649A2C7DDE61A6363091B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB1AA62BAA00B7704786F955 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-season4_mainproject-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4E9F274C2ABAC8F7003263FC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32EB063F2ABC65F000AECA3A /* LoginViewController.swift in Sources */,
+				325192092ABC31750027028E /* RegisterViewController.swift in Sources */,
 				325192032ABBD3D20027028E /* UserViewController.swift in Sources */,
 				325192012ABBD3C50027028E /* TheaterViewController.swift in Sources */,
 				320D82CA2ABADECA00D556F1 /* MainViewController.swift in Sources */,
 				4E9F27542ABAC8F7003263FC /* AppDelegate.swift in Sources */,
+				32EB063B2ABC343F00AECA3A /* UserData.swift in Sources */,
 				4E9F27562ABAC8F7003263FC /* SceneDelegate.swift in Sources */,
 				325191FD2ABBD3940027028E /* HomeViewController.swift in Sources */,
+				325192052ABC0F8E0027028E /* UserTableViewController.swift in Sources */,
 				325191FF2ABBD3B60027028E /* RecommendViewController.swift in Sources */,
+				3251920B2ABC31960027028E /* UserEditViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +467,7 @@
 		};
 		4E9F27662ABAC8F8003263FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 242FDEAD0B174A98F80534D6 /* Pods-season4_mainproject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
