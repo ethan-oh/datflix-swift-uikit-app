@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A43919C2ABC04EE00563E89 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1A43919B2ABC04EE00563E89 /* Config.xcconfig */; };
 		320D82CA2ABADECA00D556F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D82C92ABADECA00D556F1 /* MainViewController.swift */; };
 		325191F52ABBD0DA0027028E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F42ABBD0DA0027028E /* Home.storyboard */; };
 		325191F72ABBD0E70027028E /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F62ABBD0E70027028E /* Recommend.storyboard */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A43919B2ABC04EE00563E89 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		320D82C92ABADECA00D556F1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		325191F42ABBD0DA0027028E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		325191F62ABBD0E70027028E /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		4E9F27522ABAC8F7003263FC /* season4_mainproject */ = {
 			isa = PBXGroup;
 			children = (
+				1A43919B2ABC04EE00563E89 /* Config.xcconfig */,
 				1A2C69672ABBEB4C003C9A1E /* Service */,
 				4E9F27532ABAC8F7003263FC /* AppDelegate.swift */,
 				4E9F27552ABAC8F7003263FC /* SceneDelegate.swift */,
@@ -177,6 +180,7 @@
 				325191F72ABBD0E70027028E /* Recommend.storyboard in Resources */,
 				4E9F275D2ABAC8F8003263FC /* Assets.xcassets in Resources */,
 				4E9F275B2ABAC8F7003263FC /* Main.storyboard in Resources */,
+				1A43919C2ABC04EE00563E89 /* Config.xcconfig in Resources */,
 				325191F92ABBD0FA0027028E /* Theater.storyboard in Resources */,
 				325191FB2ABBD1050027028E /* User.storyboard in Resources */,
 				325191F52ABBD0DA0027028E /* Home.storyboard in Resources */,
@@ -224,6 +228,7 @@
 /* Begin XCBuildConfiguration section */
 		4E9F27622ABAC8F8003263FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A43919B2ABC04EE00563E89 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -338,6 +343,7 @@
 		};
 		4E9F27652ABAC8F8003263FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A43919B2ABC04EE00563E89 /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
