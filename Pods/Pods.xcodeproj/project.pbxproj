@@ -7,19 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F55322C10BAB91DAF3F1213AFBBCFFC /* JWTDecode-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B198D80AC2C07D040216F6D677256DE9 /* JWTDecode-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		16D4D99ED7B00D179E71425F69CE1302 /* JWTDecode-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D1DA44334E763A07FBBD37BED4E2F67 /* JWTDecode-dummy.m */; };
+		0F55322C10BAB91DAF3F1213AFBBCFFC /* JWTDecode-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F0C6C3C19FF2FF057AAEDC31C819BA7 /* JWTDecode-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16D4D99ED7B00D179E71425F69CE1302 /* JWTDecode-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F301B3C8382B955CD0F118F4072BBD3 /* JWTDecode-dummy.m */; };
+		1C6156B7023F7F69398B4119A0AA492B /* CosmosText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF86BC6C1771D109F3834FF680C4441A /* CosmosText.swift */; };
 		1D6CA9AFB82AD6B24A1D0F29B5A81587 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		4E9CE74CFDD4C2B127FC8F5FF17A55AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		55369701C90D74FBE65AF243BB942C7A /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F123E847C3ACD4710BCC6B26E8A505B /* JWTDecode.swift */; };
-		6A407DAA45CEFAF408CC445A27822CC8 /* Pods-season4_mainproject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D4240376ACBD64DAF2A95A0E5054106 /* Pods-season4_mainproject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A85CF2E639C1B030B6B067304B47758 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9521C2E5C967902A1CB2888843700AD2 /* JWT.swift */; };
-		B816B5F807DA8821505A356B4DD7322E /* Pods-season4_mainproject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43C842EEE5C82B64BB67D7265600A2 /* Pods-season4_mainproject-dummy.m */; };
-		CEA1ACAC472C63AE73E92EC0E46F6CD6 /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735E5E53B03311FD9493258CAD09E4B /* JWTDecodeError.swift */; };
+		209D9DD6A82F26B8032A43B060B5D164 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2FCFA7D464D486EC1E486FFF2C21B4ED /* Cosmos-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CB77613E2C241D7DEE71C8D76842A0C7 /* Cosmos-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3E410558A06008A95E19C2FE1D5E014E /* CosmosRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B05DF0F9DBADF304C5ECFA8AD46183C /* CosmosRating.swift */; };
+		449B7D4D4BD118C480786A347A377054 /* CosmosTouchTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D1C1D3FCEEAEA39BD3B0C583C563A9 /* CosmosTouchTarget.swift */; };
+		4D8675E7F1C6254904557B7FB84E1C51 /* CosmosSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92EF02274F5F41646A9C7A1626B197D /* CosmosSettings.swift */; };
+		55369701C90D74FBE65AF243BB942C7A /* JWTDecode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F18420C0DA0CA3C81B3D3DEC2FF364 /* JWTDecode.swift */; };
+		5E87677262463376144E8B5F6916FCCB /* StarFillMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A1515AE5EBE424A9311F44423358115 /* StarFillMode.swift */; };
+		61773DD4962BFA6D7E38DD8A9D998A8A /* CosmosDefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22694CD035B1833E45EFF0854EBB2213 /* CosmosDefaultSettings.swift */; };
+		67318BB3E280E0D8FB9161E5557B71E3 /* Cosmos-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCBBC53424C77D05BDBC05878CB704D0 /* Cosmos-dummy.m */; };
+		772B7FA4384C442360975E95D12383BA /* CosmosAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633648C44AA8574BA8BF1DA2E51CCE3 /* CosmosAccessibility.swift */; };
+		7AA4F48458A149B12BCF7E8EB147E25C /* CosmosTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0489F1C702038831CB580FDF5E1173 /* CosmosTouch.swift */; };
+		7E298ECE9B23835D17446526E27D2D67 /* StarLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C9DCCDC211BA3DE37955EC461A53D99 /* StarLayer.swift */; };
+		8322D938B4C21C24E70FBA1B95797AC9 /* CosmosSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 530A8D6ED8B563E9B0B1BF7B4B2A2BA0 /* CosmosSize.swift */; };
+		9755F83E9DE9BA2CC07496C16AF80B42 /* RightToLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F75026A2F4C19F00E96DB8B4F1C18 /* RightToLeft.swift */; };
+		99DB653A1F70EAEC3490B69E4AC9011F /* CosmosLayerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7BB5A142FC4183DBD892538E17DB17 /* CosmosLayerHelper.swift */; };
+		9A85CF2E639C1B030B6B067304B47758 /* JWT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458399FEAAFE21AFBF44897217AC841 /* JWT.swift */; };
+		ABFB9BF862F602531FE8131A350542B0 /* CosmosLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 134700D795140AD5CE996CFB595C7A80 /* CosmosLayers.swift */; };
+		AED454129A766CAC149B269A419B6CA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		C62879E34D2EA53BCE603274B9FD2D4C /* Pods-season4_mainproject-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E43C842EEE5C82B64BB67D7265600A2 /* Pods-season4_mainproject-dummy.m */; };
+		CB4D7FEF62D7943C6E236467F3C516C1 /* CosmosLocalizedRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15221E05B0009AB83EA6F44AD3B7EA9 /* CosmosLocalizedRating.swift */; };
+		CEA1ACAC472C63AE73E92EC0E46F6CD6 /* JWTDecodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB395D114C105B72C84D728C9A3AA75 /* JWTDecodeError.swift */; };
+		D7C46EF3E360E0620D29D3F3F407C895 /* Pods-season4_mainproject-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D4240376ACBD64DAF2A95A0E5054106 /* Pods-season4_mainproject-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC1899EF909D17F47C5C0C2064BD2533 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821C8EF668342A844D1E660EF3DE392F /* CosmosView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		F2E57269D45FF8705F497BF1B01DB10A /* PBXContainerItemProxy */ = {
+		C4E99CFD5F5B2385FF7C44B1D3F1BA86 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00F31BD5217A20974B5E9AAC6256D98E;
+			remoteInfo = Cosmos;
+		};
+		CA587E9B381D42F131260B4B6659B2E9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -29,40 +54,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		005D9675BFDBBCC7C15B83664D9C124F /* JWTDecode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWTDecode.debug.xcconfig; sourceTree = "<group>"; };
-		082D21DB9933C10AC80480256FD991AB /* JWTDecode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWTDecode.release.xcconfig; sourceTree = "<group>"; };
+		05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Cosmos; path = Cosmos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB395D114C105B72C84D728C9A3AA75 /* JWTDecodeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTDecodeError.swift; path = JWTDecode/JWTDecodeError.swift; sourceTree = "<group>"; };
 		0D4240376ACBD64DAF2A95A0E5054106 /* Pods-season4_mainproject-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-season4_mainproject-umbrella.h"; sourceTree = "<group>"; };
+		134700D795140AD5CE996CFB595C7A80 /* CosmosLayers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayers.swift; path = Cosmos/CosmosLayers.swift; sourceTree = "<group>"; };
 		15890381DB8DB46A8853D328D973F77A /* Pods-season4_mainproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-season4_mainproject.debug.xcconfig"; sourceTree = "<group>"; };
-		185BE6A9033D8A28736A369BBB388EC2 /* JWTDecode-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-prefix.pch"; sourceTree = "<group>"; };
-		1D1DA44334E763A07FBBD37BED4E2F67 /* JWTDecode-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JWTDecode-dummy.m"; sourceTree = "<group>"; };
-		371E04AB1EDFE282675E996B9FAF975F /* JWTDecode.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JWTDecode.modulemap; sourceTree = "<group>"; };
-		3F123E847C3ACD4710BCC6B26E8A505B /* JWTDecode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTDecode.swift; path = JWTDecode/JWTDecode.swift; sourceTree = "<group>"; };
+		22694CD035B1833E45EFF0854EBB2213 /* CosmosDefaultSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosDefaultSettings.swift; path = Cosmos/CosmosDefaultSettings.swift; sourceTree = "<group>"; };
+		24F18420C0DA0CA3C81B3D3DEC2FF364 /* JWTDecode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTDecode.swift; path = JWTDecode/JWTDecode.swift; sourceTree = "<group>"; };
+		2AB8430279620FB09DE500AC97CF78B1 /* JWTDecode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWTDecode.debug.xcconfig; sourceTree = "<group>"; };
+		36FF6F45EE4F98EE32AA1B1B6FECAC0A /* Cosmos-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Cosmos-Info.plist"; sourceTree = "<group>"; };
+		4A5CEEFDF90E89FF8265E57E23435145 /* JWTDecode-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-prefix.pch"; sourceTree = "<group>"; };
+		530A8D6ED8B563E9B0B1BF7B4B2A2BA0 /* CosmosSize.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSize.swift; path = Cosmos/CosmosSize.swift; sourceTree = "<group>"; };
 		54024643BBEE54E3CB3FF274969702FC /* Pods-season4_mainproject-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-season4_mainproject-acknowledgements.markdown"; sourceTree = "<group>"; };
+		54051B0949DC562D6DEB2DF32B27453B /* Cosmos.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Cosmos.modulemap; sourceTree = "<group>"; };
 		5942ED6AA2F1080A32395FE99532381D /* Pods-season4_mainproject.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-season4_mainproject.modulemap"; sourceTree = "<group>"; };
+		5A1515AE5EBE424A9311F44423358115 /* StarFillMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarFillMode.swift; path = Cosmos/StarFillMode.swift; sourceTree = "<group>"; };
 		5DAC6368A221AE6B37FB1788C8966B08 /* Pods-season4_mainproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-season4_mainproject.release.xcconfig"; sourceTree = "<group>"; };
+		61D1C1D3FCEEAEA39BD3B0C583C563A9 /* CosmosTouchTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouchTarget.swift; path = Cosmos/Helpers/CosmosTouchTarget.swift; sourceTree = "<group>"; };
+		6B05DF0F9DBADF304C5ECFA8AD46183C /* CosmosRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosRating.swift; path = Cosmos/CosmosRating.swift; sourceTree = "<group>"; };
 		6B252C304428E2F896B4A1994064C575 /* Pods-season4_mainproject-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-season4_mainproject-frameworks.sh"; sourceTree = "<group>"; };
+		6C9DCCDC211BA3DE37955EC461A53D99 /* StarLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StarLayer.swift; path = Cosmos/StarLayer.swift; sourceTree = "<group>"; };
+		6DA0A7B186B721E813FE083D7A8C4194 /* Cosmos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.debug.xcconfig; sourceTree = "<group>"; };
+		6F0C6C3C19FF2FF057AAEDC31C819BA7 /* JWTDecode-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7A8D4AC02B51FD03224739D06AEE207B /* JWTDecode */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = JWTDecode; path = JWTDecode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		821C8EF668342A844D1E660EF3DE392F /* CosmosView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosView.swift; path = Cosmos/CosmosView.swift; sourceTree = "<group>"; };
+		8458399FEAAFE21AFBF44897217AC841 /* JWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWT.swift; path = JWTDecode/JWT.swift; sourceTree = "<group>"; };
+		8633648C44AA8574BA8BF1DA2E51CCE3 /* CosmosAccessibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosAccessibility.swift; path = Cosmos/CosmosAccessibility.swift; sourceTree = "<group>"; };
+		8A7BB5A142FC4183DBD892538E17DB17 /* CosmosLayerHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLayerHelper.swift; path = Cosmos/CosmosLayerHelper.swift; sourceTree = "<group>"; };
+		8F301B3C8382B955CD0F118F4072BBD3 /* JWTDecode-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "JWTDecode-dummy.m"; sourceTree = "<group>"; };
 		94B8EB8DD9EEAE042E832390ACA016B1 /* Pods-season4_mainproject-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-season4_mainproject-Info.plist"; sourceTree = "<group>"; };
-		9521C2E5C967902A1CB2888843700AD2 /* JWT.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWT.swift; path = JWTDecode/JWT.swift; sourceTree = "<group>"; };
+		9B3F75026A2F4C19F00E96DB8B4F1C18 /* RightToLeft.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RightToLeft.swift; path = Cosmos/Helpers/RightToLeft.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E43C842EEE5C82B64BB67D7265600A2 /* Pods-season4_mainproject-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-season4_mainproject-dummy.m"; sourceTree = "<group>"; };
 		9F5A9DCBD30BD23D480D750C5EFB0259 /* Pods-season4_mainproject-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-season4_mainproject-acknowledgements.plist"; sourceTree = "<group>"; };
-		ADCBD84B2C35280700529FE7EB427E1A /* JWTDecode-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JWTDecode-Info.plist"; sourceTree = "<group>"; };
-		B198D80AC2C07D040216F6D677256DE9 /* JWTDecode-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "JWTDecode-umbrella.h"; sourceTree = "<group>"; };
+		AE264C34E9E44D3845FD142852EE87CE /* JWTDecode.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JWTDecode.modulemap; sourceTree = "<group>"; };
+		BB796877099AA2E7757002A0F22B4662 /* Cosmos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Cosmos.release.xcconfig; sourceTree = "<group>"; };
 		C854C6F56D777ED2E005882604D5104C /* Pods-season4_mainproject */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-season4_mainproject"; path = Pods_season4_mainproject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E735E5E53B03311FD9493258CAD09E4B /* JWTDecodeError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JWTDecodeError.swift; path = JWTDecode/JWTDecodeError.swift; sourceTree = "<group>"; };
+		CB77613E2C241D7DEE71C8D76842A0C7 /* Cosmos-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-umbrella.h"; sourceTree = "<group>"; };
+		D15221E05B0009AB83EA6F44AD3B7EA9 /* CosmosLocalizedRating.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosLocalizedRating.swift; path = Cosmos/CosmosLocalizedRating.swift; sourceTree = "<group>"; };
+		DCBBC53424C77D05BDBC05878CB704D0 /* Cosmos-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Cosmos-dummy.m"; sourceTree = "<group>"; };
+		DD0489F1C702038831CB580FDF5E1173 /* CosmosTouch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosTouch.swift; path = Cosmos/CosmosTouch.swift; sourceTree = "<group>"; };
+		EC9205375EFFB1A3F861D899323637EA /* JWTDecode-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "JWTDecode-Info.plist"; sourceTree = "<group>"; };
+		F079CF05D0DDF6AAF1F5A2FFECF60C8B /* Cosmos-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Cosmos-prefix.pch"; sourceTree = "<group>"; };
+		F92EF02274F5F41646A9C7A1626B197D /* CosmosSettings.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosSettings.swift; path = Cosmos/CosmosSettings.swift; sourceTree = "<group>"; };
+		FE08BF4FAB85FF39889909831E807EEF /* JWTDecode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = JWTDecode.release.xcconfig; sourceTree = "<group>"; };
+		FF86BC6C1771D109F3834FF680C4441A /* CosmosText.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CosmosText.swift; path = Cosmos/CosmosText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		299E3BEEDD2601996B99F7E6B6C52220 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4E9CE74CFDD4C2B127FC8F5FF17A55AB /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4E708ACD10AB1D45FBE8799611865EC2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,16 +111,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6DEC9D66D25D7967B167DEA713C2359C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				209D9DD6A82F26B8032A43B060B5D164 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFDD069F01F31E47C2E38CBD1867BAEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AED454129A766CAC149B269A419B6CA8 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E41EC9816A12473BE6662254F13C9C7 /* Products */ = {
+		0A3109F7F1C0731C8AC8167D67FC251E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7A8D4AC02B51FD03224739D06AEE207B /* JWTDecode */,
-				C854C6F56D777ED2E005882604D5104C /* Pods-season4_mainproject */,
+				AE264C34E9E44D3845FD142852EE87CE /* JWTDecode.modulemap */,
+				8F301B3C8382B955CD0F118F4072BBD3 /* JWTDecode-dummy.m */,
+				EC9205375EFFB1A3F861D899323637EA /* JWTDecode-Info.plist */,
+				4A5CEEFDF90E89FF8265E57E23435145 /* JWTDecode-prefix.pch */,
+				6F0C6C3C19FF2FF057AAEDC31C819BA7 /* JWTDecode-umbrella.h */,
+				2AB8430279620FB09DE500AC97CF78B1 /* JWTDecode.debug.xcconfig */,
+				FE08BF4FAB85FF39889909831E807EEF /* JWTDecode.release.xcconfig */,
 			);
-			name = Products;
+			name = "Support Files";
+			path = "../Target Support Files/JWTDecode";
+			sourceTree = "<group>";
+		};
+		0D2179611AEA21663A2EAF4EA0A42D50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				44A43BE7BE4D2CEC88365976BF23FC94 /* Cosmos */,
+				FE16E26BE394918171AA58239E850C16 /* JWTDecode */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		25AC2481E289B6CDBAABA974F49E6D88 /* Pods-season4_mainproject */ = {
@@ -100,19 +171,43 @@
 			path = "Target Support Files/Pods-season4_mainproject";
 			sourceTree = "<group>";
 		};
-		550431BF87E884DE51DBC836752012AD /* Support Files */ = {
+		44A43BE7BE4D2CEC88365976BF23FC94 /* Cosmos */ = {
 			isa = PBXGroup;
 			children = (
-				371E04AB1EDFE282675E996B9FAF975F /* JWTDecode.modulemap */,
-				1D1DA44334E763A07FBBD37BED4E2F67 /* JWTDecode-dummy.m */,
-				ADCBD84B2C35280700529FE7EB427E1A /* JWTDecode-Info.plist */,
-				185BE6A9033D8A28736A369BBB388EC2 /* JWTDecode-prefix.pch */,
-				B198D80AC2C07D040216F6D677256DE9 /* JWTDecode-umbrella.h */,
-				005D9675BFDBBCC7C15B83664D9C124F /* JWTDecode.debug.xcconfig */,
-				082D21DB9933C10AC80480256FD991AB /* JWTDecode.release.xcconfig */,
+				8633648C44AA8574BA8BF1DA2E51CCE3 /* CosmosAccessibility.swift */,
+				22694CD035B1833E45EFF0854EBB2213 /* CosmosDefaultSettings.swift */,
+				8A7BB5A142FC4183DBD892538E17DB17 /* CosmosLayerHelper.swift */,
+				134700D795140AD5CE996CFB595C7A80 /* CosmosLayers.swift */,
+				D15221E05B0009AB83EA6F44AD3B7EA9 /* CosmosLocalizedRating.swift */,
+				6B05DF0F9DBADF304C5ECFA8AD46183C /* CosmosRating.swift */,
+				F92EF02274F5F41646A9C7A1626B197D /* CosmosSettings.swift */,
+				530A8D6ED8B563E9B0B1BF7B4B2A2BA0 /* CosmosSize.swift */,
+				FF86BC6C1771D109F3834FF680C4441A /* CosmosText.swift */,
+				DD0489F1C702038831CB580FDF5E1173 /* CosmosTouch.swift */,
+				61D1C1D3FCEEAEA39BD3B0C583C563A9 /* CosmosTouchTarget.swift */,
+				821C8EF668342A844D1E660EF3DE392F /* CosmosView.swift */,
+				9B3F75026A2F4C19F00E96DB8B4F1C18 /* RightToLeft.swift */,
+				5A1515AE5EBE424A9311F44423358115 /* StarFillMode.swift */,
+				6C9DCCDC211BA3DE37955EC461A53D99 /* StarLayer.swift */,
+				5546DA019D4ABB8922B822CB24064AB4 /* Support Files */,
+			);
+			name = Cosmos;
+			path = Cosmos;
+			sourceTree = "<group>";
+		};
+		5546DA019D4ABB8922B822CB24064AB4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				54051B0949DC562D6DEB2DF32B27453B /* Cosmos.modulemap */,
+				DCBBC53424C77D05BDBC05878CB704D0 /* Cosmos-dummy.m */,
+				36FF6F45EE4F98EE32AA1B1B6FECAC0A /* Cosmos-Info.plist */,
+				F079CF05D0DDF6AAF1F5A2FFECF60C8B /* Cosmos-prefix.pch */,
+				CB77613E2C241D7DEE71C8D76842A0C7 /* Cosmos-umbrella.h */,
+				6DA0A7B186B721E813FE083D7A8C4194 /* Cosmos.debug.xcconfig */,
+				BB796877099AA2E7757002A0F22B4662 /* Cosmos.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/JWTDecode";
+			path = "../Target Support Files/Cosmos";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -123,21 +218,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		8C7D2196A7EE27AA0A8CF499FB1744B7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F1178FA3E62AA26874938489223B6F96 /* JWTDecode */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				8C7D2196A7EE27AA0A8CF499FB1744B7 /* Pods */,
-				0E41EC9816A12473BE6662254F13C9C7 /* Products */,
+				0D2179611AEA21663A2EAF4EA0A42D50 /* Pods */,
+				EC2AD836DE3890C9807DA3DB4C8A5B1C /* Products */,
 				EA92BD6D0CA1792A66D80EBD1965C4DD /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -158,13 +245,23 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F1178FA3E62AA26874938489223B6F96 /* JWTDecode */ = {
+		EC2AD836DE3890C9807DA3DB4C8A5B1C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9521C2E5C967902A1CB2888843700AD2 /* JWT.swift */,
-				3F123E847C3ACD4710BCC6B26E8A505B /* JWTDecode.swift */,
-				E735E5E53B03311FD9493258CAD09E4B /* JWTDecodeError.swift */,
-				550431BF87E884DE51DBC836752012AD /* Support Files */,
+				05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos */,
+				7A8D4AC02B51FD03224739D06AEE207B /* JWTDecode */,
+				C854C6F56D777ED2E005882604D5104C /* Pods-season4_mainproject */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE16E26BE394918171AA58239E850C16 /* JWTDecode */ = {
+			isa = PBXGroup;
+			children = (
+				8458399FEAAFE21AFBF44897217AC841 /* JWT.swift */,
+				24F18420C0DA0CA3C81B3D3DEC2FF364 /* JWTDecode.swift */,
+				0AB395D114C105B72C84D728C9A3AA75 /* JWTDecodeError.swift */,
+				0A3109F7F1C0731C8AC8167D67FC251E /* Support Files */,
 			);
 			name = JWTDecode;
 			path = JWTDecode;
@@ -173,14 +270,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0460FE6B329833157A873FCF777C0B8D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A407DAA45CEFAF408CC445A27822CC8 /* Pods-season4_mainproject-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		04921AE8EA376E8C80EC3649B333D99F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -189,9 +278,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40097E5779029102CCD9C3E4EE752DDF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FCFA7D464D486EC1E486FFF2C21B4ED /* Cosmos-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9C657A63476CD802C8CBD57527C3163C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7C46EF3E360E0620D29D3F3F407C895 /* Pods-season4_mainproject-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		00F31BD5217A20974B5E9AAC6256D98E /* Cosmos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5531D3CEF3EBE4420E9BFCEFA9DD7F6 /* Build configuration list for PBXNativeTarget "Cosmos" */;
+			buildPhases = (
+				40097E5779029102CCD9C3E4EE752DDF /* Headers */,
+				B1B8AB666CBBC24142B5B2D2C578F7E6 /* Sources */,
+				6DEC9D66D25D7967B167DEA713C2359C /* Frameworks */,
+				C77B64B25EBB18C8D211C061D92B0B4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Cosmos;
+			productName = Cosmos;
+			productReference = 05C4280976BF93DA8B36818DE2E2A5E0 /* Cosmos */;
+			productType = "com.apple.product-type.framework";
+		};
 		22E1F0E7CBECE226FC294E79C21B0033 /* JWTDecode */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3E0F337F318A4B6AB0B280E358867A9F /* Build configuration list for PBXNativeTarget "JWTDecode" */;
@@ -212,17 +335,18 @@
 		};
 		285BFBC91933AAE32D7969A438CB7F1E /* Pods-season4_mainproject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B3BB61BC9AABB977EE676C2DCBA9D55 /* Build configuration list for PBXNativeTarget "Pods-season4_mainproject" */;
+			buildConfigurationList = 364228D51C2F7BE3C8F6EB4E3EDA3475 /* Build configuration list for PBXNativeTarget "Pods-season4_mainproject" */;
 			buildPhases = (
-				0460FE6B329833157A873FCF777C0B8D /* Headers */,
-				4A41B92062A0D99E276B9ADDABC6CCC3 /* Sources */,
-				299E3BEEDD2601996B99F7E6B6C52220 /* Frameworks */,
-				C0F809D5FF680EA059BBB9BE0FD1087F /* Resources */,
+				9C657A63476CD802C8CBD57527C3163C /* Headers */,
+				8B68F2D24219426D1FBBBCB8B8DA54CC /* Sources */,
+				AFDD069F01F31E47C2E38CBD1867BAEF /* Frameworks */,
+				51BB0810AB8D284A4A0A04B6E0EA3829 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				0C2EA85E9DC2BCF5D9F3C10484638589 /* PBXTargetDependency */,
+				06D3EA0BC47DEBD6E087976DAA85F501 /* PBXTargetDependency */,
+				22FA3113A4E9A0C60F4501C160813C04 /* PBXTargetDependency */,
 			);
 			name = "Pods-season4_mainproject";
 			productName = Pods_season4_mainproject;
@@ -247,10 +371,11 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 0E41EC9816A12473BE6662254F13C9C7 /* Products */;
+			productRefGroup = EC2AD836DE3890C9807DA3DB4C8A5B1C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				00F31BD5217A20974B5E9AAC6256D98E /* Cosmos */,
 				22E1F0E7CBECE226FC294E79C21B0033 /* JWTDecode */,
 				285BFBC91933AAE32D7969A438CB7F1E /* Pods-season4_mainproject */,
 			);
@@ -258,6 +383,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		51BB0810AB8D284A4A0A04B6E0EA3829 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5F72A40BE86DFA4B2082499610CD3DCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -265,7 +397,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C0F809D5FF680EA059BBB9BE0FD1087F /* Resources */ = {
+		C77B64B25EBB18C8D211C061D92B0B4F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -275,11 +407,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4A41B92062A0D99E276B9ADDABC6CCC3 /* Sources */ = {
+		8B68F2D24219426D1FBBBCB8B8DA54CC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B816B5F807DA8821505A356B4DD7322E /* Pods-season4_mainproject-dummy.m in Sources */,
+				C62879E34D2EA53BCE603274B9FD2D4C /* Pods-season4_mainproject-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,19 +426,121 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1B8AB666CBBC24142B5B2D2C578F7E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67318BB3E280E0D8FB9161E5557B71E3 /* Cosmos-dummy.m in Sources */,
+				772B7FA4384C442360975E95D12383BA /* CosmosAccessibility.swift in Sources */,
+				61773DD4962BFA6D7E38DD8A9D998A8A /* CosmosDefaultSettings.swift in Sources */,
+				99DB653A1F70EAEC3490B69E4AC9011F /* CosmosLayerHelper.swift in Sources */,
+				ABFB9BF862F602531FE8131A350542B0 /* CosmosLayers.swift in Sources */,
+				CB4D7FEF62D7943C6E236467F3C516C1 /* CosmosLocalizedRating.swift in Sources */,
+				3E410558A06008A95E19C2FE1D5E014E /* CosmosRating.swift in Sources */,
+				4D8675E7F1C6254904557B7FB84E1C51 /* CosmosSettings.swift in Sources */,
+				8322D938B4C21C24E70FBA1B95797AC9 /* CosmosSize.swift in Sources */,
+				1C6156B7023F7F69398B4119A0AA492B /* CosmosText.swift in Sources */,
+				7AA4F48458A149B12BCF7E8EB147E25C /* CosmosTouch.swift in Sources */,
+				449B7D4D4BD118C480786A347A377054 /* CosmosTouchTarget.swift in Sources */,
+				EC1899EF909D17F47C5C0C2064BD2533 /* CosmosView.swift in Sources */,
+				9755F83E9DE9BA2CC07496C16AF80B42 /* RightToLeft.swift in Sources */,
+				5E87677262463376144E8B5F6916FCCB /* StarFillMode.swift in Sources */,
+				7E298ECE9B23835D17446526E27D2D67 /* StarLayer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0C2EA85E9DC2BCF5D9F3C10484638589 /* PBXTargetDependency */ = {
+		06D3EA0BC47DEBD6E087976DAA85F501 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Cosmos;
+			target = 00F31BD5217A20974B5E9AAC6256D98E /* Cosmos */;
+			targetProxy = C4E99CFD5F5B2385FF7C44B1D3F1BA86 /* PBXContainerItemProxy */;
+		};
+		22FA3113A4E9A0C60F4501C160813C04 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = JWTDecode;
 			target = 22E1F0E7CBECE226FC294E79C21B0033 /* JWTDecode */;
-			targetProxy = F2E57269D45FF8705F497BF1B01DB10A /* PBXContainerItemProxy */;
+			targetProxy = CA587E9B381D42F131260B4B6659B2E9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1367399E9626B56D5A9BFDDF552C8D70 /* Release */ = {
+		0037EE418EA9723A9061EA8B8C53AC26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15890381DB8DB46A8853D328D973F77A /* Pods-season4_mainproject.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		5F1EAB6940D0701156E3E7BC443DCD67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE08BF4FAB85FF39889909831E807EEF /* JWTDecode.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/JWTDecode/JWTDecode-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/JWTDecode/JWTDecode-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/JWTDecode/JWTDecode.modulemap";
+				PRODUCT_MODULE_NAME = JWTDecode;
+				PRODUCT_NAME = JWTDecode;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.8;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		69A059D23CA7F8BE3C25AC9E42F19794 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DAC6368A221AE6B37FB1788C8966B08 /* Pods-season4_mainproject.release.xcconfig */;
 			buildSettings = {
@@ -344,11 +578,10 @@
 			};
 			name = Release;
 		};
-		5F1EAB6940D0701156E3E7BC443DCD67 /* Release */ = {
+		6EC69149E28F5E27C4706FFEAF8B58F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 082D21DB9933C10AC80480256FD991AB /* JWTDecode.release.xcconfig */;
+			baseConfigurationReference = 6DA0A7B186B721E813FE083D7A8C4194 /* Cosmos.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -357,28 +590,27 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/JWTDecode/JWTDecode-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/JWTDecode/JWTDecode-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/JWTDecode/JWTDecode.modulemap";
-				PRODUCT_MODULE_NAME = JWTDecode;
-				PRODUCT_NAME = JWTDecode;
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				PRODUCT_MODULE_NAME = Cosmos;
+				PRODUCT_NAME = Cosmos;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.8;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		7C3FBC45C4966EFE20583918767EFBE2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -446,12 +678,10 @@
 			};
 			name = Debug;
 		};
-		F24D8B399A4EBF4650FAA39E36E4EC05 /* Debug */ = {
+		C78C1BA85703BCE69743B7C85B847990 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15890381DB8DB46A8853D328D973F77A /* Pods-season4_mainproject.debug.xcconfig */;
+			baseConfigurationReference = BB796877099AA2E7757002A0F22B4662 /* Cosmos.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -460,32 +690,32 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/Cosmos/Cosmos-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Cosmos/Cosmos-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/Cosmos/Cosmos.modulemap";
+				PRODUCT_MODULE_NAME = Cosmos;
+				PRODUCT_NAME = Cosmos;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		F5EAE6B570A6F7C738B36C879DC8FBB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 005D9675BFDBBCC7C15B83664D9C124F /* JWTDecode.debug.xcconfig */;
+			baseConfigurationReference = 2AB8430279620FB09DE500AC97CF78B1 /* JWTDecode.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -583,11 +813,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B3BB61BC9AABB977EE676C2DCBA9D55 /* Build configuration list for PBXNativeTarget "Pods-season4_mainproject" */ = {
+		364228D51C2F7BE3C8F6EB4E3EDA3475 /* Build configuration list for PBXNativeTarget "Pods-season4_mainproject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F24D8B399A4EBF4650FAA39E36E4EC05 /* Debug */,
-				1367399E9626B56D5A9BFDDF552C8D70 /* Release */,
+				0037EE418EA9723A9061EA8B8C53AC26 /* Debug */,
+				69A059D23CA7F8BE3C25AC9E42F19794 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -606,6 +836,15 @@
 			buildConfigurations = (
 				7C3FBC45C4966EFE20583918767EFBE2 /* Debug */,
 				FF0A36149038A192FFD678E1D4A40D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5531D3CEF3EBE4420E9BFCEFA9DD7F6 /* Build configuration list for PBXNativeTarget "Cosmos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6EC69149E28F5E27C4706FFEAF8B58F4 /* Debug */,
+				C78C1BA85703BCE69743B7C85B847990 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

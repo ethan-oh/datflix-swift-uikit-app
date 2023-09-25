@@ -4,14 +4,30 @@
 //
 //  Created by Kang Hyeon Oh on 2023/09/25.
 //
-
+import Cosmos
 import UIKit
 
 class ReviewViewController: UIViewController {
 
+    @IBOutlet weak var movieTitle: UILabel!
+    @IBOutlet weak var movieGenre: UILabel!
+    @IBOutlet weak var movieCountry: UILabel!
+    @IBOutlet weak var movieRating: UILabel!
+    @IBOutlet weak var movieImage: UIImageView!
+    
+    // 별점 기능
+    @IBOutlet weak var cosmosView: CosmosView!
+    //https://velog.io/@minji0801/iOSLibrary-Cosmos#cocoapods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        cosmosView.rating = 4
+        cosmosView.settings.updateOnTouch = false
+        cosmosView.settings.starSize = 30
+        cosmosView.settings.starMargin = 5
+        cosmosView.settings.filledColor = UIColor.orange
+        cosmosView.settings.emptyBorderColor = UIColor.orange
+        cosmosView.settings.filledBorderColor = UIColor.orange
         // Do any additional setup after loading the view.
     }
     
