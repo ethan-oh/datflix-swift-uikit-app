@@ -7,14 +7,14 @@
 
 import Foundation
 
-struct AuthJSONModel: Codable{
+struct AuthJSON: Codable{
     var message: String
     var access_token: String
     var refresh_token: String
 
 }
 
-struct RegisterJSONModel: Codable{
+struct RegisterJSON: Codable{
     var message: String
     var email: String
 }

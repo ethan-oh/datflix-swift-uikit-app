@@ -5,4 +5,10 @@
 //  Created by TJ on 2023/09/21.
 //
 
-import Foundation
+class User{
+    static var email = ""
+    static var nickname = ""
+    static var name = ""
+    static var access_token = ""
+    static var refresh_token = ""
+}

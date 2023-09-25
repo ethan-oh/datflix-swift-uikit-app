@@ -10,7 +10,7 @@ import UIKit
 class UserViewController: UIViewController {
     let PORT = Bundle.main.object(forInfoDictionaryKey: "PORT") as? String ?? ""
     let HOST = Bundle.main.object(forInfoDictionaryKey: "HOST") as? String ?? ""
-    @IBOutlet weak var tfUser: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        self.view.backgroundColor = UIColor.black
