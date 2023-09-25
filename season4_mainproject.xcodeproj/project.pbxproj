@@ -10,6 +10,11 @@
 		1A43919C2ABC04EE00563E89 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 1A43919B2ABC04EE00563E89 /* Config.xcconfig */; };
 		27CAE61F5BD3634CDCA44C64 /* Pods_season4_mainproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2F241DB758A7944842A569 /* Pods_season4_mainproject.framework */; };
 		320D82CA2ABADECA00D556F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D82C92ABADECA00D556F1 /* MainViewController.swift */; };
+		3251249C2AC115A800CD856E /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251249B2AC115A800CD856E /* LoginVM.swift */; };
+		3251249F2AC116CC00CD856E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251249E2AC116CC00CD856E /* UserModel.swift */; };
+		325124A12AC116D800CD856E /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325124A02AC116D800CD856E /* MovieModel.swift */; };
+		325124A52AC1199A00CD856E /* UserJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325124A42AC1199A00CD856E /* UserJSONModel.swift */; };
+		325124A72AC119AC00CD856E /* MovieJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325124A62AC119AC00CD856E /* MovieJSONModel.swift */; };
 		325191F52ABBD0DA0027028E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F42ABBD0DA0027028E /* Home.storyboard */; };
 		325191F72ABBD0E70027028E /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F62ABBD0E70027028E /* Recommend.storyboard */; };
 		325191F92ABBD0FA0027028E /* Theater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F82ABBD0FA0027028E /* Theater.storyboard */; };
@@ -34,6 +39,11 @@
 		1A43919B2ABC04EE00563E89 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		242FDEAD0B174A98F80534D6 /* Pods-season4_mainproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season4_mainproject.release.xcconfig"; path = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject.release.xcconfig"; sourceTree = "<group>"; };
 		320D82C92ABADECA00D556F1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3251249B2AC115A800CD856E /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010\U0010\U0010\U0010\U0010\U0010LoginVM.swift"; sourceTree = "<group>"; };
+		3251249E2AC116CC00CD856E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		325124A02AC116D800CD856E /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		325124A42AC1199A00CD856E /* UserJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserJSONModel.swift; sourceTree = "<group>"; };
+		325124A62AC119AC00CD856E /* MovieJSONModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieJSONModel.swift; sourceTree = "<group>"; };
 		325191F42ABBD0DA0027028E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		325191F62ABBD0E70027028E /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
 		325191F82ABBD0FA0027028E /* Theater.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Theater.storyboard; sourceTree = "<group>"; };
@@ -105,6 +115,41 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		3251249A2AC1158300CD856E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3251249B2AC115A800CD856E /* LoginVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3251249D2AC116B200CD856E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				325124A32AC1198100CD856E /* JSONModel */,
+				325124A22AC1197400CD856E /* DBModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		325124A22AC1197400CD856E /* DBModel */ = {
+			isa = PBXGroup;
+			children = (
+				3251249E2AC116CC00CD856E /* UserModel.swift */,
+				325124A02AC116D800CD856E /* MovieModel.swift */,
+			);
+			path = DBModel;
+			sourceTree = "<group>";
+		};
+		325124A32AC1198100CD856E /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				325124A42AC1199A00CD856E /* UserJSONModel.swift */,
+				325124A62AC119AC00CD856E /* MovieJSONModel.swift */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
 		32EB06392ABC341100AECA3A /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +179,8 @@
 		4E9F27522ABAC8F7003263FC /* season4_mainproject */ = {
 			isa = PBXGroup;
 			children = (
+				3251249D2AC116B200CD856E /* Model */,
+				3251249A2AC1158300CD856E /* ViewModel */,
 				32EB06392ABC341100AECA3A /* User */,
 				1A43919B2ABC04EE00563E89 /* Config.xcconfig */,
 				1A2C69672ABBEB4C003C9A1E /* Service */,
@@ -286,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32EB063F2ABC65F000AECA3A /* LoginViewController.swift in Sources */,
+				3251249C2AC115A800CD856E /* LoginVM.swift in Sources */,
 				325192092ABC31750027028E /* RegisterViewController.swift in Sources */,
 				325192032ABBD3D20027028E /* UserViewController.swift in Sources */,
 				325192012ABBD3C50027028E /* TheaterViewController.swift in Sources */,
@@ -293,8 +341,12 @@
 				4E9F27542ABAC8F7003263FC /* AppDelegate.swift in Sources */,
 				32EB063B2ABC343F00AECA3A /* UserData.swift in Sources */,
 				4E9F27562ABAC8F7003263FC /* SceneDelegate.swift in Sources */,
+				3251249F2AC116CC00CD856E /* UserModel.swift in Sources */,
 				325191FD2ABBD3940027028E /* HomeViewController.swift in Sources */,
+				325124A52AC1199A00CD856E /* UserJSONModel.swift in Sources */,
+				325124A72AC119AC00CD856E /* MovieJSONModel.swift in Sources */,
 				325192052ABC0F8E0027028E /* UserTableViewController.swift in Sources */,
+				325124A12AC116D800CD856E /* MovieModel.swift in Sources */,
 				325191FF2ABBD3B60027028E /* RecommendViewController.swift in Sources */,
 				3251920B2ABC31960027028E /* UserEditViewController.swift in Sources */,
 			);
