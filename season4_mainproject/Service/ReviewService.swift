@@ -23,7 +23,7 @@ class ReviewService {
         request.setValue("Authorization", forHTTPHeaderField: "Bearer \(access_token)")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let parameters = ReviewJson(movie_id: movie_id, content: content, ratring: rating)
+        let parameters = ReviewJson(movie_id: movie_id, content: content, rating: rating)
         guard let uploadData = try? JSONEncoder().encode(parameters)
             else { return false }
 
@@ -60,7 +60,7 @@ class ReviewService {
         request.setValue("Authorization", forHTTPHeaderField: "Bearer \(access_token)")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        let parameters = ReviewJson(content: content, ratring: rating)
+        let parameters = ReviewJson(content: content, rating: rating)
         guard let uploadData = try? JSONEncoder().encode(parameters)
             else { return false }
 
@@ -82,6 +82,86 @@ class ReviewService {
         return result
     }
     
+    /// Review Read
+    func readModel(movie_id: Int, completion: @escaping ([Review]) -> Void) {
+        let baseUrl = HOST + ":" + PORT + "/review/" + String(movie_id)
+        print(baseUrl)
+        
+        let url: URL = URL(string: baseUrl)!
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+                DispatchQueue.main.async {
+                    completion([])
+                }
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse,
+                  (200...299).contains(httpResponse.statusCode) else {
+                print("Invalid HTTP response")
+                DispatchQueue.main.async {
+                    completion([])
+                }
+                return
+            }
+
+            guard let data = data else {
+                print("No data received")
+                DispatchQueue.main.async {
+                    completion([])
+                }
+                return
+            }
+
+            let reviews = self.parseJSON(data)
+            DispatchQueue.main.async {
+                completion(reviews)
+            }
+        }
+
+        task.resume()
+
+    }
+    
+    func deleteModel(movie_id: Int) -> Bool {
+        var result: Bool = false
+        let access_token: String = User.access_token
+        let baseUrl = HOST + PORT + "/review/" + String(movie_id)
+        
+        let url: URL = URL(string: baseUrl)!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.addValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            
+            // 서버가 응답이 없거나 통신이 실패
+            if let e = error {
+                NSLog("An error has occurred: \(e.localizedDescription)")
+                return
+            }
+            
+            // 응답 처리 로직
+            if let httpResponse = response as? HTTPURLResponse {
+                if httpResponse.statusCode == 200 {
+                    print("Review deleted successfully")
+                } else {
+                    print("Failed to delete review. Status code: \(httpResponse.statusCode)")
+                }
+            }
+        }
+        
+        task.resume()
+        result = true
+        return result
+    }
+
+
     
     func parseJSON(_ data: Data) -> [Review] {
         let decoder = JSONDecoder()
@@ -89,7 +169,7 @@ class ReviewService {
         do {
             let reviewlists = try decoder.decode(ReviewJSONResults.self, from: data)
             for review in reviewlists.result {
-                let query = Review(movie_id : review.movie_id!, content: review.content, ratring: review.ratring)
+                let query = Review(nickname : review.nickname, movie_id : Int(review.movie_id!), content: review.content, rating: review.rating, insertdate: review.insertdate)
                 locations.append(query)
             }
         } catch {

@@ -9,11 +9,12 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
     
+    var reviewList : [Review] = []
     
-    let contentArray = ["아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워"]
+    let contentArray = ["아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오"]
     let contentArray2 = ["아오 어려워", "뭐가 이리 많은거야", "확인하는 용도"]
     
-    
+    let reviewController = ReviewController(service: ReviewService())
     
     @IBOutlet weak var Star_with_Comment_TableView: UITableView!
     @IBOutlet weak var Movie_Information_TableView: UITableView!
@@ -90,10 +91,29 @@ class MovieDetailViewController: UIViewController {
         
         print("contentArray.count : \(contentArray.count)")
         
-        
         // Do any additional setup after loading the view.
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        readValues()
+    }
+    
+    func readValues() {
+        self.reviewList.removeAll()
+        reviewController.selectReview(movie_id: 3) { [weak self] reviews in
+            guard let self = self else { return }
+            
+            // 가져온 리뷰 데이터를 reviewList에 추가
+            self.reviewList.append(contentsOf: reviews)
+            
+            // UI 업데이트는 메인 스레드에서 수행
+            DispatchQueue.main.async {
+                self.CommentTableView.reloadData()
+            }
+        }
+    }
+
     
 
 
@@ -117,7 +137,7 @@ extension MovieDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == CommentTableView {
             // CommentTableView의 경우 contentArray.count로 셀의 갯수를 설정
-            return contentArray2.count
+            return reviewList.count
         } else if tableView == Movie_Information_TableView {
             // Movie_Information_TableView의 경우 contentArray.count로 셀의 갯수를 설정
             return min(1, contentArray.count)
@@ -133,7 +153,7 @@ extension MovieDetailViewController: UITableViewDataSource {
         if tableView == CommentTableView {
             let cell = CommentTableView.dequeueReusableCell(withIdentifier: "myTableViewCell", for: indexPath) as! MyTableViewCell
             
-            cell.userContentLabel.text = contentArray2[indexPath.row]
+            cell.userContentLabel.text = reviewList[indexPath.row].content
             
             return cell
         }else if tableView == Movie_Information_TableView{
