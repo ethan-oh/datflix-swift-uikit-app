@@ -134,18 +134,8 @@ class MovieTableViewController: UITableViewController {
             if segue.identifier == "sgDetail" {
                 let cell = sender as! UITableViewCell
                 let indexPath = self.tvListView.indexPath(for: cell)
-                DetailInformation.id = AddressList[indexPath!.row].id
-                DetailInformation.ott = AddressList[indexPath!.row].ott
-                DetailInformation.title = AddressList[indexPath!.row].title
-                DetailInformation.imagepath = AddressList[indexPath!.row].imagepath
-                DetailInformation.releasedate = AddressList[indexPath!.row].releasedate
-                DetailInformation.genre = AddressList[indexPath!.row].genre
-                DetailInformation.totalaudience = AddressList[indexPath!.row].totalaudience
-                DetailInformation.contry = AddressList[indexPath!.row].contry
-                DetailInformation.rating = AddressList[indexPath!.row].rating
-                DetailInformation.star = AddressList[indexPath!.row].star
-                DetailInformation.runningtime = AddressList[indexPath!.row].runningtime
-                DetailInformation.summary = AddressList[indexPath!.row].summary
+                let detailView = segue.destination as! MovieDetailViewController
+                detailView.receivedid = AddressList[indexPath!.row].id
                 // Get the new view controller using segue.destination.
                 // Pass the selected object to the new view controller.
             }

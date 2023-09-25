@@ -18,6 +18,9 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var star5: UIButton!
     var starCount = 0
     
+    @IBOutlet weak var nickname: UILabel!
+    @IBOutlet weak var insertDate: UILabel!
+    
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var userContentLabel: UILabel!
     //셀이 랜더링(그릴때) 될때
