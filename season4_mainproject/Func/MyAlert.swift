@@ -25,6 +25,15 @@ class MyAlert{
         resultAlert.addAction(okAction)
         viewController.present(resultAlert, animated: true)
     }
+    
+    func showSegAlert(on viewController: UIViewController, content: String, seg: String) {
+        let resultAlert = UIAlertController(title: "결과", message: content, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "네", style: .default, handler: {ACTION in
+            viewController.navigationController?.performSegue(withIdentifier: seg, sender: nil)
+        })
+        resultAlert.addAction(okAction)
+        viewController.present(resultAlert, animated: true)
+    }
 
 }
 

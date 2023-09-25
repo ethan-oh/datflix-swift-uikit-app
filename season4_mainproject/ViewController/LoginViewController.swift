@@ -14,27 +14,31 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStyle()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     @IBAction func btnRegister(_ sender: UIButton) {
     }
     
     @IBAction func btnLogin(_ sender: UIButton) {
-        
-        readValue()
-        
+        if tfEmail.text!.trimmingCharacters(in: .whitespaces).isEmpty{
+            let resultAlert = UIAlertController(title: "결과", message: "Email을 입력해주세요.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "네", style: .default)
+            
+            resultAlert.addAction(okAction)
+            present(resultAlert, animated: true)
+        }else if tfPassword.text!.trimmingCharacters(in: .whitespaces).isEmpty{
+            let resultAlert = UIAlertController(title: "결과", message: "Password를 입력해주세요.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "네", style: .default)
+            
+            resultAlert.addAction(okAction)
+            present(resultAlert, animated: true)
+        }else{
+            readValue()
+        }
     }
-    
-    func setStyle(){
-        self.view.layer.backgroundColor = UIColor(red: 0.141, green: 0.165, blue: 0.196, alpha: 1).cgColor
-          
-    }
-    
-    
     
     func readValue(){
         let email = tfEmail.text?.trimmingCharacters(in: .whitespaces)
@@ -71,7 +75,6 @@ extension LoginViewController: LoginProtocol{
             present(resultAlert, animated: true)
         }else{
             User.email = tfEmail.text!.trimmingCharacters(in: .whitespaces)
-            print(data.access_token)
             
             let resultAlert = UIAlertController(title: "결과", message: "로그인 성공.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "네", style: .default, handler: {ACTION in

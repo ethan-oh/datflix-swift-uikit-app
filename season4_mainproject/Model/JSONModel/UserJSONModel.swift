@@ -14,7 +14,6 @@ struct AuthJSON: Codable{
 
 }
 
-struct RegisterJSON: Codable{
+struct ResultJSON: Codable{
     var message: String
-    var email: String
 }

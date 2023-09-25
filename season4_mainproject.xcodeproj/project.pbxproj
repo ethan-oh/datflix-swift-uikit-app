@@ -28,6 +28,10 @@
 		1E5A4CBA2AC1824F009DBB5C /* Star_with_CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A4CB92AC1824F009DBB5C /* Star_with_CommentCell.xib */; };
 		1E5A4CBC2AC1825F009DBB5C /* Star_with_CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A4CBB2AC1825F009DBB5C /* Star_with_CommentCell.swift */; };
 		27CAE61F5BD3634CDCA44C64 /* Pods_season4_mainproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2F241DB758A7944842A569 /* Pods_season4_mainproject.framework */; };
+		3206A6842AC1A77600C5B8A5 /* EmailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206A6812AC1A77600C5B8A5 /* EmailVM.swift */; };
+		3206A6852AC1A77600C5B8A5 /* NickNameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206A6822AC1A77600C5B8A5 /* NickNameVM.swift */; };
+		3206A6862AC1A77600C5B8A5 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206A6832AC1A77600C5B8A5 /* RegisterVM.swift */; };
+		3206A6892AC1A7F800C5B8A5 /* MyAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206A6882AC1A7F800C5B8A5 /* MyAlert.swift */; };
 		320D82CA2ABADECA00D556F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320D82C92ABADECA00D556F1 /* MainViewController.swift */; };
 		3251249C2AC115A800CD856E /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251249B2AC115A800CD856E /* LoginVM.swift */; };
 		3251249F2AC116CC00CD856E /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251249E2AC116CC00CD856E /* UserModel.swift */; };
@@ -76,6 +80,10 @@
 		1E5A4CB92AC1824F009DBB5C /* Star_with_CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Star_with_CommentCell.xib; sourceTree = "<group>"; };
 		1E5A4CBB2AC1825F009DBB5C /* Star_with_CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_with_CommentCell.swift; sourceTree = "<group>"; };
 		242FDEAD0B174A98F80534D6 /* Pods-season4_mainproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season4_mainproject.release.xcconfig"; path = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject.release.xcconfig"; sourceTree = "<group>"; };
+		3206A6812AC1A77600C5B8A5 /* EmailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVM.swift; sourceTree = "<group>"; };
+		3206A6822AC1A77600C5B8A5 /* NickNameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameVM.swift; sourceTree = "<group>"; };
+		3206A6832AC1A77600C5B8A5 /* RegisterVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		3206A6882AC1A7F800C5B8A5 /* MyAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyAlert.swift; path = season4_mainproject/Func/MyAlert.swift; sourceTree = SOURCE_ROOT; };
 		320D82C92ABADECA00D556F1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		3251249B2AC115A800CD856E /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010\U0010\U0010\U0010\U0010\U0010LoginVM.swift"; sourceTree = "<group>"; };
 		3251249E2AC116CC00CD856E /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -173,9 +181,20 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		3206A6872AC1A7AF00C5B8A5 /* Func */ = {
+			isa = PBXGroup;
+			children = (
+				3206A6882AC1A7F800C5B8A5 /* MyAlert.swift */,
+			);
+			path = Func;
+			sourceTree = "<group>";
+		};
 		3251249A2AC1158300CD856E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3206A6812AC1A77600C5B8A5 /* EmailVM.swift */,
+				3206A6822AC1A77600C5B8A5 /* NickNameVM.swift */,
+				3206A6832AC1A77600C5B8A5 /* RegisterVM.swift */,
 				3251249B2AC115A800CD856E /* LoginVM.swift */,
 			);
 			path = ViewModel;
@@ -243,6 +262,7 @@
 		4E9F27522ABAC8F7003263FC /* season4_mainproject */ = {
 			isa = PBXGroup;
 			children = (
+				3206A6872AC1A7AF00C5B8A5 /* Func */,
 				1E5A4C9C2AC159B9009DBB5C /* Test */,
 				3251249D2AC116B200CD856E /* Model */,
 				3251249A2AC1158300CD856E /* ViewModel */,
@@ -415,12 +435,16 @@
 				1AE9D27C2AC19CF400CA506D /* Review.swift in Sources */,
 				320D82CA2ABADECA00D556F1 /* MainViewController.swift in Sources */,
 				4E9F27542ABAC8F7003263FC /* AppDelegate.swift in Sources */,
+				3206A6862AC1A77600C5B8A5 /* RegisterVM.swift in Sources */,
 				32EB063B2ABC343F00AECA3A /* UserData.swift in Sources */,
 				1AE9D27E2AC19D1E00CA506D /* ReviewJSONModel.swift in Sources */,
 				1E5A4C992AC15626009DBB5C /* DetailInformation.swift in Sources */,
 				4E9F27562ABAC8F7003263FC /* SceneDelegate.swift in Sources */,
 				3251249F2AC116CC00CD856E /* UserModel.swift in Sources */,
+				3206A6852AC1A77600C5B8A5 /* NickNameVM.swift in Sources */,
 				325191FD2ABBD3940027028E /* HomeViewController.swift in Sources */,
+				3206A6892AC1A7F800C5B8A5 /* MyAlert.swift in Sources */,
+				3206A6842AC1A77600C5B8A5 /* EmailVM.swift in Sources */,
 				325124A52AC1199A00CD856E /* UserJSONModel.swift in Sources */,
 				1E5A4CBC2AC1825F009DBB5C /* Star_with_CommentCell.swift in Sources */,
 				325124A72AC119AC00CD856E /* MovieJSONModel.swift in Sources */,
