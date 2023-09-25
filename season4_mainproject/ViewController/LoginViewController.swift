@@ -11,13 +11,13 @@ class LoginViewController: UIViewController {
     
     var data = tokenModel(message: "", access_token: "", refresh_token: "")
     
-    @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.layer.backgroundColor = UIColor(red: 0.141, green: 0.165, blue: 0.196, alpha: 1).cgColor
+        setStyle()
     }
     
     @IBAction func btnRegister(_ sender: UIButton) {
@@ -28,6 +28,13 @@ class LoginViewController: UIViewController {
         readValue()
         
     }
+    
+    func setStyle(){
+        self.view.layer.backgroundColor = UIColor(red: 0.141, green: 0.165, blue: 0.196, alpha: 1).cgColor
+          
+    }
+    
+    
     
     func readValue(){
         let email = tfEmail.text?.trimmingCharacters(in: .whitespaces)
