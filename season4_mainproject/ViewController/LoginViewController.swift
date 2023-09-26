@@ -53,13 +53,19 @@ extension LoginViewController: LoginProtocol{
         if data.message != "Logged in successfully" {
             myAlert.showDefaultAlert(on: self, content: "아이디나 패스워드가 틀렸습니다.")
         } else {
-            User.email = tfEmail.text!.trimmingCharacters(in: .whitespaces)
-            User.access_token = data.access_token
-            User.refresh_token = data.refresh_token
-            User.name = data.name
-            User.nickname = data.nickname
+            UserDefaults.standard.setValue(tfEmail.text!.trimmingCharacters(in: .whitespaces), forKey: "email")
+            UserDefaults.standard.setValue(data.access_token, forKey: "access_token")
+            UserDefaults.standard.setValue(data.refresh_token, forKey: "refresh_token")
+            UserDefaults.standard.setValue(data.name, forKey: "name")
+            UserDefaults.standard.setValue(data.nickname, forKey: "nickname")
             
-            myAlert.showPopAlert(on: self, content: "로그인 성공.")
+//            User.email = tfEmail.text!.trimmingCharacters(in: .whitespaces)
+//            User.access_token = data.access_token
+//            User.refresh_token = data.refresh_token
+//            User.name = data.name
+//            User.nickname = data.nickname
+            
+            myAlert.showMoveTabAlert(on: self, content: "로그인 성공.", index: 0)
         }
     }
 }

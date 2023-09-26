@@ -25,6 +25,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
         naviAndTabSetting()
         
@@ -55,6 +56,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         animeList = []
         romanceList = []
 
+        self.navigationItem.title = UserDefaults.standard.string(forKey: "name") == nil ? "로그인이 필요합니다." : "\(UserDefaults.standard.string(forKey: "name")!) 님"
         
         // 무비데이터 들고오기
         readValues()
@@ -195,9 +197,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         let tabbarAppearance = UITabBarAppearance()
         tabbarAppearance.backgroundColor = UIColor(named: "background")
         
-        self.navigationItem.title = User.name.isEmpty ? "로그인이 필요합니다." : "\(User.name) 님"
-
-        
         self.navigationController?.navigationBar.scrollEdgeAppearance = naviAppearance
         self.navigationController?.navigationBar.standardAppearance = naviAppearance
         self.navigationController?.navigationBar.compactAppearance = naviAppearance
@@ -242,9 +241,10 @@ extension MovieViewController: JSONMovieQueryModelProtocol {
     func itemDownloaded(item: [MovieModel]) {
         movieList = item
         
-        let sortedMovieList = movieList.sorted(by: { $0.totalaudience > $1.totalaudience })
+        let sortedAudienceList = movieList.sorted(by: { $0.totalaudience > $1.totalaudience })
+        let sortedDateList = movieList.sorted(by: { $0.releasedate > $1.releasedate })
         
-        for (index, movie) in sortedMovieList.prefix(10).enumerated() {
+        for (index, movie) in sortedAudienceList.prefix(10).enumerated() {
             rankList.append(movie)
             
             // 관객수 기준 상위 10개 담으면 빠져나오게
@@ -253,7 +253,7 @@ extension MovieViewController: JSONMovieQueryModelProtocol {
             }
         }
         
-        for movie in movieList{
+        for movie in sortedDateList{
             
             if movie.ott != "영화"{
                 ottList.append(movie)

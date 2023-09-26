@@ -22,7 +22,7 @@ class UserViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if User.access_token.isEmpty {
+        if UserDefaults.standard.string(forKey: "name") == nil {
             btnLogIn.setTitle("로그인", for: .normal)
             resetLabelText()
         } else {
@@ -33,7 +33,7 @@ class UserViewController: UIViewController {
     
     
     @IBAction func btnLogInOut(_ sender: UIButton) {
-        if User.access_token.isEmpty {
+        if UserDefaults.standard.string(forKey: "name") == nil {
             self.performSegue(withIdentifier: "sgUserToLogin", sender: nil)
         } else {
             resetUserData()
@@ -42,10 +42,16 @@ class UserViewController: UIViewController {
     }
     
     func resetUserData(){
-        User.nickname = ""
-        User.name = ""
-        User.access_token = ""
-        User.refresh_token = ""
+        UserDefaults.standard.removeObject(forKey: "email")
+        UserDefaults.standard.removeObject(forKey: "access_token")
+        UserDefaults.standard.removeObject(forKey: "refresh_token")
+        UserDefaults.standard.removeObject(forKey: "name")
+        UserDefaults.standard.removeObject(forKey: "nickname")
+        
+//        User.nickname = ""
+//        User.name = ""
+//        User.access_token = ""
+//        User.refresh_token = ""
     }
     
     func resetLabelText(){
@@ -55,9 +61,9 @@ class UserViewController: UIViewController {
     }
     
     func setLabelText(){
-        lblEmail.text = User.email
-        lblName.text = User.name
-        lblNickName.text = User.nickname
+        lblEmail.text = UserDefaults.standard.string(forKey: "email")
+        lblName.text = UserDefaults.standard.string(forKey: "name")
+        lblNickName.text = UserDefaults.standard.string(forKey: "nickname")
     }
 
 }
