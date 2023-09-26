@@ -12,7 +12,7 @@ class MovieDetailViewController: UIViewController, MovieDetailDelegate {
 
     var reviewList: [Review] = []
     var Movie: [MovieDetailModel] = []
-    var MovieCast: [MovieDetailCastModel] = []
+//    var MovieCast: [MovieDetailCastModel] = []
     let contentArray = ["아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오"]
     let contentArray2 = ["아오 어려워", "뭐가 이리 많은거야", "확인하는 용도"]
 
@@ -113,9 +113,9 @@ class MovieDetailViewController: UIViewController, MovieDetailDelegate {
         moviedetailQueryModel.delegate = self
         moviedetailQueryModel.fetchDataFromAPI(seq: receivedid)
         
-        let moviedetailcastQueryModel = MovieDetailCastQueryModel()
-        moviedetailcastQueryModel.delegate = self
-        moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
+//        let moviedetailcastQueryModel = MovieDetailCastQueryModel()
+//        moviedetailcastQueryModel.delegate = self
+//        moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
         
         self.reviewList.removeAll()
         reviewController.selectReview(movie_id: self.receivedid) { [weak self] reviews in
@@ -244,7 +244,7 @@ extension MovieDetailViewController: UITableViewDataSource {
                 } else if tableView == MovieCast_TableView {
                     let cell = MovieCast_TableView.dequeueReusableCell(withIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell
                     if !Movie.isEmpty {
-                        cell.lblCastName.text = MovieCast[indexPath.row].name
+//                        cell.lblCastName.text = MovieCast[indexPath.row].name
                         return cell
                     }
                 }
@@ -264,14 +264,14 @@ extension MovieDetailViewController: MovieDetailQueryModelProtocol{
                 }
     }
 }
-extension MovieDetailViewController: MovieDetailCastQueryModelProtocol{
-    func itemDownloaded(item: [MovieDetailCastModel]) {
-        MovieCast = item
-        
-        DispatchQueue.main.async { [weak self] in
-            self?.MovieCast_TableView.reloadData()
-                }
-    }
-    
-    
-}
+//extension MovieDetailViewController: MovieDetailCastQueryModelProtocol{
+//    func itemDownloaded(item: [MovieDetailCastModel]) {
+//        MovieCast = item
+//
+//        DispatchQueue.main.async { [weak self] in
+//            self?.MovieCast_TableView.reloadData()
+//                }
+//    }
+//
+//
+//}

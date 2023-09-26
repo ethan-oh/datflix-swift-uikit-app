@@ -38,7 +38,7 @@ class JSONAMovieQueryModel{
                 let movieData = try decoder.decode(MovieData.self, from: data)
                 // 필요한 작업을 수행하세요
                 for movie in movieData.result {
-                    let query = MovieModel(id: movie.id, ott: movie.ott, title: movie.title, imagepath: movie.imagepath, releasedate: movie.releasedate, genre: movie.genre, totalaudience: movie.totalaudience, country: movie.country, rating: movie.rating, star: Int(movie.star), runningtime: movie.runningtime, summary: movie.summary)
+                    let query = MovieModel(id: movie.id, ott: movie.ott, title: movie.title, imagepath: movie.imagepath, releasedate: movie.releasedate, genre: movie.genre, totalaudience: movie.totalaudience, contry: movie.country, rating: movie.rating, star: Int(movie.star), runningtime: movie.runningtime, summary: movie.summary)
                     locations.append(query)
                 }
             } catch {
