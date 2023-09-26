@@ -8,7 +8,7 @@ import UIKit
 
 class MovieViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    @IBOutlet weak var collectionView: UICollectionView! // IBOutlet으로 컬렉션 뷰 연결
+    @IBOutlet weak var cvListView: UICollectionView! // IBOutlet으로 컬렉션 뷰 연결
     
     var movieList: [MovieModel] = []
     
@@ -16,18 +16,18 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         super.viewDidLoad()
         
         // UICollectionView 설정
-        collectionView.delegate = self
-        collectionView.dataSource = self
+        cvListView.delegate = self
+        cvListView.dataSource = self
         
         // UICollectionViewFlowLayout을 사용하여 수평 스크롤 설정
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        collectionView.collectionViewLayout = layout
+        cvListView.collectionViewLayout = layout
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        collectionView.backgroundColor = UIColor.clear
-        collectionView.backgroundView = nil
+        cvListView.backgroundColor = UIColor.clear
+        cvListView.backgroundView = nil
         readValues()
     }
     
@@ -44,7 +44,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! MovieCollectionViewCell
+        let cell = cvListView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! MovieCollectionViewCell
         
         let imageUrlString = movieList[indexPath.row].imagepath
         let imageUrl = URL(string: imageUrlString)
@@ -76,10 +76,12 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if segue.identifier == "sgDetail" {
-                let cell = sender as! UICollectionViewCell
-                let indexPath = self.collectionView.indexPath(for: cell)
+                let cell = sender as! MovieCollectionViewCell
+                let indexPath = self.cvListView.indexPath(for: cell)
                 let detailView = segue.destination as! MovieDetailViewController
                 detailView.receivedid = movieList[indexPath!.row].id
+                print("아이디")
+                print(movieList[indexPath!.row].id)
                 // Get the new view controller using segue.destination.
                 // Pass the selected object to the new view controller.
             }
@@ -95,7 +97,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
 extension MovieViewController: JSONMovieQueryModelProtocol {
     func itemDownloaded(item: [MovieModel]) {
         movieList = item
-        self.collectionView.reloadData()
+        self.cvListView.reloadData()
     }
 }
 

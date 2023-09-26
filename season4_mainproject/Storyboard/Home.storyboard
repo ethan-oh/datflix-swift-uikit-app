@@ -45,7 +45,7 @@
                                         <size key="customSize" width="187" height="242"/>
                                         <connections>
                                             <outlet property="movieImage" destination="kkB-w9-naK" id="nBr-77-vhS"/>
-                                            <segue destination="GKZ-b5-XJq" kind="show" id="oJ5-T1-UoH"/>
+                                            <segue destination="GKZ-b5-XJq" kind="show" identifier="sgDetail" id="oJ5-T1-UoH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -60,7 +60,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="393" height="1500"/>
                     <connections>
-                        <outlet property="collectionView" destination="Z6Z-Lb-vDk" id="Z1t-27-2bk"/>
+                        <outlet property="cvListView" destination="Z6Z-Lb-vDk" id="MFR-xa-Oba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TIq-FA-rXC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
