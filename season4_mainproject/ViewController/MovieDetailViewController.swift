@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController, MovieDetailDelegate {
+class MovieDetailViewController: UIViewController {
 
 
     var reviewList: [Review] = []
@@ -135,6 +135,11 @@ class MovieDetailViewController: UIViewController, MovieDetailDelegate {
         let storyboard = UIStoryboard(name: "Review", bundle: nil)
         guard let reviewVC = storyboard.instantiateViewController(identifier: "Review") as? ReviewViewController else { return }
         reviewVC.receivedId = receivedid
+        reviewVC.receivedTitle = Movie[0].title
+        reviewVC.receivedGenre = Movie[0].genre
+        reviewVC.receivedCountry = Movie[0].country
+        reviewVC.imagePath = Movie[0].imagepath
+        reviewVC.receivedRelease = Movie[0].releasedate
         // 모달로 화면 전환
         reviewVC.modalPresentationStyle = .formSheet
 
