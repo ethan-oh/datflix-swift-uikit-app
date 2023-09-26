@@ -28,6 +28,9 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
 
     override func viewWillAppear(_ animated: Bool) {
         
+        // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
+        naviAndTabSetting()
+        
         setDelegateAndDataSource(cvDramaView)
         setDelegateAndDataSource(cvOTTView)
         setDelegateAndDataSource(cvListView)
@@ -164,6 +167,21 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
     
     // MARK: - ViewWillAppear Setting
+    func naviAndTabSetting(){
+        let naviAppearance = UINavigationBarAppearance()
+        naviAppearance.backgroundColor = UIColor(named: "background")
+        naviAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let tabbarAppearance = UITabBarAppearance()
+        tabbarAppearance.backgroundColor = UIColor(named: "background")
+
+        
+        self.navigationController?.navigationBar.scrollEdgeAppearance = naviAppearance
+        self.navigationController?.navigationBar.standardAppearance = naviAppearance
+        self.navigationController?.navigationBar.compactAppearance = naviAppearance
+
+        self.tabBarController?.tabBar.scrollEdgeAppearance = tabbarAppearance
+        self.tabBarController?.tabBar.standardAppearance = tabbarAppearance
+    }
     
     func setDelegateAndDataSource(_ view: UICollectionView){
         view.delegate = self
