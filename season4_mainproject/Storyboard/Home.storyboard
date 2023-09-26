@@ -25,14 +25,14 @@
             <objects>
                 <viewController id="m62-8Q-42v" customClass="MovieViewController" customModule="season4_mainproject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qov-3M-gir">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-oz-7Tc">
-                                <rect key="frame" x="0.0" y="103" width="393" height="1314"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="1114"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fa0-IW-xfn">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fa0-IW-xfn">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1300"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="랭킹" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmE-0Y-ukF">
                                                 <rect key="frame" x="16" y="0.0" width="361" height="40"/>
@@ -169,7 +169,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCell" id="eGK-QH-gqR" customClass="MovieCollectionViewCell" customModule="season4_mainproject" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="animeCell" id="eGK-QH-gqR" customClass="AnimeCollectionViewCell" customModule="season4_mainproject" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="127" height="185"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="snm-HP-yhX">
@@ -184,7 +184,47 @@
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="127" height="185"/>
                                                         <connections>
-                                                            <outlet property="movieImage" destination="fim-Ho-BxI" id="wh0-6I-7vt"/>
+                                                            <outlet property="movieImage" destination="fim-Ho-BxI" id="tv1-Eo-4eq"/>
+                                                            <segue destination="GKZ-b5-XJq" kind="show" identifier="sgAnimeDetail" id="vNB-I6-VyS"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="로맨스 &amp; 멜로" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BAH-SZ-yYD">
+                                                <rect key="frame" x="16" y="964" width="361" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bFc-y3-AoI">
+                                                <rect key="frame" x="0.0" y="1012" width="393" height="185"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qIc-Fa-Map">
+                                                    <size key="itemSize" width="127" height="185"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="romanceCell" id="dLD-ig-8KO" customClass="RomanceCollectionViewCell" customModule="season4_mainproject" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="127" height="185"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hy6-mo-3UY">
+                                                            <rect key="frame" x="0.0" y="0.0" width="127" height="185"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gjt-zg-BKg">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="127" height="185"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </collectionViewCellContentView>
+                                                        <size key="customSize" width="127" height="185"/>
+                                                        <connections>
+                                                            <outlet property="movieImage" destination="gjt-zg-BKg" id="sOD-7a-Krb"/>
+                                                            <segue destination="GKZ-b5-XJq" kind="show" identifier="sgRomanceDetail" id="Tom-pg-qZw"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -192,7 +232,7 @@
                                         </subviews>
                                         <color key="backgroundColor" name="background"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1500" id="7qd-Af-10K"/>
+                                            <constraint firstAttribute="height" constant="1300" id="7qd-Af-10K"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -219,11 +259,13 @@
                     <tabBarItem key="tabBarItem" title="Movie" image="house.fill" catalog="system" id="ESp-dW-inJ"/>
                     <navigationItem key="navigationItem" title="Movie" id="Pze-am-oER"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <size key="freeformSize" width="393" height="1500"/>
+                    <size key="freeformSize" width="393" height="1300"/>
                     <connections>
+                        <outlet property="cvAnimeView" destination="cMh-pw-Eex" id="mZV-y6-ebv"/>
                         <outlet property="cvDramaView" destination="kQm-mK-JkC" id="JL4-ap-cBN"/>
                         <outlet property="cvListView" destination="tJn-IL-G9p" id="6Hz-0Q-RKf"/>
                         <outlet property="cvOTTView" destination="52j-fI-EAp" id="BPw-A8-N76"/>
+                        <outlet property="cvRomanceView" destination="bFc-y3-AoI" id="gAf-yD-oOO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxO-GJ-PvG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -250,7 +292,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hsu-Nj-nav"/>
+        <segue reference="Tom-pg-qZw"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
