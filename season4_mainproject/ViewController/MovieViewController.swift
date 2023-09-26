@@ -7,10 +7,16 @@
 import UIKit
 
 class MovieViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+
     
+    @IBOutlet weak var cvOTTView: UICollectionView!
     @IBOutlet weak var cvListView: UICollectionView! // IBOutlet으로 컬렉션 뷰 연결
     
     var movieList: [MovieModel] = []
+    var rankList: [MovieModel] = []
+    var ottList: [MovieModel] = []
+    var dramaList: [MovieModel] = []
+    var animeList: [MovieModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +32,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.navigationBar.tintColor = UIColor.white
+        // 컬렉션뷰 배경 투명하게
         cvListView.backgroundColor = UIColor.clear
         cvListView.backgroundView = nil
         readValues()
@@ -45,8 +51,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = cvListView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath) as! MovieCollectionViewCell
-        
+        let cell = cvListView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as! MovieCollectionViewCell
         let imageUrlString = movieList[indexPath.row].imagepath
         let imageUrl = URL(string: imageUrlString)
         
@@ -58,16 +63,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             if let data = data, let image = UIImage(data: data) {
                 DispatchQueue.main.async {
-                    // 이미지 크기 조정
-                    let imageSize = CGSize(width: 200, height: 250) // 원하는 크기로 조절
-                    UIGraphicsBeginImageContext(imageSize)
-                    image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
-                    if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
-                        cell.movieImage.image = resizedImage
-                    }
-                    UIGraphicsEndImageContext()
-                    //content.text = self.movieList[indexPath.row].title
-//                    content.secc = self.movieList[indexPath.row].genre
+                    cell.movieImage.image = image
                 }
             }
         }.resume()
@@ -81,8 +77,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let indexPath = self.cvListView.indexPath(for: cell)
                 let detailView = segue.destination as! MovieDetailViewController
                 detailView.receivedid = movieList[indexPath!.row].id
-                print("아이디")
-                print(movieList[indexPath!.row].id)
                 // Get the new view controller using segue.destination.
                 // Pass the selected object to the new view controller.
             }
@@ -98,6 +92,11 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
 extension MovieViewController: JSONMovieQueryModelProtocol {
     func itemDownloaded(item: [MovieModel]) {
         movieList = item
+        for movie in movieList{
+            if(movie.ott != "영화"){
+                ottList.append(movie)
+            }
+        }
         self.cvListView.reloadData()
     }
 }
@@ -110,14 +109,13 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout{
     
     // 좌우 간격
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 1
+        return 0
     }
     
     // Cell Size ( 옆 라인을 고려하여 설정)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = collectionView.frame.width / 2 - 1
-        let size = CGSize(width: width, height: width)
-        
-        return size
+        return CGSize(width: 127+10, height: 185)
     }
+    
 }
+

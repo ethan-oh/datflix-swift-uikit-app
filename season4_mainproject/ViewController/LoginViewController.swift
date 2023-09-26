@@ -16,7 +16,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.tintColor = UIColor.white
     }
     
     @IBAction func btnRegister(_ sender: UIButton) {
@@ -75,7 +74,8 @@ extension LoginViewController: LoginProtocol{
             present(resultAlert, animated: true)
         }else{
             User.email = tfEmail.text!.trimmingCharacters(in: .whitespaces)
-            
+            User.access_token = data.access_token
+            User.refresh_token = data.refresh_token
             let resultAlert = UIAlertController(title: "결과", message: "로그인 성공.", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "네", style: .default, handler: {ACTION in
                 self.performSegue(withIdentifier: "sgLogin", sender: nil)
