@@ -12,10 +12,9 @@ class MovieDetailViewController: UIViewController, MovieDetailDelegate {
 
     var reviewList: [Review] = []
     var Movie: [MovieDetailModel] = []
-//    var MovieCast: [MovieDetailCastModel] = []
+    var MovieCast: [MovieCastModel] = []
     let contentArray = ["아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오"]
     let contentArray2 = ["아오 어려워", "뭐가 이리 많은거야", "확인하는 용도"]
-
     let reviewController = ReviewController(service: ReviewService())
 
     
@@ -113,9 +112,9 @@ class MovieDetailViewController: UIViewController, MovieDetailDelegate {
         moviedetailQueryModel.delegate = self
         moviedetailQueryModel.fetchDataFromAPI(seq: receivedid)
         
-//        let moviedetailcastQueryModel = MovieDetailCastQueryModel()
-//        moviedetailcastQueryModel.delegate = self
-//        moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
+        let moviedetailcastQueryModel = MovieCastQueryModel()
+        moviedetailcastQueryModel.delegate = self
+        moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
         
         self.reviewList.removeAll()
         reviewController.selectReview(movie_id: self.receivedid) { [weak self] reviews in
@@ -170,6 +169,9 @@ class MovieDetailViewController: UIViewController, MovieDetailDelegate {
             }
         }
     }
+    
+    
+
 
 
     /*
@@ -240,11 +242,43 @@ extension MovieDetailViewController: UITableViewDataSource {
                     return cell
                 } else if tableView == Star_with_Comment_TableView {
                     let cell = Star_with_Comment_TableView.dequeueReusableCell(withIdentifier: "Star_with_CommentCell", for: indexPath) as! Star_with_CommentCell
-                    return cell
+                    if !Movie.isEmpty {
+                        let starCount = Movie[0].star
+                        let stars = [cell.star1, cell.star2, cell.star3, cell.star4, cell.star5]
+                           for (index, starButton) in stars.enumerated() {
+                               starButton?.tintColor = Int(starCount) > index ? UIColor.yellow : UIColor.gray
+                           }
+                    }
+                        return cell
                 } else if tableView == MovieCast_TableView {
                     let cell = MovieCast_TableView.dequeueReusableCell(withIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell
-                    if !Movie.isEmpty {
-//                        cell.lblCastName.text = MovieCast[indexPath.row].name
+                    if !MovieCast.isEmpty {
+                        cell.lblCastName.text = MovieCast[indexPath.row].name
+                        cell.lblCastRole.text = MovieCast[indexPath.row].role
+                        let imageUrlString = MovieCast[indexPath.row].imgpath
+                        let imageUrl = URL(string: imageUrlString)
+                        
+                        URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
+                            if let error = error {
+                                print("Error downloading image: \(error.localizedDescription)")
+                                return
+                            }
+                            
+                            if let data = data, let image = UIImage(data: data) {
+                                DispatchQueue.main.async {
+                                    // 이미지 크기 조정
+                                    let imageSize = CGSize(width: 200, height: 250) // 원하는 크기로 조절
+                                    UIGraphicsBeginImageContext(imageSize)
+                                    image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
+                                    if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
+                                        cell.imgCast.image = resizedImage
+                                    }
+                                    UIGraphicsEndImageContext()
+                                    //content.text = self.movieList[indexPath.row].title
+                //                    content.secc = self.movieList[indexPath.row].genre
+                                }
+                            }
+                        }.resume()
                         return cell
                     }
                 }
@@ -260,18 +294,18 @@ extension MovieDetailViewController: MovieDetailQueryModelProtocol{
         lblMovieInformation.text = String(Movie[0].releasedate.prefix(4)) + " · " + Movie[0].country + " · " + Movie[0].genre
         
         DispatchQueue.main.async { [weak self] in
+            self?.Star_with_Comment_TableView.reloadData()
                     self?.Movie_Information_TableView.reloadData()
                 }
     }
 }
-//extension MovieDetailViewController: MovieDetailCastQueryModelProtocol{
-//    func itemDownloaded(item: [MovieDetailCastModel]) {
-//        MovieCast = item
-//
-//        DispatchQueue.main.async { [weak self] in
-//            self?.MovieCast_TableView.reloadData()
-//                }
-//    }
-//
-//
-//}
+extension MovieDetailViewController: MovieCastProtocol{
+    func itemDownloaded(item: [MovieCastModel]) {
+        MovieCast = item
+        DispatchQueue.main.async { [weak self] in
+            self?.MovieCast_TableView.reloadData()
+                }
+    }
+
+
+}

@@ -17,7 +17,6 @@ class MovieInformationCell: UITableViewCell {
     var movie: [MovieDetailModel]?
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     

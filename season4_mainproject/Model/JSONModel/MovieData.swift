@@ -1,12 +1,16 @@
 //
-//  Movie.swift
+//  MovieData.swift
 //  season4_mainproject
 //
 //  Created by 박지환 on 2023/09/25.
 //
 
 import Foundation
-// Movie 구조체 정의 (API 응답의 각 영화 정보에 대한 구조체)
+// MovieData 구조체 정의
+struct MovieData: Decodable {
+    let result: [Movie]
+}
+
 struct Movie: Decodable {
     let id: Int
     let ott: String
