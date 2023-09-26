@@ -23,7 +23,7 @@
         <!--Movie-->
         <scene sceneID="TL8-A0-B2o">
             <objects>
-                <viewController id="m62-8Q-42v" customClass="MovieViewController" customModule="season4_mainproject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainView" id="m62-8Q-42v" customClass="MovieViewController" customModule="season4_mainproject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qov-3M-gir">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
