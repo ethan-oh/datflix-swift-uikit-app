@@ -9,18 +9,24 @@ import UIKit
 
 class ReviewViewController: UIViewController {
 
-    @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var movieGenre: UILabel!
-    @IBOutlet weak var movieCountry: UILabel!
-    @IBOutlet weak var movieRating: UILabel!
-    @IBOutlet weak var movieImage: UIImageView!
-    
+
+
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblGenre: UILabel!
+    @IBOutlet weak var lblCountry: UILabel!
+    @IBOutlet weak var ImgView: UIImageView!
+    @IBOutlet weak var lblRelaese: UILabel!
+
+    @IBOutlet weak var tfReview: UITextField!
+    var receivedId: Int = 0
+
     // 별점 기능
     @IBOutlet weak var cosmosView: CosmosView!
     //https://velog.io/@minji0801/iOSLibrary-Cosmos#cocoapods
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblTitle.text = String(receivedId)
         cosmosView.rating = 4
         cosmosView.settings.updateOnTouch = false
         cosmosView.settings.starSize = 30
@@ -30,7 +36,6 @@ class ReviewViewController: UIViewController {
         cosmosView.settings.filledBorderColor = UIColor.orange
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -41,8 +46,21 @@ class ReviewViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+    @IBAction func btnCheck(_ sender: UIButton) {
+    }
+
+    @IBAction func btnSave(_ sender: UIButton) {
+    }
+
+
+
+
+
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
 }
+/*
+    // MARK: -EXTENSION
+ */

@@ -110,7 +110,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="댓글 작성하기"/>
                                                 <connections>
-                                                    <segue destination="bg3-cI-fgd" kind="show" id="Mn3-5I-F1Y"/>
+                                                    <action selector="btnWrite:" destination="0Ps-MM-BOt" eventType="touchUpInside" id="ZHa-Gh-m3p"/>
                                                 </connections>
                                             </button>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="P9f-kx-10b">
@@ -158,16 +158,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ryp-Hu-ccr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2785.4961832061067" y="-35.211267605633807"/>
-        </scene>
-        <!--Review-->
-        <scene sceneID="C0d-dT-6MZ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Review" id="bg3-cI-fgd" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="bvW-TB-Hzc"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G63-nZ-GU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3298" y="6"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="KYX-zt-loX">

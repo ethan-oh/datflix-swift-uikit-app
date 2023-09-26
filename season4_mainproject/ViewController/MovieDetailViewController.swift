@@ -7,7 +7,8 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController, MovieDetailDelegate {
+
 
     var reviewList: [Review] = []
 
@@ -23,6 +24,9 @@ class MovieDetailViewController: UIViewController {
 
     var receivedid: Int = 0
 
+    func passMovieId(_ id: Int) {
+        receivedid = id
+    }
 
     @IBOutlet weak var Movie_Information_TableViewHeight: NSLayoutConstraint!
 
@@ -113,6 +117,16 @@ class MovieDetailViewController: UIViewController {
         }
     }
 
+    @IBAction func btnWrite(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Review", bundle: nil)
+        guard let reviewVC = storyboard.instantiateViewController(identifier: "Review") as? ReviewViewController else { return }
+        reviewVC.receivedId = receivedid
+        // 모달로 화면 전환
+        reviewVC.modalPresentationStyle = .formSheet
+
+        // 모달 띄우기
+        self.present(reviewVC , animated: true)
+    }
 
 
 
@@ -127,6 +141,9 @@ class MovieDetailViewController: UIViewController {
     */
 
 }
+/*
+// MARK: - EXTENSION
+*/
 extension MovieDetailViewController: UITableViewDelegate {
 
 }
@@ -163,9 +180,9 @@ extension MovieDetailViewController: UITableViewDataSource {
                 let cell = CommentTableView.dequeueReusableCell(withIdentifier: "myTableViewCell", for: indexPath) as! MyTableViewCell
                 cell.userContentLabel.text = reviewList[indexPath.row].content
                 cell.nickname.text =
-                reviewList[indexPath.row].nickname
+                    reviewList[indexPath.row].nickname
                 cell.insertDate.text =
-                reviewList[indexPath.row].insertdate
+                    reviewList[indexPath.row].insertdate
                 return cell
             }
         } else if tableView == Movie_Information_TableView {
