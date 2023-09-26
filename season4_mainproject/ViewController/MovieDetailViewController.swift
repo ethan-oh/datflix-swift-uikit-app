@@ -96,12 +96,12 @@ class MovieDetailViewController: UIViewController {
         self.CommentTableView.delegate = self
         self.CommentTableView.dataSource = self
 
-        print("contentArray.count : \(contentArray.count)")
 
         // Do any additional setup after loading the view.
 
     }
-
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         readValues()
 
@@ -160,7 +160,7 @@ class MovieDetailViewController: UIViewController {
         DispatchQueue.global().async {
             if let imageUrl = imageUrl, let imageData = try? Data(contentsOf: imageUrl), let image = UIImage(data: imageData) {
                 // 이미지 크기 조정
-                let imageSize = CGSize(width: 70, height: 100) // 원하는 크기로 조절
+                let imageSize = CGSize(width: 110, height: 150) // 원하는 크기로 조절
                 UIGraphicsBeginImageContext(imageSize)
                 image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
                 if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
@@ -198,7 +198,8 @@ extension MovieDetailViewController: UITableViewDelegate {
 }
 
 extension MovieDetailViewController: UITableViewDataSource {
-
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == CommentTableView {
             // CommentTableView의 경우 contentArray.count로 셀의 갯수를 설정
@@ -224,6 +225,11 @@ extension MovieDetailViewController: UITableViewDataSource {
                         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
                         cell.textLabel?.text = "리뷰가 없습니다."
                         cell.textLabel?.textAlignment = .center
+                        cell.textLabel?.textColor = UIColor.white
+                        if let background = UIColor(named: "background"){
+                            cell.backgroundColor = background
+                            tableView.backgroundColor = background
+                        }
                         return cell
                     } else {
                         let cell = CommentTableView.dequeueReusableCell(withIdentifier: "myTableViewCell", for: indexPath) as! MyTableViewCell
@@ -238,10 +244,14 @@ extension MovieDetailViewController: UITableViewDataSource {
                         let content = Movie[0].summary
                         cell.userContentLabel.text = content
                         cell.movie = Movie
+                        if let background = UIColor(named: "background"){
+                            cell.backgroundColor = background
+                            tableView.backgroundColor = background
+                        }
                         if cell.isFullTextVisible {
                             cell.userContentLabel.numberOfLines = 0
                         } else {
-                            cell.userContentLabel.numberOfLines = 6
+                            cell.userContentLabel.numberOfLines = 9
                         }
                     }
                     return cell

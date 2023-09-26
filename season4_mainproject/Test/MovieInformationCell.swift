@@ -37,7 +37,7 @@ class MovieInformationCell: UITableViewCell {
             moreButton.setTitle("간략히", for: .normal)
         } else {
             // 간략 내용 표시 로직
-            userContentLabel.numberOfLines = 6 // 원하는 줄 수로 설정
+            userContentLabel.numberOfLines = 9 // 원하는 줄 수로 설정
             userContentLabel.text = movie![indexPath.row].summary
             moreButton.setTitle("더보기", for: .normal)
         }

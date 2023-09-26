@@ -10,38 +10,38 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="143" id="wYo-Ih-Mee" customClass="Star_with_CommentCell" customModule="season4_mainproject" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="405" height="143"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="110" id="wYo-Ih-Mee" customClass="Star_with_CommentCell" customModule="season4_mainproject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="110"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wYo-Ih-Mee" id="VtO-fY-9rk">
-                <rect key="frame" x="0.0" y="0.0" width="405" height="143"/>
+                <rect key="frame" x="0.0" y="0.0" width="405" height="110"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eOS-KT-ST9">
-                        <rect key="frame" x="72" y="55" width="260" height="34.333333333333343"/>
+                        <rect key="frame" x="72" y="20.000000000000004" width="260" height="36.333333333333343"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eWb-DS-KY3">
-                                <rect key="frame" x="0.0" y="0.0" width="52" height="34.333333333333336"/>
+                                <rect key="frame" x="0.0" y="0.0" width="52" height="36.333333333333336"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EL0-IY-3SV">
-                                <rect key="frame" x="52" y="0.0" width="52" height="34.333333333333336"/>
+                                <rect key="frame" x="52" y="0.0" width="52" height="36.333333333333336"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYn-MC-15h">
-                                <rect key="frame" x="104" y="0.0" width="52" height="34.333333333333336"/>
+                                <rect key="frame" x="104" y="0.0" width="52" height="36.333333333333336"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nr6-jG-2pA">
-                                <rect key="frame" x="156" y="0.0" width="52" height="34.333333333333336"/>
+                                <rect key="frame" x="156" y="0.0" width="52" height="36.333333333333336"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4U-Cw-ANw">
-                                <rect key="frame" x="208" y="0.0" width="52" height="34.333333333333336"/>
+                                <rect key="frame" x="208" y="0.0" width="52" height="36.333333333333336"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
                             </button>
@@ -53,7 +53,7 @@
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="eOS-KT-ST9" secondAttribute="bottom" constant="53.670000000000002" id="KGT-9f-gg8"/>
                     <constraint firstItem="eOS-KT-ST9" firstAttribute="leading" secondItem="VtO-fY-9rk" secondAttribute="leading" constant="72" id="Plz-jq-XHc"/>
-                    <constraint firstItem="eOS-KT-ST9" firstAttribute="top" secondItem="VtO-fY-9rk" secondAttribute="top" constant="55" id="SFJ-we-sd0"/>
+                    <constraint firstItem="eOS-KT-ST9" firstAttribute="top" secondItem="VtO-fY-9rk" secondAttribute="top" constant="20" id="SFJ-we-sd0"/>
                     <constraint firstAttribute="trailing" secondItem="eOS-KT-ST9" secondAttribute="trailing" constant="73" id="eUZ-Nx-TtT"/>
                 </constraints>
             </tableViewCellContentView>
@@ -64,7 +64,7 @@
                 <outlet property="star4" destination="Nr6-jG-2pA" id="V3a-hS-btf"/>
                 <outlet property="star5" destination="A4U-Cw-ANw" id="31f-mC-6eG"/>
             </connections>
-            <point key="canvasLocation" x="-5.343511450381679" y="-60.91549295774648"/>
+            <point key="canvasLocation" x="-5.343511450381679" y="-72.535211267605632"/>
         </tableViewCell>
     </objects>
     <resources>
