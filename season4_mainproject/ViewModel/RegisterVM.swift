@@ -22,8 +22,6 @@ class RegisterModel{
         let url: URL = URL(string: urlPath)!
         var request = URLRequest(url: url)
         
-        print("urlPath: \(urlPath)")
-        
         // post방식 설정
         request.httpMethod = "POST"
         

@@ -29,7 +29,19 @@ class MyAlert{
     func showSegAlert(on viewController: UIViewController, content: String, seg: String) {
         let resultAlert = UIAlertController(title: "결과", message: content, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "네", style: .default, handler: {ACTION in
-            viewController.navigationController?.performSegue(withIdentifier: seg, sender: nil)
+            viewController.performSegue(withIdentifier: seg, sender: nil)
+        })
+        resultAlert.addAction(okAction)
+        viewController.present(resultAlert, animated: true)
+    }
+    
+    func showMoveTabAlert(on viewController: UIViewController, content: String, index: Int) {
+        let resultAlert = UIAlertController(title: "결과", message: content, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "네", style: .default, handler: {ACTION in
+            if let tabBarController = viewController.tabBarController {
+                tabBarController.selectedIndex = index
+            }
+
         })
         resultAlert.addAction(okAction)
         viewController.present(resultAlert, animated: true)

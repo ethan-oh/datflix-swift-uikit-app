@@ -70,10 +70,10 @@ class LoginCheckModel{
     
     func parseJSON(_ data: Data){
         let decoder = JSONDecoder()
-        var location = tokenModel(message: "", access_token: "", refresh_token: "")
+        var location = tokenModel(message: "", access_token: "", refresh_token: "", nickname: "", name: "")
         do{
             let result = try decoder.decode(AuthJSON.self, from: data) // json 풀기
-            location = tokenModel(message: result.message, access_token: result.access_token, refresh_token: result.refresh_token)
+            location = tokenModel(message: result.message, access_token: result.access_token, refresh_token: result.refresh_token, nickname: result.nickname, name: result.name)
         }catch{
             print("Fail: \(error.localizedDescription)")
         }

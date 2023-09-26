@@ -51,13 +51,9 @@
 		325191F72ABBD0E70027028E /* Recommend.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F62ABBD0E70027028E /* Recommend.storyboard */; };
 		325191F92ABBD0FA0027028E /* Theater.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191F82ABBD0FA0027028E /* Theater.storyboard */; };
 		325191FB2ABBD1050027028E /* User.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325191FA2ABBD1050027028E /* User.storyboard */; };
-		325191FD2ABBD3940027028E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325191FC2ABBD3940027028E /* HomeViewController.swift */; };
-		325191FF2ABBD3B60027028E /* RecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325191FE2ABBD3B60027028E /* RecommendViewController.swift */; };
 		325192012ABBD3C50027028E /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192002ABBD3C50027028E /* TheaterViewController.swift */; };
 		325192032ABBD3D20027028E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192022ABBD3D20027028E /* UserViewController.swift */; };
-		325192052ABC0F8E0027028E /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192042ABC0F8E0027028E /* UserTableViewController.swift */; };
 		325192092ABC31750027028E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192082ABC31750027028E /* RegisterViewController.swift */; };
-		3251920B2ABC31960027028E /* UserEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251920A2ABC31960027028E /* UserEditViewController.swift */; };
 		32EB063B2ABC343F00AECA3A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB063A2ABC343F00AECA3A /* UserData.swift */; };
 		32EB063F2ABC65F000AECA3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB063E2ABC65F000AECA3A /* LoginViewController.swift */; };
 		32EBECAD2AC2F5F300E76A98 /* RomanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBECA72AC2F5F300E76A98 /* RomanceCollectionViewCell.swift */; };
@@ -120,13 +116,9 @@
 		325191F62ABBD0E70027028E /* Recommend.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recommend.storyboard; sourceTree = "<group>"; };
 		325191F82ABBD0FA0027028E /* Theater.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Theater.storyboard; sourceTree = "<group>"; };
 		325191FA2ABBD1050027028E /* User.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = User.storyboard; sourceTree = "<group>"; };
-		325191FC2ABBD3940027028E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		325191FE2ABBD3B60027028E /* RecommendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendViewController.swift; sourceTree = "<group>"; };
 		325192002ABBD3C50027028E /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		325192022ABBD3D20027028E /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		325192042ABC0F8E0027028E /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		325192082ABC31750027028E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		3251920A2ABC31960027028E /* UserEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditViewController.swift; sourceTree = "<group>"; };
 		32EB063A2ABC343F00AECA3A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		32EB063E2ABC65F000AECA3A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32EBECA72AC2F5F300E76A98 /* RomanceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -165,14 +157,10 @@
 			children = (
 				32EBECA62AC2F5EA00E76A98 /* Cell */,
 				1AE9D2832AC19E2800CA506D /* ReviewViewController.swift */,
-				325191FC2ABBD3940027028E /* HomeViewController.swift */,
-				325191FE2ABBD3B60027028E /* RecommendViewController.swift */,
 				325192002ABBD3C50027028E /* TheaterViewController.swift */,
 				325192022ABBD3D20027028E /* UserViewController.swift */,
 				320D82C92ABADECA00D556F1 /* MainViewController.swift */,
-				325192042ABC0F8E0027028E /* UserTableViewController.swift */,
 				325192082ABC31750027028E /* RegisterViewController.swift */,
-				3251920A2ABC31960027028E /* UserEditViewController.swift */,
 				32EB063E2ABC65F000AECA3A /* LoginViewController.swift */,
 				1E5A4C962AC15124009DBB5C /* MovieTableViewController.swift */,
 				1E5A4C9A2AC15790009DBB5C /* MovieDetailViewController.swift */,
@@ -510,13 +498,11 @@
 				32EBECAD2AC2F5F300E76A98 /* RomanceCollectionViewCell.swift in Sources */,
 				1A142CE52AC2D4F400BEAF08 /* MovieCastVM.swift in Sources */,
 				3206A6852AC1A77600C5B8A5 /* NickNameVM.swift in Sources */,
-				325191FD2ABBD3940027028E /* HomeViewController.swift in Sources */,
 				3206A6892AC1A7F800C5B8A5 /* MyAlert.swift in Sources */,
 				3206A6842AC1A77600C5B8A5 /* EmailVM.swift in Sources */,
 				325124A52AC1199A00CD856E /* UserJSONModel.swift in Sources */,
 				1E5A4CBC2AC1825F009DBB5C /* Star_with_CommentCell.swift in Sources */,
 				325124A72AC119AC00CD856E /* MovieJSONModel.swift in Sources */,
-				325192052ABC0F8E0027028E /* UserTableViewController.swift in Sources */,
 				1E5A4CA42AC15E52009DBB5C /* MyTableViewCell.swift in Sources */,
 				1A142CD92AC2C48C00BEAF08 /* AiService.swift in Sources */,
 				1A142CE72AC2D52700BEAF08 /* MovieCastData.swift in Sources */,
@@ -526,9 +512,7 @@
 				1E5A4C902AC12831009DBB5C /* JSONMovieModel.swift in Sources */,
 				1A142CDB2AC2C82B00BEAF08 /* AIController.swift in Sources */,
 				325124A12AC116D800CD856E /* MovieModel.swift in Sources */,
-				325191FF2ABBD3B60027028E /* RecommendViewController.swift in Sources */,
 				1AE9D2842AC19E2800CA506D /* ReviewViewController.swift in Sources */,
-				3251920B2ABC31960027028E /* UserEditViewController.swift in Sources */,
 				1A142CE32AC2D05F00BEAF08 /* MovieCastModel.swift in Sources */,
 				32EBECB02AC2F5F300E76A98 /* MovieCollectionViewCell.swift in Sources */,
 				1E5A4C972AC15124009DBB5C /* MovieTableViewController.swift in Sources */,

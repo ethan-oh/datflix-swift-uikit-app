@@ -174,7 +174,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         let tabbarAppearance = UITabBarAppearance()
         tabbarAppearance.backgroundColor = UIColor(named: "background")
         
-        self.navigationItem.title = User.name.isEmpty ? "로그인이 필요합니다." : "\(User.name)님"
+        self.navigationItem.title = User.name.isEmpty ? "로그인이 필요합니다." : "\(User.name) 님"
 
         
         self.navigationController?.navigationBar.scrollEdgeAppearance = naviAppearance

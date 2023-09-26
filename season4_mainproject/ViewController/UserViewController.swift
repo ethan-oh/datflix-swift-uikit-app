@@ -9,11 +9,14 @@ import UIKit
 
 class UserViewController: UIViewController {
 
-    @IBOutlet weak var btnLogIn: UIButton!
-    
     let myAlert = MyAlert()
     
+    @IBOutlet weak var btnLogIn: UIButton! // 버는이름 변경하기 위해
     @IBOutlet weak var lblEmail: UILabel!
+    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var lblNickName: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,10 +24,10 @@ class UserViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if User.access_token.isEmpty {
             btnLogIn.setTitle("로그인", for: .normal)
-            lblEmail.text = ""
+            resetLabelText()
         } else {
             btnLogIn.setTitle("로그아웃", for: .normal)
-            lblEmail.text = User.email
+            setLabelText()
         }
     }
     
@@ -34,7 +37,7 @@ class UserViewController: UIViewController {
             self.performSegue(withIdentifier: "sgUserToLogin", sender: nil)
         } else {
             resetUserData()
-            myAlert.showSegAlert(on: self, content: "로그아웃 되었습니다.", seg: "sgUserToHome")
+            myAlert.showMoveTabAlert(on: self, content: "로그아웃 되었습니다.", index: 0)
         }
     }
     
@@ -43,6 +46,18 @@ class UserViewController: UIViewController {
         User.name = ""
         User.access_token = ""
         User.refresh_token = ""
+    }
+    
+    func resetLabelText(){
+        lblEmail.text = ""
+        lblName.text = ""
+        lblNickName.text = ""
+    }
+    
+    func setLabelText(){
+        lblEmail.text = User.email
+        lblName.text = User.name
+        lblNickName.text = User.nickname
     }
 
 }

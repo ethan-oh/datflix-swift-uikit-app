@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     
     let myAlert = MyAlert()
     
-    var data = tokenModel(message: "", access_token: "", refresh_token: "")
+    var data = tokenModel(message: "", access_token: "", refresh_token: "", nickname: "", name: "")
     
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -56,9 +56,10 @@ extension LoginViewController: LoginProtocol{
             User.email = tfEmail.text!.trimmingCharacters(in: .whitespaces)
             User.access_token = data.access_token
             User.refresh_token = data.refresh_token
+            User.name = data.name
+            User.nickname = data.nickname
             
             myAlert.showPopAlert(on: self, content: "로그인 성공.")
-
         }
     }
 }
