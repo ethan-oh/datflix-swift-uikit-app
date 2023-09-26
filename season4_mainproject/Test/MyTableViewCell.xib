@@ -58,9 +58,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="btnStar:" destination="D8X-aB-mmA" eventType="touchUpInside" id="KXq-Xd-wDU"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PlQ-r9-gQU">
                                 <rect key="frame" x="30" y="0.0" width="20" height="20"/>
@@ -70,9 +67,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="btnStar2:" destination="D8X-aB-mmA" eventType="touchUpInside" id="t5X-Du-lNn"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTE-Sv-dyz">
                                 <rect key="frame" x="60" y="0.0" width="20" height="20"/>
@@ -82,9 +76,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="btnStar3:" destination="D8X-aB-mmA" eventType="touchUpInside" id="BmF-YW-ExX"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cC-Zr-emh">
                                 <rect key="frame" x="90" y="0.0" width="20" height="20"/>
@@ -94,9 +85,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="btnStar4:" destination="D8X-aB-mmA" eventType="touchUpInside" id="k4V-eE-EfA"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEo-Qk-KKX">
                                 <rect key="frame" x="120" y="0.0" width="20" height="20"/>
@@ -106,9 +94,6 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="star.fill" catalog="system"/>
-                                <connections>
-                                    <action selector="btnStar5:" destination="D8X-aB-mmA" eventType="touchUpInside" id="hBC-ZN-c4m"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="tintColor" systemColor="systemGrayColor"/>

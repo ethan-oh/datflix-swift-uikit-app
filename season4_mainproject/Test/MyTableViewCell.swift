@@ -30,35 +30,6 @@ class MyTableViewCell: UITableViewCell {
         userProfileImage.layer.cornerRadius = userProfileImage.frame.width / 2
     }
     
-    @IBAction func btnStar(_ sender: UIButton) {
-        starCount = 1
-        updateStarColor()
-    }
-    
-    
-    @IBAction func btnStar2(_ sender: UIButton) {
-        starCount = 2
-        updateStarColor()
-    }
-    
-    
-    @IBAction func btnStar3(_ sender: UIButton) {
-        starCount = 3
-        updateStarColor()
-    }
-    
-    
-    @IBAction func btnStar4(_ sender: UIButton) {
-        starCount = 4
-        updateStarColor()
-    }
-    
-    
-    @IBAction func btnStar5(_ sender: UIButton) {
-        starCount = 5
-        updateStarColor()
-    }
-    
     func updateStarColor() {
         // 모든 별 버튼을 초기 상태(회색)로 설정
         star1.tintColor = UIColor.gray

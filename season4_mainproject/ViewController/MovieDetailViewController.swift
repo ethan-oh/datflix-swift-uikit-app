@@ -105,13 +105,12 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
 
 
     override func viewWillAppear(_ animated: Bool) {
-        // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
-
-        setDelegateAndDataSource(cvRecommendView)
-        // 컬렉션뷰 수평 스크롤 세팅
-        horizontalSetting(cvRecommendView)
-        // 컬렉션뷰 배경 투명하게
-        clearBackGround(cvRecommendView)
+//        // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
+//        setDelegateAndDataSource(cvRecommendView)
+//        // 컬렉션뷰 수평 스크롤 세팅
+//        horizontalSetting(cvRecommendView)
+//        // 컬렉션뷰 배경 투명하게
+//        clearBackGround(cvRecommendView)
         readValues()
 
     }
@@ -235,12 +234,14 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         view.dataSource = self
     }
 
-    func horizontalSetting(_ view: UICollectionView) {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        view.collectionViewLayout = layout
-    }
 
+//    func horizontalSetting(_ view: UICollectionView) {
+//        let layout = UICollectionViewFlowLayout()
+//        layout.scrollDirection = .horizontal
+//        view.collectionViewLayout = layout
+//    }
+
+    
 
 
 
