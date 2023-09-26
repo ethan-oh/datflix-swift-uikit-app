@@ -10,4 +10,5 @@ import UIKit
 class OTTCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var movieImage: UIImageView!
+    @IBOutlet weak var lblOTT: UILabel!
 }

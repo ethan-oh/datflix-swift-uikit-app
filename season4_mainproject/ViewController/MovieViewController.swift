@@ -25,10 +25,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        
         // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
         naviAndTabSetting()
         
@@ -49,6 +45,17 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         clearBackGround(cvListView)
         clearBackGround(cvAnimeView)
         clearBackGround(cvRomanceView)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        
+        rankList = []
+        ottList = []
+        dramaList = []
+        animeList = []
+        romanceList = []
+
+        
         // 무비데이터 들고오기
         readValues()
     }
@@ -80,10 +87,21 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
             cell = cvListView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as! MovieCollectionViewCell
             let movieCell = cell as! MovieCollectionViewCell
             movieCell.lblRank.text = "\(indexPath.row + 1)"
+            makeLabelBorder(UILabel: movieCell.lblRank)
             configureCell(cell as! MovieCollectionViewCell, withImageURL: rankList[indexPath.row].imagepath)
             
         case cvOTTView:
             cell = cvOTTView.dequeueReusableCell(withReuseIdentifier: "ottCell", for: indexPath) as! OTTCollectionViewCell
+            let ottCell = cell as! OTTCollectionViewCell
+            //티빙 왓챠 웨이브
+            if ottList[indexPath.row].ott == "티빙" {
+                ottCell.lblOTT.backgroundColor = UIColor.orange
+            } else if ottList[indexPath.row].ott == "왓챠" {
+                ottCell.lblOTT.backgroundColor = UIColor.red
+            } else {
+                ottCell.lblOTT.backgroundColor = UIColor.blue
+            }
+            ottCell.lblOTT.text = ottList[indexPath.row].ott
             configureCell(cell as! OTTCollectionViewCell, withImageURL: ottList[indexPath.row].imagepath)
             
         case cvDramaView:
@@ -209,6 +227,15 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         movieQueryModel.delegate = self
         movieQueryModel.fetchDataFromAPI()
     }
+    
+    // make border
+    func makeLabelBorder(UILabel: UILabel){
+        let attributedText = NSMutableAttributedString(string: UILabel.text!)
+        attributedText.addAttribute(.strokeColor, value: UIColor.white, range: NSRange(location: 0, length: attributedText.length))
+        attributedText.addAttribute(.strokeWidth, value: 4.0, range: NSRange(location: 0, length: attributedText.length))
+        UILabel.attributedText = attributedText
+    }
+
 }
 
 extension MovieViewController: JSONMovieQueryModelProtocol {
