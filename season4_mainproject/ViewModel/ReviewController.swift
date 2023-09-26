@@ -14,7 +14,7 @@ class ReviewController {
         self.service = service
     }
     
-    func insertReview(movie_id: Int, content: String, rating : Float) -> Bool {
+    func insertReview(movie_id: Int, content: String, rating : Double) -> Bool {
         var result :  Bool = true
         if !self.service.insertModel(movie_id: movie_id, content: content, rating: rating) {
             result = false
@@ -28,7 +28,7 @@ class ReviewController {
         }
     }
     
-    func updateReview(movie_id: Int, content: String, rating : Float) -> Bool {
+    func updateReview(movie_id: Int, content: String, rating : Double) -> Bool {
         var result :  Bool = true
         if !self.service.updateModel(movie_id: movie_id, content: content, rating: rating) {
             result = false

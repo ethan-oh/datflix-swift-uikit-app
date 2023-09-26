@@ -10,6 +10,7 @@ import UIKit
 class ReviewViewController: UIViewController {
 
     let aicontroller = AIController(service: AiService())
+    let controller = ReviewController(service: ReviewService())
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblGenre: UILabel!
@@ -48,7 +49,7 @@ class ReviewViewController: UIViewController {
         DispatchQueue.global().async {
             if let imageUrl = imageUrl, let imageData = try? Data(contentsOf: imageUrl), let image = UIImage(data: imageData) {
                 // 이미지 크기 조정
-                let imageSize = CGSize(width: 70, height: 100) // 원하는 크기로 조절
+                let imageSize = CGSize(width: 170, height: 175) // 원하는 크기로 조절
                 UIGraphicsBeginImageContext(imageSize)
                 image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
                 if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
@@ -103,7 +104,7 @@ class ReviewViewController: UIViewController {
             navigationController?.popViewController(animated: true)
         }
         alertController.addAction(OKACTION)
-        
+
         // 별점 뷰를 생성하고 설정합니다.
         let cosmosView = CosmosView()
         cosmosView.settings.fillMode = .precise
@@ -122,30 +123,43 @@ class ReviewViewController: UIViewController {
             alertController.view.centerYAnchor.constraint(equalTo: customViewController.view.centerYAnchor),
             alertController.view.widthAnchor.constraint(equalToConstant: customViewSize.width),
             alertController.view.heightAnchor.constraint(equalToConstant: customViewSize.height)
-        ])
+            ])
 
         // 별점 뷰를 UIAlertController 내에 추가합니다.
         alertController.view.addSubview(cosmosView)
-        
+
         // 별점 뷰의 위치를 조정합니다.
         cosmosView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             cosmosView.centerXAnchor.constraint(equalTo: alertController.view.centerXAnchor),
             cosmosView.topAnchor.constraint(equalTo: alertController.view.topAnchor, constant: 100) // 메시지 아래에 80포인트 떨어진 위치
-        ])
+            ])
 
         // 커스텀 뷰 컨트롤러를 Modal로 표시합니다.
         self.present(customViewController, animated: true)
     }
 
-
-
-
-
-
     @IBAction func btnSave(_ sender: UIButton) {
-        let currentRating = cosmosOh.rating
-        print("현재 별점: \(currentRating)")
+        var rating: Double = cosmosOh.rating
+        let content = tfReview.text!
+        rating = (rating * 100).rounded() / 100
+
+        let saveResult = controller.insertReview(movie_id: receivedId, content: content, rating: rating)
+
+        if saveResult {
+            // 저장 성공
+            let alertController = UIAlertController(title: "저장 완료", message: "리뷰가 성공적으로 저장되었습니다.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        } else {
+            // 저장 실패
+            let alertController = UIAlertController(title: "저장 실패", message: "리뷰 저장 중 오류가 발생했습니다.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true, completion: nil)
+        }
+
     }
 
 

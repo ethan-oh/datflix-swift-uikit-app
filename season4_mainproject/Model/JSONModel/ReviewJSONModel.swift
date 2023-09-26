@@ -12,7 +12,7 @@ struct ReviewJson : Codable {
     var nickname : String?
     var movie_id : Int?
     var content : String
-    var rating : Float
+    var rating : Double
     var insertdate : String?
     var deletedate : String?
 }

@@ -12,11 +12,11 @@ struct Review {
     var nickname : String?
     var movie_id : Int
     var content : String
-    var rating : Float
+    var rating : Double
     var insertdate : String?
     var deletedate : String?
     
-    init(email: String? = nil, nickname : String? = nil ,movie_id: Int, content: String, rating: Float, insertdate: String? = nil, deletedate: String? = nil) {
+    init(email: String? = nil, nickname : String? = nil ,movie_id: Int, content: String, rating: Double, insertdate: String? = nil, deletedate: String? = nil) {
         self.email = email
         self.nickname = nickname
         self.movie_id = movie_id

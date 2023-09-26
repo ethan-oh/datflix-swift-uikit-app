@@ -9,9 +9,9 @@ import Foundation
 
 class ReviewService {
     ///  review insert
-    func insertModel(movie_id: Int, content: String, rating : Float) -> Bool {
+    func insertModel(movie_id: Int, content: String, rating : Double) -> Bool {
         let access_token : String = User.access_token // 언제든지 바꿀 수 있는다.
-        let baseUrl = HOST + PORT + "/review"
+        let baseUrl = HOST + ":" + PORT + "/review/"
         
         let url: URL = URL(string: baseUrl)!
         var request = URLRequest(url: url)
@@ -20,7 +20,7 @@ class ReviewService {
         
         // post방식 설정
         request.httpMethod = "POST"
-        request.setValue("Authorization", forHTTPHeaderField: "Bearer \(access_token)")
+        request.setValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let parameters = ReviewJson(movie_id: movie_id, content: content, rating: rating)
@@ -46,9 +46,9 @@ class ReviewService {
     }
     
     /// Review Update
-    func updateModel(movie_id: Int, content: String, rating : Float) -> Bool {
+    func updateModel(movie_id: Int, content: String, rating : Double) -> Bool {
         let access_token : String = User.access_token // 언제든지 바꿀 수 있는다.
-        let baseUrl = HOST + PORT + "/review/" + String(movie_id)
+        let baseUrl = HOST + ":" + PORT + "/review/" + String(movie_id)
         
         let url: URL = URL(string: baseUrl)!
         var request = URLRequest(url: url)
@@ -57,7 +57,7 @@ class ReviewService {
         
         // post방식 설정
         request.httpMethod = "PUT"
-        request.setValue("Authorization", forHTTPHeaderField: "Bearer \(access_token)")
+        request.setValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let parameters = ReviewJson(content: content, rating: rating)
@@ -130,13 +130,13 @@ class ReviewService {
     func deleteModel(movie_id: Int) -> Bool {
         var result: Bool = false
         let access_token: String = User.access_token
-        let baseUrl = HOST + PORT + "/review/" + String(movie_id)
+        let baseUrl = HOST + ":" + PORT + "/review/" + String(movie_id)
         
         let url: URL = URL(string: baseUrl)!
         
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
-        request.addValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
