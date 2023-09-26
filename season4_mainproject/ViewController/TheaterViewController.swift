@@ -122,30 +122,29 @@ class TheaterViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func loadWebViewWithLocation() {
-        if let latitude = currentLatitude, let longitude = currentLongitude {
-            // Bundle에서 HTML 파일의 경로를 가져오기
-            if let htmlPath = Bundle.main.path(forResource: "htmlview", ofType: "html") {
-                let htmlURL = URL(fileURLWithPath: htmlPath)
+    // 위치 정보를 사용하여 웹뷰를 로드하는 함수
+        func loadWebViewWithLocation() {
+            if let latitude = currentLatitude, let longitude = currentLongitude {
+                let site = SiteRequest()
+                let urlString = "\(HOST):\(PORT)/map/preview"
                 
-                // HTML 파일이 있는 경우 URL을 구성하고 로드
-                let urlString = "\(HOST):\(PORT)/map/\(latitude)/\(longitude)"
-                if let myURL = URL(string: urlString) {
-                    let myRequest = URLRequest(url: myURL)
-                    
-                    // UI 업데이트는 메인 스레드에서 처리
-                    DispatchQueue.main.async {
-                        self.theaterWebView.load(myRequest)
+                if urlString.hasPrefix("http://") || urlString.hasPrefix("https://") {
+                    if let myURL = URL(string: urlString) {
+                        let myRequest = URLRequest(url: myURL)
+                        
+                        // UI 업데이트는 메인 스레드에서 처리
+                        DispatchQueue.main.async {
+                            self.theaterWebView.load(myRequest)
+                        }
+                    } else {
+                        print("Invalid URL: \(urlString)")
                     }
                 } else {
-                    print("Invalid URL: \(urlString)")
+                    print("URL does not have a valid prefix: \(urlString)")
                 }
-            } else {
-                print("HTML file not found in bundle.")
             }
         }
     }
-}
 
 
 extension TheaterViewController: WKNavigationDelegate{
