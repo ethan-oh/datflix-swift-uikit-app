@@ -17,6 +17,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     
     var movieList: [MovieModel] = []
+    var rankList: [MovieModel] = []
     var ottList: [MovieModel] = []
     var dramaList: [MovieModel] = []
     var animeList: [MovieModel] = []
@@ -57,7 +58,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     // 셀 개수 리턴
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == cvListView {
-            return movieList.count
+            return rankList.count
         }else if collectionView == cvOTTView {
             return ottList.count
         }else if collectionView == cvDramaView {
@@ -77,7 +78,9 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         switch collectionView {
         case cvListView:
             cell = cvListView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as! MovieCollectionViewCell
-            configureCell(cell as! MovieCollectionViewCell, withImageURL: movieList[indexPath.row].imagepath)
+            let movieCell = cell as! MovieCollectionViewCell
+            movieCell.lblRank.text = "\(indexPath.row + 1)"
+            configureCell(cell as! MovieCollectionViewCell, withImageURL: rankList[indexPath.row].imagepath)
             
         case cvOTTView:
             cell = cvOTTView.dequeueReusableCell(withReuseIdentifier: "ottCell", for: indexPath) as! OTTCollectionViewCell
@@ -102,7 +105,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         return cell
     }
 
-    // 셀 이미지 담아주기. 바로 위 셀별 세팅에서 호출해서 사용한다.
+    // 셀 data 담아주기. 바로 위 셀별 세팅에서 호출해서 사용한다.
     func configureCell(_ cell: UICollectionViewCell, withImageURL imageUrlString: String) {
         let imageUrl = URL(string: imageUrlString)
         
@@ -138,7 +141,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let cell = sender as! MovieCollectionViewCell
                 let indexPath = self.cvListView.indexPath(for: cell)
                 let detailView = segue.destination as! MovieDetailViewController
-                detailView.receivedid = movieList[indexPath!.row].id
+                detailView.receivedid = rankList[indexPath!.row].id
             }
             else if segue.identifier == "sgOTTDetail" {
                 let cell = sender as! OTTCollectionViewCell
@@ -211,7 +214,20 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
 extension MovieViewController: JSONMovieQueryModelProtocol {
     func itemDownloaded(item: [MovieModel]) {
         movieList = item
+        
+        let sortedMovieList = movieList.sorted(by: { $0.totalaudience > $1.totalaudience })
+        
+        for (index, movie) in sortedMovieList.prefix(10).enumerated() {
+            rankList.append(movie)
+            
+            // 관객수 기준 상위 10개 담으면 빠져나오게
+            if index == 9 {
+                break
+            }
+        }
+        
         for movie in movieList{
+            
             if movie.ott != "영화"{
                 ottList.append(movie)
             }
@@ -247,7 +263,12 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout{
     
     // Cell Size ( 옆 라인을 고려하여 설정)
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 127+10, height: 185) // 마진 10 주기
+        if collectionView == cvListView {
+            return CGSize(width: 154+10, height: 185)
+        }else {
+            return CGSize(width: 127+10, height: 185) // 마진 10 주기
+        }
+        
     }
     
 }

@@ -9,5 +9,6 @@ import UIKit
 
 class MovieCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var lblRank: UILabel!
     @IBOutlet weak var movieImage: UIImageView!
 }
