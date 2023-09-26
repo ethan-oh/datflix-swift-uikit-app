@@ -21,7 +21,6 @@ class Star_with_CommentCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        print("Star_with_CommentCell - awakeFromNib() called")
     }
     
     @IBAction func btnStar(_ sender: UIButton) {

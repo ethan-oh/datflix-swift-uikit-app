@@ -21,6 +21,5 @@ class MovieCastCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        print("MovieInformationCell - awakeFromNib() called")
     }
 }

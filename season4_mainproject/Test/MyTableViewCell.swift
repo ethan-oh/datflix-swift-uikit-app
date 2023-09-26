@@ -26,7 +26,6 @@ class MyTableViewCell: UITableViewCell {
     //셀이 랜더링(그릴때) 될때
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("MyTableViewCell - awakeFromNib() called")
         
         userProfileImage.layer.cornerRadius = userProfileImage.frame.width / 2
     }
