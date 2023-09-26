@@ -8,7 +8,7 @@ import Cosmos
 import UIKit
 
 class ReviewViewController: UIViewController {
-    
+
     let aicontroller = AIController(service: AiService())
 
     @IBOutlet weak var lblTitle: UILabel!
@@ -16,7 +16,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var lblCountry: UILabel!
     @IBOutlet weak var ImgView: UIImageView!
     @IBOutlet weak var lblRelease: UILabel!
-    
+
     @IBOutlet weak var tfReview: UITextField!
     var receivedId: Int = 0
     var receivedTitle: String = ""
@@ -24,7 +24,7 @@ class ReviewViewController: UIViewController {
     var receivedCountry: String = ""
     var imagePath: String = ""
     var receivedRelease: String = ""
-    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ReviewViewController: UIViewController {
         urlImage(imagePath)
         // Do any additional setup after loading the view.
     }
-    
+
     func urlImage(_ imagePath: String) {
         let imageUrl = URL(string: imagePath)
 
@@ -67,15 +67,18 @@ class ReviewViewController: UIViewController {
     }
     */
     @IBAction func btnCheck(_ sender: UIButton) {
-        var result : String = "Dummy"
-        aicontroller.aiResultMessage(review: tfReview.text!) { message in
+        var result: String = "Dummy"
+        aicontroller.aiResultMessage(review: tfReview.text!) { [self] message in
             result = message
+            DispatchQueue.main.async { // UI 업데이트를 메인 스레드에서 실행
+                let resultAlert = UIAlertController(title: "댓글 AI 측정", message: "\(result)", preferredStyle: .alert)
+                let OKACTION = UIAlertAction(title: "OK", style: .default) { [self] _ in
+                    navigationController?.popViewController(animated: true)
+                }
+                resultAlert.addAction(OKACTION)
+                present(resultAlert, animated: true)
+            }
         }
-        let resultAlert = UIAlertController(title: "댓글 AI 측정", message: "\(result)", preferredStyle: .alert)
-        let OKACTION = UIAlertAction(title: "OK", style: .default, handler: { ACTION in self.navigationController?.popViewController(animated: true) })
-        resultAlert.addAction(OKACTION)
-        present(resultAlert, animated: true)
-
     }
 
     @IBAction func btnSave(_ sender: UIButton) {
