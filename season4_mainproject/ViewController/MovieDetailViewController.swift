@@ -155,14 +155,44 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
 
             present(alert, animated: true, completion: nil)
         } else {
+            reviewController.hasWritten(movie_id: receivedid) { hasWritten in
+                if hasWritten {
+                    let alert = UIAlertController(title: "이미 작성된 리뷰가 있습니다.", message: "리뷰를 수정하시겠습니까?", preferredStyle: .alert)
+
+                    // 예 버튼 누를 경우
+                    let yesAction = UIAlertAction(title: "예", style: .default) { _ in
+                        showReviewViewController(true)
+                    }
+                    let CancelAction = UIAlertAction(title: "아니오", style: .cancel, handler: nil)
+                    alert.addAction(yesAction)
+                    alert.addAction(CancelAction)
+                    self.present(alert, animated: true)
+                } else {
+                    // 사용자가 리뷰를 작성하지 않은 경우
+                    let alert = UIAlertController(title: "리뷰 작성", message: "리뷰를 작성하시겠습니까?", preferredStyle: .alert)
+
+                    // 예 버튼 누를 경우
+                    let yesAction = UIAlertAction(title: "예", style: .default) { _ in
+                        showReviewViewController(false)
+                    }
+                    let CancelAction = UIAlertAction(title: "아니오", style: .cancel, handler: nil)
+                    alert.addAction(yesAction)
+                    alert.addAction(CancelAction)
+                    self.present(alert, animated: true)
+                }
+            }
+        }
+
+        func showReviewViewController(_ editmode : Bool) {
             let storyboard = UIStoryboard(name: "Review", bundle: nil)
             guard let reviewVC = storyboard.instantiateViewController(identifier: "Review") as? ReviewViewController else { return }
-            reviewVC.receivedId = receivedid
-            reviewVC.receivedTitle = Movie[0].title
-            reviewVC.receivedGenre = Movie[0].genre
-            reviewVC.receivedCountry = Movie[0].country
-            reviewVC.imagePath = Movie[0].imagepath
-            reviewVC.receivedRelease = Movie[0].releasedate
+            reviewVC.editmode = editmode
+            reviewVC.receivedId = self.receivedid
+            reviewVC.receivedTitle = self.Movie[0].title
+            reviewVC.receivedGenre = self.Movie[0].genre
+            reviewVC.receivedCountry = self.Movie[0].country
+            reviewVC.imagePath = self.Movie[0].imagepath
+            reviewVC.receivedRelease = self.Movie[0].releasedate
             // 모달로 화면 전환
             reviewVC.modalPresentationStyle = .formSheet
 

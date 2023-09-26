@@ -19,6 +19,7 @@ class ReviewViewController: UIViewController {
     @IBOutlet weak var lblRelease: UILabel!
     @IBOutlet weak var cosmosOh: CosmosView!
     @IBOutlet weak var tfReview: UITextField!
+    var editmode : Bool = false
     var receivedId: Int = 0
     var receivedTitle: String = ""
     var receivedGenre: String = ""

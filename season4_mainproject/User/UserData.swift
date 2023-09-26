@@ -7,7 +7,8 @@
 
 class User{
     static var email = ""
-    static var nickname = ""
+//    static var nickname = ""
+    static var nickname = "ohkang94"
     static var name = ""
     static var access_token = ""
     static var refresh_token = ""

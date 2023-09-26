@@ -28,6 +28,14 @@ class ReviewController {
         }
     }
     
+    func hasWritten(movie_id: Int, completion: @escaping (Bool) -> Void) {
+        self.service.readModel(movie_id: movie_id) { reviews in
+            // 리뷰 목록에서 사용자의 닉네임과 비교하여 이미 작성했는지 여부 확인
+            let written = reviews.contains { $0.nickname == User.nickname }
+            completion(written)
+        }
+    }
+    
     func updateReview(movie_id: Int, content: String, rating : Double) -> Bool {
         var result :  Bool = true
         if !self.service.updateModel(movie_id: movie_id, content: content, rating: rating) {
