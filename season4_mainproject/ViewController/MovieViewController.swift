@@ -147,16 +147,19 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let cell = sender as! DramaCollectionViewCell
                 let indexPath = self.cvDramaView.indexPath(for: cell)
                 let detailView = segue.destination as! MovieDetailViewController
+                detailView.receivedid = dramaList[indexPath!.row].id
             }
             else if segue.identifier == "sgAnimeDetail" {
                 let cell = sender as! AnimeCollectionViewCell
                 let indexPath = self.cvAnimeView.indexPath(for: cell)
                 let detailView = segue.destination as! MovieDetailViewController
+                detailView.receivedid = animeList[indexPath!.row].id
             }
             else if segue.identifier == "sgRomanceDetail" {
                 let cell = sender as! RomanceCollectionViewCell
                 let indexPath = self.cvRomanceView.indexPath(for: cell)
                 let detailView = segue.destination as! MovieDetailViewController
+                detailView.receivedid = romanceList[indexPath!.row].id
             }
         }
     
@@ -228,4 +231,3 @@ extension MovieViewController: UICollectionViewDelegateFlowLayout{
     }
     
 }
-
