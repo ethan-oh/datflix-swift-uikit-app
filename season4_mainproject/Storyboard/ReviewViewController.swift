@@ -8,10 +8,8 @@ import Cosmos
 import UIKit
 
 class ReviewViewController: UIViewController {
-
-
-
-    var movieDetailQueryModel = MovieDetailQueryModel()
+    
+    let aicontroller = AIController(service: AiService())
 
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblGenre: UILabel!
@@ -28,10 +26,6 @@ class ReviewViewController: UIViewController {
     var receivedRelease: String = ""
     
 
-    // 별점 기능
-    @IBOutlet weak var cosmosView: CosmosView!
-    //https://velog.io/@minji0801/iOSLibrary-Cosmos#cocoapods
-
     override func viewDidLoad() {
         super.viewDidLoad()
         lblTitle.text = receivedTitle
@@ -39,8 +33,6 @@ class ReviewViewController: UIViewController {
         lblCountry.text = receivedCountry
         lblRelease.text = receivedRelease
         urlImage(imagePath)
-        cosmosView.rating = 4
-        cosmosView.settings.starMargin = 5
         // Do any additional setup after loading the view.
     }
     
@@ -75,6 +67,15 @@ class ReviewViewController: UIViewController {
     }
     */
     @IBAction func btnCheck(_ sender: UIButton) {
+        var result : String = "Dummy"
+        aicontroller.aiResultMessage(review: tfReview.text!) { message in
+            result = message
+        }
+        let resultAlert = UIAlertController(title: "댓글 AI 측정", message: "\(result)", preferredStyle: .alert)
+        let OKACTION = UIAlertAction(title: "OK", style: .default, handler: { ACTION in self.navigationController?.popViewController(animated: true) })
+        resultAlert.addAction(OKACTION)
+        present(resultAlert, animated: true)
+
     }
 
     @IBAction func btnSave(_ sender: UIButton) {
