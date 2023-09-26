@@ -14,10 +14,9 @@ class AIController {
         self.service = service
     }
 
-    func aiResultMessage(review: String, completion: @escaping (String) -> Void) {
+    func aiResultMessage(review: String, completion: @escaping (String, String) -> Void) {
         service.calcScore(review: review) { result in
             if let result = result {
-                print("결과는 나옴요 ㅎㅎ", result)
                 let percentage = String(result)
                 let message: String
                 if result > 0.5 {
@@ -26,9 +25,9 @@ class AIController {
                     message = "\(percentage)% 확률로 부정 리뷰입니다."
                 }
                 print(message)
-                completion(message)
+                completion(message, percentage)
             } else {
-                completion("분석 결과를 가져올 수 없습니다.") // 예외 처리: result가 nil인 경우
+                completion("분석 결과를 가져올 수 없습니다.", "0") // 예외 처리: result가 nil인 경우
             }
         }
     }
