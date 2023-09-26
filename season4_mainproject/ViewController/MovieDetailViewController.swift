@@ -15,7 +15,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     var MovieCast: [MovieCastModel] = []
     let reviewController = ReviewController(service: ReviewService())
 
-    
+
     @IBOutlet weak var imgMoviePoster: UIImageView!
     @IBOutlet weak var lblMovieTitle: UILabel!
     @IBOutlet weak var lblMovieInformation: UILabel!
@@ -24,10 +24,10 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var MovieCast_TableView: UITableView!
     @IBOutlet weak var CommentTableView: UITableView!
 
-    
+
     @IBOutlet weak var cvRecommendView: UICollectionView!
-    
-    
+
+
     var receivedid: Int = 0
 
     func passMovieId(_ id: Int) {
@@ -102,11 +102,11 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         // Do any additional setup after loading the view.
 
     }
-    
-    
+
+
     override func viewWillAppear(_ animated: Bool) {
         // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
-        
+
         setDelegateAndDataSource(cvRecommendView)
         // 컬렉션뷰 수평 스크롤 세팅
         horizontalSetting(cvRecommendView)
@@ -120,11 +120,11 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         let moviedetailQueryModel = MovieDetailQueryModel()
         moviedetailQueryModel.delegate = self
         moviedetailQueryModel.fetchDataFromAPI(seq: receivedid)
-        
+
         let moviedetailcastQueryModel = MovieCastQueryModel()
         moviedetailcastQueryModel.delegate = self
         moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
-        
+
         self.reviewList.removeAll()
         reviewController.selectReview(movie_id: self.receivedid) { [weak self] reviews in
             guard let self = self else { return }
@@ -140,28 +140,44 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
     @IBAction func btnWrite(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: "Review", bundle: nil)
-        guard let reviewVC = storyboard.instantiateViewController(identifier: "Review") as? ReviewViewController else { return }
-        reviewVC.receivedId = receivedid
-        reviewVC.receivedTitle = Movie[0].title
-        reviewVC.receivedGenre = Movie[0].genre
-        reviewVC.receivedCountry = Movie[0].country
-        reviewVC.imagePath = Movie[0].imagepath
-        reviewVC.receivedRelease = Movie[0].releasedate
-        // 모달로 화면 전환
-        reviewVC.modalPresentationStyle = .formSheet
+        if User.access_token == "" {
+            // access_token이 없으면 로그인을 물어보는 Alert 표시
+            let alert = UIAlertController(title: "로그인이 필요합니다", message: "로그인하시겠습니까?", preferredStyle: .alert)
+            let OKAction = UIAlertAction(title: "예", style: .default) { _ in
+                if let tabBarController = self.tabBarController {
+                    tabBarController.selectedIndex = 3 // 로그인 탭
+                }
+            }
+            let CancelAction = UIAlertAction(title: "아니오", style: .cancel, handler: nil)
 
-        // 모달 띄우기
-        self.present(reviewVC , animated: true)
+            alert.addAction(OKAction)
+            alert.addAction(CancelAction)
+
+            present(alert, animated: true, completion: nil)
+        } else {
+            let storyboard = UIStoryboard(name: "Review", bundle: nil)
+            guard let reviewVC = storyboard.instantiateViewController(identifier: "Review") as? ReviewViewController else { return }
+            reviewVC.receivedId = receivedid
+            reviewVC.receivedTitle = Movie[0].title
+            reviewVC.receivedGenre = Movie[0].genre
+            reviewVC.receivedCountry = Movie[0].country
+            reviewVC.imagePath = Movie[0].imagepath
+            reviewVC.receivedRelease = Movie[0].releasedate
+            // 모달로 화면 전환
+            reviewVC.modalPresentationStyle = .formSheet
+
+            // 모달 띄우기
+            self.present(reviewVC, animated: true)
+        }
     }
-    
+
     func urlImage() {
         // Movie 배열이 비어 있는지 확인
         guard !Movie.isEmpty else {
             print("Movie array is empty.")
             return
         }
-        
+
         let imageUrlString = Movie[0].imagepath
         let imageUrl = URL(string: imageUrlString)
 
@@ -183,18 +199,18 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
             }
         }
     }
-    
-    func setDelegateAndDataSource(_ view: UICollectionView){
+
+    func setDelegateAndDataSource(_ view: UICollectionView) {
         view.delegate = self
         view.dataSource = self
     }
-    
-    func horizontalSetting(_ view: UICollectionView){
+
+    func horizontalSetting(_ view: UICollectionView) {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         view.collectionViewLayout = layout
     }
-    
+
 
 
 
@@ -217,7 +233,7 @@ extension MovieDetailViewController: UITableViewDelegate {
 }
 
 extension MovieDetailViewController: UITableViewDataSource {
-    
+
     // 셀 개수 리턴
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == cvRecommendView {
@@ -225,11 +241,11 @@ extension MovieDetailViewController: UITableViewDataSource {
         }
         return 0
     }
-    
+
     // 셀별 세팅
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: UICollectionViewCell
-        
+
         switch collectionView {
         case cvRecommendView:
             cell = cvRecommendView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as! MovieCollectionViewCell
@@ -237,20 +253,20 @@ extension MovieDetailViewController: UITableViewDataSource {
         default:
             cell = UICollectionViewCell()
         }
-        
+
         return cell
     }
-    
+
     // 셀 이미지 담아주기. 바로 위 셀별 세팅에서 호출해서 사용한다.
     func configureCell(_ cell: UICollectionViewCell, withImageURL imageUrlString: String) {
         let imageUrl = URL(string: imageUrlString)
-        
+
         URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
             if let error = error {
                 print("Error downloading image: \(error.localizedDescription)")
                 return
             }
-            
+
             if let data = data, let image = UIImage(data: data) {
                 // 비동기방식으로 이미지 불러와 담아주기
                 DispatchQueue.main.async {
@@ -269,14 +285,14 @@ extension MovieDetailViewController: UITableViewDataSource {
             }
         }.resume()
     }
-    
-    func clearBackGround(_ view: UICollectionView){
+
+    func clearBackGround(_ view: UICollectionView) {
         view.backgroundColor = UIColor.clear
         view.backgroundView = nil
     }
-    
-    
-    
+
+
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == CommentTableView {
             // CommentTableView의 경우 contentArray.count로 셀의 갯수를 설정
@@ -298,105 +314,105 @@ extension MovieDetailViewController: UITableViewDataSource {
     // 각 셀에 대한 설정
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if tableView == CommentTableView {
-                    if reviewList.isEmpty {
-                        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-                        cell.textLabel?.text = "리뷰가 없습니다."
-                        cell.textLabel?.textAlignment = .center
-                        cell.textLabel?.textColor = UIColor.white
-                        if let background = UIColor(named: "background"){
-                            cell.backgroundColor = background
-                            tableView.backgroundColor = background
-                        }
-                        return cell
-                    } else {
-                        let cell = CommentTableView.dequeueReusableCell(withIdentifier: "myTableViewCell", for: indexPath) as! MyTableViewCell
-                        cell.userContentLabel.text = reviewList[indexPath.row].content
-                        cell.nickname.text = reviewList[indexPath.row].nickname
-                        cell.insertDate.text = reviewList[indexPath.row].insertdate
-                        return cell
-                    }
-                } else if tableView == Movie_Information_TableView {
-                    let cell = Movie_Information_TableView.dequeueReusableCell(withIdentifier: "MovieInformationCell", for: indexPath) as! MovieInformationCell
-                    if !Movie.isEmpty {
-                        let content = Movie[0].summary
-                        cell.userContentLabel.text = content
-                        cell.movie = Movie
-                        if let background = UIColor(named: "background"){
-                            cell.backgroundColor = background
-                            tableView.backgroundColor = background
-                        }
-                        if cell.isFullTextVisible {
-                            cell.userContentLabel.numberOfLines = 0
-                        } else {
-                            cell.userContentLabel.numberOfLines = 9
-                        }
-                    }
-                    return cell
-                } else if tableView == Star_with_Comment_TableView {
-                    let cell = Star_with_Comment_TableView.dequeueReusableCell(withIdentifier: "Star_with_CommentCell", for: indexPath) as! Star_with_CommentCell
-                    if !Movie.isEmpty {
-                        let starCount = Movie[0].star
-                        let stars = [cell.star1, cell.star2, cell.star3, cell.star4, cell.star5]
-                           for (index, starButton) in stars.enumerated() {
-                               starButton?.tintColor = Int(starCount) > index ? UIColor.yellow : UIColor.gray
-                           }
-                    }
-                        return cell
-                } else if tableView == MovieCast_TableView {
-                    let cell = MovieCast_TableView.dequeueReusableCell(withIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell
-                    if !MovieCast.isEmpty {
-                        cell.lblCastName.text = MovieCast[indexPath.row].name
-                        cell.lblCastRole.text = MovieCast[indexPath.row].role
-                        let imageUrlString = MovieCast[indexPath.row].imgpath
-                        let imageUrl = URL(string: imageUrlString)
-                        
-                        URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
-                            if let error = error {
-                                print("Error downloading image: \(error.localizedDescription)")
-                                return
-                            }
-                            
-                            if let data = data, let image = UIImage(data: data) {
-                                DispatchQueue.main.async {
-                                    // 이미지 크기 조정
-                                    let imageSize = CGSize(width: 200, height: 250) // 원하는 크기로 조절
-                                    UIGraphicsBeginImageContext(imageSize)
-                                    image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
-                                    if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
-                                        cell.imgCast.image = resizedImage
-                                    }
-                                    UIGraphicsEndImageContext()
-                                    //content.text = self.movieList[indexPath.row].title
-                //                    content.secc = self.movieList[indexPath.row].genre
-                                }
-                            }
-                        }.resume()
-                        return cell
-                    }
+            if reviewList.isEmpty {
+                let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+                cell.textLabel?.text = "리뷰가 없습니다."
+                cell.textLabel?.textAlignment = .center
+                cell.textLabel?.textColor = UIColor.white
+                if let background = UIColor(named: "background") {
+                    cell.backgroundColor = background
+                    tableView.backgroundColor = background
                 }
-                return UITableViewCell()
+                return cell
+            } else {
+                let cell = CommentTableView.dequeueReusableCell(withIdentifier: "myTableViewCell", for: indexPath) as! MyTableViewCell
+                cell.userContentLabel.text = reviewList[indexPath.row].content
+                cell.nickname.text = reviewList[indexPath.row].nickname
+                cell.insertDate.text = reviewList[indexPath.row].insertdate
+                return cell
+            }
+        } else if tableView == Movie_Information_TableView {
+            let cell = Movie_Information_TableView.dequeueReusableCell(withIdentifier: "MovieInformationCell", for: indexPath) as! MovieInformationCell
+            if !Movie.isEmpty {
+                let content = Movie[0].summary
+                cell.userContentLabel.text = content
+                cell.movie = Movie
+                if let background = UIColor(named: "background") {
+                    cell.backgroundColor = background
+                    tableView.backgroundColor = background
+                }
+                if cell.isFullTextVisible {
+                    cell.userContentLabel.numberOfLines = 0
+                } else {
+                    cell.userContentLabel.numberOfLines = 9
+                }
+            }
+            return cell
+        } else if tableView == Star_with_Comment_TableView {
+            let cell = Star_with_Comment_TableView.dequeueReusableCell(withIdentifier: "Star_with_CommentCell", for: indexPath) as! Star_with_CommentCell
+            if !Movie.isEmpty {
+                let starCount = Movie[0].star
+                let stars = [cell.star1, cell.star2, cell.star3, cell.star4, cell.star5]
+                for (index, starButton) in stars.enumerated() {
+                    starButton?.tintColor = Int(starCount) > index ? UIColor.yellow : UIColor.gray
+                }
+            }
+            return cell
+        } else if tableView == MovieCast_TableView {
+            let cell = MovieCast_TableView.dequeueReusableCell(withIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell
+            if !MovieCast.isEmpty {
+                cell.lblCastName.text = MovieCast[indexPath.row].name
+                cell.lblCastRole.text = MovieCast[indexPath.row].role
+                let imageUrlString = MovieCast[indexPath.row].imgpath
+                let imageUrl = URL(string: imageUrlString)
+
+                URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
+                    if let error = error {
+                        print("Error downloading image: \(error.localizedDescription)")
+                        return
+                    }
+
+                    if let data = data, let image = UIImage(data: data) {
+                        DispatchQueue.main.async {
+                            // 이미지 크기 조정
+                            let imageSize = CGSize(width: 200, height: 250) // 원하는 크기로 조절
+                            UIGraphicsBeginImageContext(imageSize)
+                            image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
+                            if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
+                                cell.imgCast.image = resizedImage
+                            }
+                            UIGraphicsEndImageContext()
+                            //content.text = self.movieList[indexPath.row].title
+                            //                    content.secc = self.movieList[indexPath.row].genre
+                        }
+                    }
+                }.resume()
+                return cell
             }
         }
+        return UITableViewCell()
+    }
+}
 
-extension MovieDetailViewController: MovieDetailQueryModelProtocol{
+extension MovieDetailViewController: MovieDetailQueryModelProtocol {
     func itemDownloaded(item: [MovieDetailModel]) {
         Movie = item
         urlImage()
         lblMovieTitle.text = Movie[0].title
         lblMovieInformation.text = String(Movie[0].releasedate.prefix(4)) + " · " + Movie[0].country + " · " + Movie[0].genre
-        
+
         DispatchQueue.main.async { [weak self] in
             self?.Star_with_Comment_TableView.reloadData()
-                    self?.Movie_Information_TableView.reloadData()
-                }
+            self?.Movie_Information_TableView.reloadData()
+        }
     }
 }
-extension MovieDetailViewController: MovieCastProtocol{
+extension MovieDetailViewController: MovieCastProtocol {
     func itemDownloaded(item: [MovieCastModel]) {
         MovieCast = item
         DispatchQueue.main.async { [weak self] in
             self?.MovieCast_TableView.reloadData()
-                }
+        }
     }
 
 
