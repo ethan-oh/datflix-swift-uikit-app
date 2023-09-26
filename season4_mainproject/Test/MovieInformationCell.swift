@@ -14,7 +14,7 @@ class MovieInformationCell: UITableViewCell {
     @IBOutlet weak var moreButton: UIButton!
     var stateNumber = 0
     var isFullTextVisible = false
-    let contentArray = ["아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워", "뭐가 이리 많은거야", "확인하는 용도"]
+    var movie: [MovieDetailModel]?
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -35,12 +35,12 @@ class MovieInformationCell: UITableViewCell {
         if isFullTextVisible {
             // 전체 내용 표시 로직
             userContentLabel.numberOfLines = 0 // 여러 줄 표시 허용
-            userContentLabel.text = contentArray[indexPath.row]
+            userContentLabel.text = movie![indexPath.row].summary
             moreButton.setTitle("간략히", for: .normal)
         } else {
             // 간략 내용 표시 로직
             userContentLabel.numberOfLines = 6 // 원하는 줄 수로 설정
-            userContentLabel.text = contentArray[indexPath.row]
+            userContentLabel.text = movie![indexPath.row].summary
             moreButton.setTitle("더보기", for: .normal)
         }
         

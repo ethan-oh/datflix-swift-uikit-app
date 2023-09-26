@@ -10,7 +10,7 @@ import UIKit
 
 class MovieCastCell: UITableViewCell {
     
-    
+    var movie: [MovieDetailModel]?
     @IBOutlet weak var imgCast: UIImageView!
     @IBOutlet weak var lblCastName: UILabel!
     @IBOutlet weak var lblCastRole: UILabel!
