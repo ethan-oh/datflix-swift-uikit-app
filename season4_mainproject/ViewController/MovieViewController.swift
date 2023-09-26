@@ -26,6 +26,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         cvListView.backgroundColor = UIColor.clear
         cvListView.backgroundView = nil
         readValues()
