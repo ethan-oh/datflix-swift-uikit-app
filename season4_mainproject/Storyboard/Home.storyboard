@@ -29,7 +29,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <segue destination="Fcy-Ua-9GK" kind="show" id="kEz-dH-3wu"/>
+                                    <segue destination="tAZ-xt-KLv" kind="show" id="dLZ-P3-ET5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -42,16 +42,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057.2519083969464" y="-34.507042253521128"/>
-        </scene>
-        <!--Detail-->
-        <scene sceneID="hch-Bj-SuO">
-            <objects>
-                <viewControllerPlaceholder storyboardName="MovieDetail" referencedIdentifier="Detail" id="Fcy-Ua-9GK" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="7gt-7r-jvC"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g45-kU-xhB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1597" y="5"/>
         </scene>
         <!--Home-->
         <scene sceneID="sy7-sU-fnR">
@@ -71,6 +61,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rUm-DD-5OA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+        <!--Movie Table View Controller-->
+        <scene sceneID="LFw-Bs-tw4">
+            <objects>
+                <tableViewController storyboardIdentifier="Detail" id="tAZ-xt-KLv" customClass="MovieTableViewController" customModule="season4_mainproject" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="mtl-d6-fdk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="TOR-p4-QBr">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TOR-p4-QBr" id="LeY-Ls-Hu6">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="GKZ-b5-XJq" kind="show" id="JPx-cU-LA5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="bLY-EO-MhH"/>
+                    <connections>
+                        <outlet property="tvListView" destination="mtl-d6-fdk" id="8cf-ei-CCr"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rop-n9-A53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="-35"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="3NY-jd-B2q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetail" referencedIdentifier="Detail" id="GKZ-b5-XJq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="21B-H7-Uk9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5oJ-Qm-fah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2695" y="-39"/>
         </scene>
     </scenes>
     <resources>

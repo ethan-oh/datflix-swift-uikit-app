@@ -16,6 +16,8 @@
 		1AE9D2862AC1AD3A00CA506D /* ReviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9D2852AC1AD3A00CA506D /* ReviewController.swift */; };
 		1AE9D2892AC2698100CA506D /* MovieDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AE9D2882AC2698100CA506D /* MovieDetailDelegate.swift */; };
 		1E13B7662AC2814400D09995 /* MovieDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E13B7652AC2814400D09995 /* MovieDetail.storyboard */; };
+		1E42B4EC2AC286D700E01E70 /* MovieDetailJSONModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42B4EB2AC286D600E01E70 /* MovieDetailJSONModel.swift */; };
+		1E42B4EE2AC286F600E01E70 /* MovieDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E42B4ED2AC286F600E01E70 /* MovieDetail.swift */; };
 		1E5A4C902AC12831009DBB5C /* JSONMovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A4C8F2AC12831009DBB5C /* JSONMovieModel.swift */; };
 		1E5A4C922AC134B2009DBB5C /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A4C912AC134B2009DBB5C /* Movie.swift */; };
 		1E5A4C942AC134D5009DBB5C /* MovieData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A4C932AC134D5009DBB5C /* MovieData.swift */; };
@@ -71,6 +73,8 @@
 		1AE9D2852AC1AD3A00CA506D /* ReviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewController.swift; sourceTree = "<group>"; };
 		1AE9D2882AC2698100CA506D /* MovieDetailDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDelegate.swift; sourceTree = "<group>"; };
 		1E13B7652AC2814400D09995 /* MovieDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovieDetail.storyboard; sourceTree = "<group>"; };
+		1E42B4EB2AC286D600E01E70 /* MovieDetailJSONModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailJSONModel.swift; sourceTree = "<group>"; };
+		1E42B4ED2AC286F600E01E70 /* MovieDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetail.swift; sourceTree = "<group>"; };
 		1E5A4C8F2AC12831009DBB5C /* JSONMovieModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONMovieModel.swift; sourceTree = "<group>"; };
 		1E5A4C912AC134B2009DBB5C /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		1E5A4C932AC134D5009DBB5C /* MovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieData.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				3206A6832AC1A77600C5B8A5 /* RegisterVM.swift */,
 				3251249B2AC115A800CD856E /* LoginVM.swift */,
 				1AE9D2852AC1AD3A00CA506D /* ReviewController.swift */,
+				1E42B4EB2AC286D600E01E70 /* MovieDetailJSONModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				1E5A4C932AC134D5009DBB5C /* MovieData.swift */,
 				1E5A4C982AC15626009DBB5C /* DetailInformation.swift */,
 				1AE9D27B2AC19CF400CA506D /* Review.swift */,
+				1E42B4ED2AC286F600E01E70 /* MovieDetail.swift */,
 			);
 			path = DBModel;
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				1E5A4C992AC15626009DBB5C /* DetailInformation.swift in Sources */,
 				4E9F27562ABAC8F7003263FC /* SceneDelegate.swift in Sources */,
 				3251249F2AC116CC00CD856E /* UserModel.swift in Sources */,
+				1E42B4EE2AC286F600E01E70 /* MovieDetail.swift in Sources */,
 				3206A6852AC1A77600C5B8A5 /* NickNameVM.swift in Sources */,
 				325191FD2ABBD3940027028E /* HomeViewController.swift in Sources */,
 				3206A6892AC1A7F800C5B8A5 /* MyAlert.swift in Sources */,
@@ -471,6 +478,7 @@
 				325192052ABC0F8E0027028E /* UserTableViewController.swift in Sources */,
 				1E5A4CA42AC15E52009DBB5C /* MyTableViewCell.swift in Sources */,
 				1E5A4C922AC134B2009DBB5C /* Movie.swift in Sources */,
+				1E42B4EC2AC286D700E01E70 /* MovieDetailJSONModel.swift in Sources */,
 				1E5A4C902AC12831009DBB5C /* JSONMovieModel.swift in Sources */,
 				325124A12AC116D800CD856E /* MovieModel.swift in Sources */,
 				325191FF2ABBD3B60027028E /* RecommendViewController.swift in Sources */,
