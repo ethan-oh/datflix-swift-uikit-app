@@ -32,7 +32,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func readValues() {
-        print("hochul wanryo")
         let movieQueryModel = JSONAMovieQueryModel()
         movieQueryModel.delegate = self
         movieQueryModel.fetchDataFromAPI()
@@ -74,6 +73,17 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "sgDetail" {
+                let cell = sender as! UICollectionViewCell
+                let indexPath = self.collectionView.indexPath(for: cell)
+                let detailView = segue.destination as! MovieDetailViewController
+                detailView.receivedid = movieList[indexPath!.row].id
+                // Get the new view controller using segue.destination.
+                // Pass the selected object to the new view controller.
+            }
+        }
     
     // MARK: - UICollectionViewDelegate
     
