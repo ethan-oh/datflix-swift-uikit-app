@@ -142,10 +142,16 @@ class ReviewViewController: UIViewController {
 
     @IBAction func btnSave(_ sender: UIButton) {
         var rating: Double = cosmosOh.rating
+        var saveResult : Bool
         let content = tfReview.text!
         rating = (rating * 100).rounded() / 100
-
-        let saveResult = controller.insertReview(movie_id: receivedId, content: content, rating: rating)
+        
+        if editmode{
+            saveResult = controller.updateReview(movie_id: receivedId, content: content, rating: rating)
+        }else{
+            saveResult = controller.insertReview(movie_id: receivedId, content: content, rating: rating)
+        }
+       
 
         if saveResult {
             // 저장 성공

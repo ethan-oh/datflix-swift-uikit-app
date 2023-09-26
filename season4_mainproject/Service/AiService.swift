@@ -11,8 +11,6 @@ class AiService {
     func calcScore(review: String, completion: @escaping (Double?) -> Void) {
         let access_token: String = User.access_token // 언제든지 바꿀 수 있는다.
         let baseUrl = HOST + ":" + PORT + "/ai/review"
-        print(baseUrl)
-        print(access_token)
         
         let url = URL(string: baseUrl)
         var request = URLRequest(url: url!)
