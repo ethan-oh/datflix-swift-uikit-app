@@ -9,5 +9,5 @@ import UIKit
 
 class OTTCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var ottImage: UIImageView!
+    @IBOutlet weak var movieImage: UIImageView!
 }
