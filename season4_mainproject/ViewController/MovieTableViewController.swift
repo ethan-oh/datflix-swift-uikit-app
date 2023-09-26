@@ -12,8 +12,6 @@ class MovieTableViewController: UITableViewController {
     
     @IBOutlet var tvListView: UITableView!
     
-    
-    
     var AddressList: [MovieModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
