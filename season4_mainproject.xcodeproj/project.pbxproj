@@ -36,7 +36,6 @@
 		1E5A4CB22AC17D94009DBB5C /* MovieCastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A4CB12AC17D94009DBB5C /* MovieCastCell.swift */; };
 		1E5A4CBA2AC1824F009DBB5C /* Star_with_CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E5A4CB92AC1824F009DBB5C /* Star_with_CommentCell.xib */; };
 		1E5A4CBC2AC1825F009DBB5C /* Star_with_CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A4CBB2AC1825F009DBB5C /* Star_with_CommentCell.swift */; };
-		1EF65ABC2AC325950069B86B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF65ABB2AC325950069B86B /* Message.swift */; };
 		27CAE61F5BD3634CDCA44C64 /* Pods_season4_mainproject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD2F241DB758A7944842A569 /* Pods_season4_mainproject.framework */; };
 		3206A6842AC1A77600C5B8A5 /* EmailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206A6812AC1A77600C5B8A5 /* EmailVM.swift */; };
 		3206A6852AC1A77600C5B8A5 /* NickNameVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206A6822AC1A77600C5B8A5 /* NickNameVM.swift */; };
@@ -106,7 +105,6 @@
 		1E5A4CB12AC17D94009DBB5C /* MovieCastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCastCell.swift; sourceTree = "<group>"; };
 		1E5A4CB92AC1824F009DBB5C /* Star_with_CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Star_with_CommentCell.xib; sourceTree = "<group>"; };
 		1E5A4CBB2AC1825F009DBB5C /* Star_with_CommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_with_CommentCell.swift; sourceTree = "<group>"; };
-		1EF65ABB2AC325950069B86B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		242FDEAD0B174A98F80534D6 /* Pods-season4_mainproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-season4_mainproject.release.xcconfig"; path = "Target Support Files/Pods-season4_mainproject/Pods-season4_mainproject.release.xcconfig"; sourceTree = "<group>"; };
 		3206A6812AC1A77600C5B8A5 /* EmailVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVM.swift; sourceTree = "<group>"; };
 		3206A6822AC1A77600C5B8A5 /* NickNameVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NickNameVM.swift; sourceTree = "<group>"; };
@@ -217,7 +215,6 @@
 				1E5A4CB12AC17D94009DBB5C /* MovieCastCell.swift */,
 				1E5A4CB92AC1824F009DBB5C /* Star_with_CommentCell.xib */,
 				1E5A4CBB2AC1825F009DBB5C /* Star_with_CommentCell.swift */,
-				1EF65ABB2AC325950069B86B /* Message.swift */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -505,7 +502,6 @@
 				4E9F27542ABAC8F7003263FC /* AppDelegate.swift in Sources */,
 				3206A6862AC1A77600C5B8A5 /* RegisterVM.swift in Sources */,
 				32EB063B2ABC343F00AECA3A /* UserData.swift in Sources */,
-				1EF65ABC2AC325950069B86B /* Message.swift in Sources */,
 				32EBECB12AC2F5F300E76A98 /* AnimeCollectionViewCell.swift in Sources */,
 				1AE9D27E2AC19D1E00CA506D /* ReviewJSONModel.swift in Sources */,
 				1E5A4C992AC15626009DBB5C /* DetailInformation.swift in Sources */,

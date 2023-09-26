@@ -7,14 +7,12 @@
 
 import UIKit
 
-class MovieDetailViewController: UIViewController {
+class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
 
     var reviewList: [Review] = []
     var Movie: [MovieDetailModel] = []
     var MovieCast: [MovieCastModel] = []
-    let contentArray = ["아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오 어려워아오"]
-    let contentArray2 = ["아오 어려워", "뭐가 이리 많은거야", "확인하는 용도"]
     let reviewController = ReviewController(service: ReviewService())
 
     
@@ -26,6 +24,10 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var MovieCast_TableView: UITableView!
     @IBOutlet weak var CommentTableView: UITableView!
 
+    
+    @IBOutlet weak var cvRecommendView: UICollectionView!
+    
+    
     var receivedid: Int = 0
 
     func passMovieId(_ id: Int) {
@@ -103,6 +105,13 @@ class MovieDetailViewController: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
+        // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
+        
+        setDelegateAndDataSource(cvRecommendView)
+        // 컬렉션뷰 수평 스크롤 세팅
+        horizontalSetting(cvRecommendView)
+        // 컬렉션뷰 배경 투명하게
+        clearBackGround(cvRecommendView)
         readValues()
 
     }
@@ -175,6 +184,16 @@ class MovieDetailViewController: UIViewController {
         }
     }
     
+    func setDelegateAndDataSource(_ view: UICollectionView){
+        view.delegate = self
+        view.dataSource = self
+    }
+    
+    func horizontalSetting(_ view: UICollectionView){
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        view.collectionViewLayout = layout
+    }
     
 
 
@@ -199,6 +218,64 @@ extension MovieDetailViewController: UITableViewDelegate {
 
 extension MovieDetailViewController: UITableViewDataSource {
     
+    // 셀 개수 리턴
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if collectionView == cvRecommendView {
+            return Movie.count
+        }
+        return 0
+    }
+    
+    // 셀별 세팅
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        var cell: UICollectionViewCell
+        
+        switch collectionView {
+        case cvRecommendView:
+            cell = cvRecommendView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as! MovieCollectionViewCell
+            configureCell(cell as! MovieCollectionViewCell, withImageURL: Movie[indexPath.row].imagepath)
+        default:
+            cell = UICollectionViewCell()
+        }
+        
+        return cell
+    }
+    
+    // 셀 이미지 담아주기. 바로 위 셀별 세팅에서 호출해서 사용한다.
+    func configureCell(_ cell: UICollectionViewCell, withImageURL imageUrlString: String) {
+        let imageUrl = URL(string: imageUrlString)
+        
+        URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
+            if let error = error {
+                print("Error downloading image: \(error.localizedDescription)")
+                return
+            }
+            
+            if let data = data, let image = UIImage(data: data) {
+                // 비동기방식으로 이미지 불러와 담아주기
+                DispatchQueue.main.async {
+                    if let movieCell = cell as? MovieCollectionViewCell {
+                        movieCell.movieImage.image = image
+                    } else if let ottCell = cell as? OTTCollectionViewCell {
+                        ottCell.movieImage.image = image
+                    } else if let dramaCell = cell as? DramaCollectionViewCell {
+                        dramaCell.movieImage.image = image
+                    } else if let animeCell = cell as? AnimeCollectionViewCell {
+                        animeCell.movieImage.image = image
+                    } else if let romanceCell = cell as? RomanceCollectionViewCell {
+                        romanceCell.movieImage.image = image
+                    }
+                }
+            }
+        }.resume()
+    }
+    
+    func clearBackGround(_ view: UICollectionView){
+        view.backgroundColor = UIColor.clear
+        view.backgroundView = nil
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == CommentTableView {
@@ -210,11 +287,11 @@ extension MovieDetailViewController: UITableViewDataSource {
             }
         } else if tableView == Movie_Information_TableView {
             // Movie_Information_TableView의 경우 contentArray.count로 셀의 갯수를 설정
-            return min(1, contentArray.count)
+            return min(1, Movie.count)
         } else if tableView == Star_with_Comment_TableView {
             return 1
         } else if tableView == MovieCast_TableView {
-            return self.contentArray2.count
+            return self.MovieCast.count
         }
         return 0
     }
