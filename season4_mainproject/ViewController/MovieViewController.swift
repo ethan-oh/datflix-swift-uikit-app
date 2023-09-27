@@ -15,6 +15,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var cvAnimeView: UICollectionView!
     @IBOutlet weak var cvRomanceView: UICollectionView!
     
+    @IBOutlet weak var btnUserName: UIBarButtonItem!
     
     var movieList: [MovieModel] = []
     var rankList: [MovieModel] = []
@@ -56,7 +57,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         animeList = []
         romanceList = []
 
-        self.navigationItem.title = UserDefaults.standard.string(forKey: "name") == nil ? "로그인이 필요합니다." : "\(UserDefaults.standard.string(forKey: "name")!) 님"
+        btnUserName.title = UserDefaults.standard.string(forKey: "name") == nil ? "" : "\(UserDefaults.standard.string(forKey: "name")!) 님"
         
         // 무비데이터 들고오기
         readValues()
