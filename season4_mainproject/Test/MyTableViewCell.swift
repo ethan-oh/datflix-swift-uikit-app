@@ -18,7 +18,6 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
     var starCount = 0
-    var review = 0.0
     @IBOutlet weak var nickname: UILabel!
     @IBOutlet weak var insertDate: UILabel!
     @IBOutlet weak var cosmosOh: CosmosView!
@@ -39,45 +38,6 @@ class MyTableViewCell: UITableViewCell {
         cosmosView.rating = Double(percentage)! / 20.0
     }
     
-    func updateStarColor() {
-        // 모든 별 버튼을 초기 상태(회색)로 설정
-        star1.tintColor = UIColor.gray
-        star2.tintColor = UIColor.gray
-        star3.tintColor = UIColor.gray
-        star4.tintColor = UIColor.gray
-        star5.tintColor = UIColor.gray
-        
-        // 선택된 별 버튼까지만 색상을 변경
-        switch starCount {
-        case 1:
-            print("1번 별입니다")
-            star1.tintColor = UIColor.yellow
-        case 2:
-            print("2번 별입니다")
-            star1.tintColor = UIColor.yellow
-            star2.tintColor = UIColor.yellow
-        case 3:
-            print("3번 별입니다")
-            star1.tintColor = UIColor.yellow
-            star2.tintColor = UIColor.yellow
-            star3.tintColor = UIColor.yellow
-        case 4:
-            print("4번 별입니다")
-            star1.tintColor = UIColor.yellow
-            star2.tintColor = UIColor.yellow
-            star3.tintColor = UIColor.yellow
-            star4.tintColor = UIColor.yellow
-        case 5:
-            print("5번 별입니다")
-            star1.tintColor = UIColor.yellow
-            star2.tintColor = UIColor.yellow
-            star3.tintColor = UIColor.yellow
-            star4.tintColor = UIColor.yellow
-            star5.tintColor = UIColor.yellow
-        default:
-            break
-        }
-    }
     
     
     

@@ -360,8 +360,7 @@ extension MovieDetailViewController: UITableViewDataSource {
                 cell.userContentLabel.text = reviewList[indexPath.row].content
                 cell.nickname.text = reviewList[indexPath.row].nickname
                 cell.insertDate.text = reviewList[indexPath.row].insertdate
-                cell.review = reviewList[indexPath.row].rating
-                
+                cell.cosmosOh.rating = reviewList[indexPath.row].rating
                 return cell
             }
         } else if tableView == Movie_Information_TableView {
@@ -433,7 +432,6 @@ extension MovieDetailViewController: MovieDetailQueryModelProtocol {
         urlImage()
         lblMovieTitle.text = Movie[0].title
         lblMovieInformation.text = String(Movie[0].releasedate.prefix(4)) + " · " + Movie[0].country + " · " + Movie[0].genre
-
         DispatchQueue.main.async { [weak self] in
             self?.CommentTableView.reloadData()
             self?.Star_with_Comment_TableView.reloadData()
