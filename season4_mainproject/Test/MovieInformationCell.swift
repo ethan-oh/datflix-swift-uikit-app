@@ -29,7 +29,6 @@ class MovieInformationCell: UITableViewCell {
             return
         }
         isFullTextVisible.toggle()
-        
         if isFullTextVisible {
             // 전체 내용 표시 로직
             userContentLabel.numberOfLines = 0 // 여러 줄 표시 허용

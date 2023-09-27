@@ -365,16 +365,27 @@ extension MovieDetailViewController: UITableViewDataSource {
             let cell = Movie_Information_TableView.dequeueReusableCell(withIdentifier: "MovieInformationCell", for: indexPath) as! MovieInformationCell
             if !Movie.isEmpty {
                 let content = Movie[0].summary
-                cell.userContentLabel.text = content
-                cell.movie = Movie
-                if let background = UIColor(named: "background") {
-                    cell.backgroundColor = background
-                    tableView.backgroundColor = background
-                }
-                if cell.isFullTextVisible {
-                    cell.userContentLabel.numberOfLines = 0
-                } else {
-                    cell.userContentLabel.numberOfLines = 9
+                if content == "0"{
+                    cell.textLabel?.text = "기본정보가 없습니다."
+                    cell.textLabel?.textAlignment = .center
+                    cell.textLabel?.textColor = UIColor.white
+                    cell.moreButton.isHidden = true
+                    if let background = UIColor(named: "background") {
+                        cell.backgroundColor = background
+                        tableView.backgroundColor = background
+                    }
+                }else{
+                    cell.userContentLabel.text = content
+                    cell.movie = Movie
+                    if let background = UIColor(named: "background") {
+                        cell.backgroundColor = background
+                        tableView.backgroundColor = background
+                    }
+                    if cell.isFullTextVisible {
+                        cell.userContentLabel.numberOfLines = 0
+                    } else {
+                        cell.userContentLabel.numberOfLines = 9
+                    }
                 }
             }
             return cell
@@ -384,9 +395,20 @@ extension MovieDetailViewController: UITableViewDataSource {
                 let starCount = Movie[0].star
                 let stars = [cell.star1, cell.star2, cell.star3, cell.star4, cell.star5]
                 for (index, starButton) in stars.enumerated() {
-                    starButton?.tintColor = Int(starCount) > index ? UIColor.yellow : UIColor.gray
+                        if let starButton = starButton {
+                            // 현재 별 버튼의 인덱스
+                            let starIndex = Float(index) + 1.0
+                            // 별 버튼에 표시할 색상 결정
+                            if starIndex <= starCount {
+                                // 노란색 별 표시
+                                starButton.tintColor = UIColor.yellow
+                            } else {
+                                // 회색 별 표시
+                                starButton.tintColor = UIColor.gray
+                            }
+                        }
+                    }
                 }
-            }
             return cell
         } else if tableView == MovieCast_TableView {
             let cell = MovieCast_TableView.dequeueReusableCell(withIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell

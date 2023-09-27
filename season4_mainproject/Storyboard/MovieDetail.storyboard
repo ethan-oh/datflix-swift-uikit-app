@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="Detail" id="e9p-La-nrp" customClass="MovieDetailViewController" customModule="season4_mainproject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NqV-vf-Qx4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="1800"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="1530"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhK-Gg-Pl5">
-                                <rect key="frame" x="0.0" y="91" width="393" height="1675"/>
+                                <rect key="frame" x="0.0" y="91" width="393" height="1405"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgz-jl-vgV">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="1800"/>
@@ -146,7 +146,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2y3-G8-s36"/>
-                    <size key="freeformSize" width="393" height="1800"/>
+                    <size key="freeformSize" width="393" height="1530"/>
                     <connections>
                         <outlet property="CommentTableView" destination="nGf-Uv-uix" id="GhT-AZ-miY"/>
                         <outlet property="MovieCast_TableView" destination="N8v-MV-Krf" id="Kj7-Ai-B4v"/>
