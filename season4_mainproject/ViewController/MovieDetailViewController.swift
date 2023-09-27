@@ -417,20 +417,43 @@ extension MovieDetailViewController: UITableViewDataSource {
             let cell = Star_with_Comment_TableView.dequeueReusableCell(withIdentifier: "Star_with_CommentCell", for: indexPath) as! Star_with_CommentCell
             if !Movie.isEmpty {
                 let starCount = Movie[0].star
-                let stars = [cell.star1, cell.star2, cell.star3, cell.star4, cell.star5]
-                for (index, starButton) in stars.enumerated() {
-                        if let starButton = starButton {
-                            // 현재 별 버튼의 인덱스
-                            let starIndex = Float(index) + 1.0
-                            // 별 버튼에 표시할 색상 결정
-                            if starIndex <= starCount {
-                                // 노란색 별 표시
-                                starButton.tintColor = UIColor.yellow
-                            } else {
-                                // 회색 별 표시
-                                starButton.tintColor = UIColor.gray
-                            }
-                        }
+                print(starCount)
+                if starCount <= 0.0 {
+                        cell.star1.tintColor = UIColor.gray
+                        cell.star2.tintColor = UIColor.gray
+                        cell.star3.tintColor = UIColor.gray
+                        cell.star4.tintColor = UIColor.gray
+                        cell.star5.tintColor = UIColor.gray
+                    } else if starCount < 2.0 {
+                        cell.star1.tintColor = UIColor.yellow
+                        cell.star2.tintColor = UIColor.gray
+                        cell.star3.tintColor = UIColor.gray
+                        cell.star4.tintColor = UIColor.gray
+                        cell.star5.tintColor = UIColor.gray
+                    } else if starCount < 4.0 {
+                        cell.star1.tintColor = UIColor.yellow
+                        cell.star2.tintColor = UIColor.yellow
+                        cell.star3.tintColor = UIColor.gray
+                        cell.star4.tintColor = UIColor.gray
+                        cell.star5.tintColor = UIColor.gray
+                    } else if starCount < 6.0 {
+                        cell.star1.tintColor = UIColor.yellow
+                        cell.star2.tintColor = UIColor.yellow
+                        cell.star3.tintColor = UIColor.yellow
+                        cell.star4.tintColor = UIColor.gray
+                        cell.star5.tintColor = UIColor.gray
+                    } else if starCount < 8.0 {
+                        cell.star1.tintColor = UIColor.yellow
+                        cell.star2.tintColor = UIColor.yellow
+                        cell.star3.tintColor = UIColor.yellow
+                        cell.star4.tintColor = UIColor.yellow
+                        cell.star5.tintColor = UIColor.gray
+                    } else {
+                        cell.star1.tintColor = UIColor.yellow
+                        cell.star2.tintColor = UIColor.yellow
+                        cell.star3.tintColor = UIColor.yellow
+                        cell.star4.tintColor = UIColor.yellow
+                        cell.star5.tintColor = UIColor.yellow
                     }
                 }
             return cell

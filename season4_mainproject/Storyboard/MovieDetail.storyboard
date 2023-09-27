@@ -94,6 +94,7 @@
                                                         <size key="customSize" width="127" height="185"/>
                                                         <connections>
                                                             <outlet property="movieImage" destination="zjj-VR-c2P" id="in8-8Y-imp"/>
+                                                            <segue destination="w0K-9S-CCx" kind="show" identifier="sgDetail" id="YV2-Ci-Fct"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -108,7 +109,7 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yFl-Gq-svF">
                                                 <rect key="frame" x="0.0" y="472" width="393" height="185"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="backgroundColor" name="background"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DY7-ff-UNS">
                                                     <size key="itemSize" width="115" height="183"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -205,6 +206,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1m-6k-0iv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4637.6923076923076" y="-35.545023696682463"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="XLR-gl-X2x">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetail" referencedIdentifier="Detail" id="w0K-9S-CCx" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="rug-Te-EJV"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFe-nr-XVq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5442" y="-121"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VB7-51-fde">

@@ -91,7 +91,9 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
             let movieCell = cell as! MovieCollectionViewCell
             movieCell.lblRank.text = "\(indexPath.row + 1)"
             makeLabelBorder(UILabel: movieCell.lblRank)
-            configureCell(cell as! MovieCollectionViewCell, withImageURL: rankList[indexPath.row].imagepath)
+            let imagePath = rankList[indexPath.row].imagepath
+            let trimmedImagePath = imagePath.trimmingCharacters(in: .whitespacesAndNewlines)
+            configureCell(cell as! MovieCollectionViewCell, withImageURL: trimmedImagePath)
             
         case cvOTTView:
             cell = cvOTTView.dequeueReusableCell(withReuseIdentifier: "ottCell", for: indexPath) as! OTTCollectionViewCell
