@@ -10,7 +10,6 @@ import UIKit
 class UserViewController: UIViewController {
 
     let myAlert = MyAlert()
-    
     var codeValue = 0
     
     @IBOutlet weak var btnLogIn: UIButton! // 버튼이름 변경하기 위해
@@ -22,6 +21,8 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,14 +39,6 @@ class UserViewController: UIViewController {
     }
     
     @IBAction func btnChangePassword(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func btnChangeNickname(_ sender: UIButton) {
-        
-        let nicknameCheck = NicknameDupCheckModel()
-        nicknameCheck.delegate = self
-        
         let pwAlert = UIAlertController(title: "닉네임 변경", message: nil, preferredStyle: .alert)
         pwAlert.addTextField(){ textField in
             textField.placeholder = "닉네임 입력"
@@ -54,6 +47,29 @@ class UserViewController: UIViewController {
         let okAction = UIAlertAction(title: "확인", style: .default, handler: {ACTION in
     
             let newNickname = pwAlert.textFields?[0].text?.trimmingCharacters(in: .whitespaces)
+            
+        })
+
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+
+        pwAlert.addAction(okAction)
+        pwAlert.addAction(cancelAction)
+        self.present(pwAlert, animated: true)
+    }
+    
+    @IBAction func btnChangeNickname(_ sender: UIButton) {
+        
+        let nicknameCheck = NicknameDupCheckModel()
+        nicknameCheck.delegate = self
+        
+        let nicknameAlert = UIAlertController(title: "닉네임 변경", message: nil, preferredStyle: .alert)
+        nicknameAlert.addTextField(){ textField in
+            textField.placeholder = "변경하실 닉네임을 입력해주세요."
+        }
+
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: {ACTION in
+    
+            let newNickname = nicknameAlert.textFields?[0].text?.trimmingCharacters(in: .whitespaces)
             if newNickname?.isEmpty == false{
                 DispatchQueue.global(qos: .background).async {
                     nicknameCheck.downloadItems(nickname: newNickname!)
@@ -75,9 +91,9 @@ class UserViewController: UIViewController {
 
         let cancelAction = UIAlertAction(title: "취소", style: .cancel)
 
-        pwAlert.addAction(okAction)
-        pwAlert.addAction(cancelAction)
-        self.present(pwAlert, animated: true)
+        nicknameAlert.addAction(okAction)
+        nicknameAlert.addAction(cancelAction)
+        self.present(nicknameAlert, animated: true)
     }
     
     
