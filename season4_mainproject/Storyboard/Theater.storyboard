@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Rm9-yP-0Gz">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--Theater-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Theater" id="Y6W-OH-hqX" customClass="TheaterViewController" customModule="season4_mainproject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="TheaterViewController" customModule="season4_mainproject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,28 +20,40 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Theater" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fOF-Ci-lW0">
                                 <rect key="frame" x="164" y="239" width="60" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="background"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-o7-gTW">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="752"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XlW-o7-gTW">
+                                <rect key="frame" x="0.0" y="103" width="393" height="649"/>
+                                <color key="backgroundColor" name="background"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="393" id="4kP-xd-ZGJ"/>
+                                </constraints>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-VY-v3G">
-                                <rect key="frame" x="186" y="366" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="YPv-VY-v3G">
+                                <rect key="frame" x="186" y="366" width="21" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="YPv-VY-v3G" secondAttribute="bottom" constant="383" id="0VO-2X-8Sw"/>
+                            <constraint firstItem="YPv-VY-v3G" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="186" id="5zW-u8-xzw"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="XlW-o7-gTW" secondAttribute="bottom" constant="17" id="VJd-qV-6Oo"/>
+                            <constraint firstItem="XlW-o7-gTW" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Y7o-xc-bfs"/>
+                            <constraint firstItem="XlW-o7-gTW" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Z47-AH-MIC"/>
+                            <constraint firstItem="XlW-o7-gTW" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="d0f-3J-7sY"/>
+                            <constraint firstItem="XlW-o7-gTW" firstAttribute="centerX" secondItem="YPv-VY-v3G" secondAttribute="centerX" id="wdm-6R-OR7"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Theater" selectedImage="popcorn.fill" catalog="system" id="ZEL-Ap-ilo"/>
+                    <tabBarItem key="tabBarItem" title="Theater" image="popcorn.fill" catalog="system" id="m4I-fG-WFp"/>
+                    <navigationItem key="navigationItem" title="Theater" id="6aU-xG-Hpu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myActivityIndicator" destination="YPv-VY-v3G" id="3se-nb-AaG"/>
@@ -49,13 +62,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="-34.507042253521128"/>
+        </scene>
+        <!--Theater-->
+        <scene sceneID="YTL-Ae-DIQ">
+            <objects>
+                <navigationController storyboardIdentifier="Theater" automaticallyAdjustsScrollViewInsets="NO" id="Rm9-yP-0Gz" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Theater" selectedImage="popcorn.fill" catalog="system" id="ZEL-Ap-ilo"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qlz-2L-XAh">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="labelColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="HFO-d0-rfT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GX9-I1-ZuG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>
         <image name="popcorn.fill" catalog="system" width="102" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <namedColor name="background">
+            <color red="0.14100000262260437" green="0.16500000655651093" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
