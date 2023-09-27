@@ -14,7 +14,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     var Movie: [MovieDetailModel] = []
     var MovieCast: [MovieCastModel] = []
     let reviewController = ReviewController(service: ReviewService())
-
+    var recommendMovie: [MovieModel] = []
 
     @IBOutlet weak var imgMoviePoster: UIImageView!
     @IBOutlet weak var lblMovieTitle: UILabel!
@@ -105,14 +105,13 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
 
 
     override func viewWillAppear(_ animated: Bool) {
-//        // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
-//        setDelegateAndDataSource(cvRecommendView)
-//        // 컬렉션뷰 수평 스크롤 세팅
-//        horizontalSetting(cvRecommendView)
-//        // 컬렉션뷰 배경 투명하게
-//        clearBackGround(cvRecommendView)
+        // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
+        setDelegateAndDataSource(cvRecommendView)
+        // 컬렉션뷰 수평 스크롤 세팅
+        horizontalSetting(cvRecommendView)
+        // 컬렉션뷰 배경 투명하게
+        clearBackGround(cvRecommendView)
         readValues()
-
     }
 
     func readValues() {
@@ -123,7 +122,12 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         let moviedetailcastQueryModel = MovieCastQueryModel()
         moviedetailcastQueryModel.delegate = self
         moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
-
+        
+//        let aiService = AiService()
+//        aiService.delegate = self
+//        aiService.searchTop(title: Movie[0])
+        
+        
         self.reviewList.removeAll()
         reviewController.selectReview(movie_id: self.receivedid) { [weak self] reviews in
             guard let self = self else { return }
@@ -144,7 +148,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
             let alert = UIAlertController(title: "로그인이 필요합니다", message: "로그인하시겠습니까?", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "예", style: .default) { _ in
                 if let tabBarController = self.tabBarController {
-                    tabBarController.selectedIndex = 3 // 로그인 탭
+                    tabBarController.selectedIndex = 2 // 로그인 탭
                 }
             }
             let CancelAction = UIAlertAction(title: "아니오", style: .cancel, handler: nil)
@@ -235,11 +239,11 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
 
-//    func horizontalSetting(_ view: UICollectionView) {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        view.collectionViewLayout = layout
-//    }
+    func horizontalSetting(_ view: UICollectionView) {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        view.collectionViewLayout = layout
+    }
 
     
 
@@ -279,8 +283,8 @@ extension MovieDetailViewController: UITableViewDataSource {
 
         switch collectionView {
         case cvRecommendView:
-            cell = cvRecommendView.dequeueReusableCell(withReuseIdentifier: "rankCell", for: indexPath) as! MovieCollectionViewCell
-            configureCell(cell as! MovieCollectionViewCell, withImageURL: Movie[indexPath.row].imagepath)
+            cell = cvRecommendView.dequeueReusableCell(withReuseIdentifier: "recommendCell", for: indexPath) as! RecommendCollectionViewCell
+            configureCell(cell as! RecommendCollectionViewCell, withImageURL: recommendMovie[indexPath.row].imagepath)
         default:
             cell = UICollectionViewCell()
         }
@@ -301,16 +305,8 @@ extension MovieDetailViewController: UITableViewDataSource {
             if let data = data, let image = UIImage(data: data) {
                 // 비동기방식으로 이미지 불러와 담아주기
                 DispatchQueue.main.async {
-                    if let movieCell = cell as? MovieCollectionViewCell {
+                    if let movieCell = cell as? RecommendCollectionViewCell {
                         movieCell.movieImage.image = image
-                    } else if let ottCell = cell as? OTTCollectionViewCell {
-                        ottCell.movieImage.image = image
-                    } else if let dramaCell = cell as? DramaCollectionViewCell {
-                        dramaCell.movieImage.image = image
-                    } else if let animeCell = cell as? AnimeCollectionViewCell {
-                        animeCell.movieImage.image = image
-                    } else if let romanceCell = cell as? RomanceCollectionViewCell {
-                        romanceCell.movieImage.image = image
                     }
                 }
             }
@@ -448,4 +444,15 @@ extension MovieDetailViewController: MovieCastProtocol {
     }
 
 
+}
+
+extension MovieDetailViewController: JSONMovieQueryModelProtocol{
+    func itemDownloaded(item: [MovieModel]) {
+        recommendMovie = item
+        DispatchQueue.main.async { [weak self] in
+            self?.cvRecommendView.reloadData()
+        }
+    }
+    
+    
 }

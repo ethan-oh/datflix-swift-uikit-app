@@ -93,6 +93,7 @@ class AiService {
                     for movie in movieData.result {
                         let query = MovieModel(id: movie.id, ott: movie.ott, title: movie.title, imagepath: movie.imagepath, releasedate: movie.releasedate, genre: movie.genre, totalaudience: movie.totalaudience, contry: movie.country, rating: movie.rating, star: Int(movie.star), runningtime: movie.runningtime, summary: movie.summary)
                         locations.append(query)
+                        print(movie.id)
                     }
                 } catch {
                     print("JSON decoding error: \(error.localizedDescription)")
