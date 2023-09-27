@@ -156,7 +156,11 @@ class ReviewViewController: UIViewController {
         if saveResult {
             // 저장 성공
             let alertController = UIAlertController(title: "저장 완료", message: "리뷰가 성공적으로 저장되었습니다.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            let okAction = UIAlertAction(title: "확인", style: .default) { [weak self] _ in
+                self?.dismiss(animated: true) {
+                    self?.presentingViewController?.dismiss(animated: true, completion: nil)
+                }
+                }
             alertController.addAction(okAction)
             present(alertController, animated: true, completion: nil)
         } else {
