@@ -94,7 +94,7 @@
                                                         <size key="customSize" width="127" height="185"/>
                                                         <connections>
                                                             <outlet property="movieImage" destination="zjj-VR-c2P" id="in8-8Y-imp"/>
-                                                            <segue destination="w0K-9S-CCx" kind="show" identifier="sgDetail" id="YV2-Ci-Fct"/>
+                                                            <segue destination="w0K-9S-CCx" kind="show" identifier="sgDetail" id="XR2-p9-fi5"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -109,7 +109,7 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yFl-Gq-svF">
                                                 <rect key="frame" x="0.0" y="472" width="393" height="185"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" name="background"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DY7-ff-UNS">
                                                     <size key="itemSize" width="115" height="183"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>

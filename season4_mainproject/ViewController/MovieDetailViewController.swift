@@ -286,8 +286,9 @@ extension MovieDetailViewController: UITableViewDataSource {
         var cell: UICollectionViewCell
             switch collectionView {
             case cvCastView:
+                let imageUrlString = MovieCast[indexPath.row].imgpath.trimmingCharacters(in: .whitespacesAndNewlines)
                 cell = cvCastView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCollectionViewCell
-                    configureCell(cell as! CastCollectionViewCell, withImageURL: MovieCast[indexPath.row].imgpath)
+                    configureCell(cell as! CastCollectionViewCell, withImageURL: imageUrlString)
                 let castCell = cell as! CastCollectionViewCell
                 castCell.CastName.text = MovieCast[indexPath.row].name
                 castCell.CastRole.text = MovieCast[indexPath.row].role
@@ -417,7 +418,6 @@ extension MovieDetailViewController: UITableViewDataSource {
             let cell = Star_with_Comment_TableView.dequeueReusableCell(withIdentifier: "Star_with_CommentCell", for: indexPath) as! Star_with_CommentCell
             if !Movie.isEmpty {
                 let starCount = Movie[0].star
-                print(starCount)
                 if starCount <= 0.0 {
                         cell.star1.tintColor = UIColor.gray
                         cell.star2.tintColor = UIColor.gray
