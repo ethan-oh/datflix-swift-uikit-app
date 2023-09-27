@@ -46,7 +46,6 @@ class UserViewController: UIViewController {
 
         let okAction = UIAlertAction(title: "확인", style: .default, handler: {ACTION in
     
-            let newNickname = pwAlert.textFields?[0].text?.trimmingCharacters(in: .whitespaces)
             
         })
 
@@ -62,6 +61,8 @@ class UserViewController: UIViewController {
         let nicknameCheck = NicknameDupCheckModel()
         nicknameCheck.delegate = self
         
+        let changeNickVM = ChangeNickVM()
+        
         let nicknameAlert = UIAlertController(title: "닉네임 변경", message: nil, preferredStyle: .alert)
         nicknameAlert.addTextField(){ textField in
             textField.placeholder = "변경하실 닉네임을 입력해주세요."
@@ -69,7 +70,8 @@ class UserViewController: UIViewController {
 
         let okAction = UIAlertAction(title: "확인", style: .default, handler: {ACTION in
     
-            let newNickname = nicknameAlert.textFields?[0].text?.trimmingCharacters(in: .whitespaces)
+            let newNickname = nicknameAlert.textFields?[0].text
+            print("바꿀닉네임은 !!! \(nicknameAlert.textFields?[0].text ?? "")")
             if newNickname?.isEmpty == false{
                 DispatchQueue.global(qos: .background).async {
                     nicknameCheck.downloadItems(nickname: newNickname!)
@@ -77,7 +79,11 @@ class UserViewController: UIViewController {
                     DispatchQueue.main.async {
                         print("code: \(self.codeValue)")
                         if self.codeValue == 200 {
-                            
+                            let code = changeNickVM.updateModel(nickname: nicknameAlert.textFields?[0].text ?? "")
+                            if code == 200{
+                                self.lblNickName.text = nicknameAlert.textFields?[0].text
+                                self.myAlert.showDefaultAlert(on: self, content: "닉네임이 \(nicknameAlert.textFields?[0].text ?? "")으로 변경되었습니다.")
+                            }
                         }else{
                             self.myAlert.showDefaultAlert(on: self, content: "이미 존재하는 닉네임입니다.")
                         }
