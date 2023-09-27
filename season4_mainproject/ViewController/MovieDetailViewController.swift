@@ -123,9 +123,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         moviedetailcastQueryModel.delegate = self
         moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
         
-        let aiService = AiService()
-        aiService.delegate = self
-        aiService.searchTop(title: "잠")
+        
         
         
         self.reviewList.removeAll()
@@ -203,6 +201,8 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
             self.present(reviewVC, animated: true)
         }
     }
+    
+    
 
     func urlImage() {
         // Movie 배열이 비어 있는지 확인
@@ -273,7 +273,7 @@ extension MovieDetailViewController: UITableViewDataSource {
     // 셀 개수 리턴
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == cvRecommendView {
-            return Movie.count
+            return recommendMovie.count
         }
         return 0
     }
@@ -293,6 +293,18 @@ extension MovieDetailViewController: UITableViewDataSource {
 
         return cell
     }
+    
+    // segment별 셀 클릭 시 데이터 넘겨주기(id값)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "sgDetail" {
+            let cell = sender as! RecommendCollectionViewCell
+            let indexPath = self.cvRecommendView.indexPath(for: cell)
+            let detailView = segue.destination as! MovieDetailViewController
+            detailView.receivedid = recommendMovie[indexPath!.row].id
+        }
+    }
+    
 
     // 셀 이미지 담아주기. 바로 위 셀별 세팅에서 호출해서 사용한다.
     func configureCell(_ cell: UICollectionViewCell, withImageURL imageUrlString: String) {
@@ -453,6 +465,9 @@ extension MovieDetailViewController: MovieDetailQueryModelProtocol {
         urlImage()
         lblMovieTitle.text = Movie[0].title
         lblMovieInformation.text = String(Movie[0].releasedate.prefix(4)) + " · " + Movie[0].country + " · " + Movie[0].genre
+        let aiService = AiService()
+        aiService.delegate = self
+        aiService.searchTop(title: Movie[0].title)
         DispatchQueue.main.async { [weak self] in
             self?.CommentTableView.reloadData()
             self?.Star_with_Comment_TableView.reloadData()
@@ -479,5 +494,28 @@ extension MovieDetailViewController: JSONMovieQueryModelProtocol{
         }
     }
     
+    
+}
+// 컬렉션뷰 사이즈와 간격 세팅
+extension MovieDetailViewController: UICollectionViewDelegateFlowLayout{
+    // 위아래 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0 // 1픽셀
+    }
+    
+    // 좌우 간격
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    // Cell Size ( 옆 라인을 고려하여 설정)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == cvRecommendView {
+            return CGSize(width: 154+10, height: 185)
+        }else {
+            return CGSize(width: 127+10, height: 185) // 마진 10 주기
+        }
+        
+    }
     
 }

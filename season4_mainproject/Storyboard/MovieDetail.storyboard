@@ -99,6 +99,7 @@
                                                         <size key="customSize" width="127" height="185"/>
                                                         <connections>
                                                             <outlet property="movieImage" destination="zjj-VR-c2P" id="in8-8Y-imp"/>
+                                                            <segue destination="Njr-Vr-QbC" kind="show" identifier="sgDetail" id="Tyo-bi-D1c"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -162,6 +163,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1m-6k-0iv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4637.6923076923076" y="-35.545023696682463"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="Kd7-G4-Yfx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovieDetail" referencedIdentifier="Detail" id="Njr-Vr-QbC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hPV-2F-7ow"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rTR-se-Ehg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5397" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VB7-51-fde">
