@@ -26,6 +26,7 @@ class ReviewViewController: UIViewController {
     var receivedCountry: String = ""
     var imagePath: String = ""
     var receivedRelease: String = ""
+    var rating : Double = 4.0
 
 
     override func viewDidLoad() {
@@ -38,7 +39,7 @@ class ReviewViewController: UIViewController {
         // Do any additional setup after loading the view.
         // 코스모스 설정
         cosmosOh.settings.fillMode = .precise
-        cosmosOh.rating = 4.0 // 예시 별점 설정 (4.0)
+        cosmosOh.rating = rating
         cosmosOh.settings.starSize = 30
         cosmosOh.settings.starMargin = 5
     }
@@ -110,7 +111,9 @@ class ReviewViewController: UIViewController {
         let cosmosView = CosmosView()
         cosmosView.settings.fillMode = .precise
         cosmosView.settings.updateOnTouch = false
-        cosmosView.rating = Double(percentage)! / 20.0
+        self.rating = Double(percentage)! / 20.0
+        cosmosView.rating = self.rating
+        self.cosmosOh.rating = self.rating
 
         // UIAlertController를 커스텀 뷰 컨트롤러의 하위 뷰로 추가합니다.
         customViewController.addChild(alertController)
