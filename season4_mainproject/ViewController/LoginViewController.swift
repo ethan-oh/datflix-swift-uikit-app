@@ -59,12 +59,11 @@ extension LoginViewController: LoginProtocol{
             UserDefaults.standard.setValue(data.name, forKey: "name")
             UserDefaults.standard.setValue(data.nickname, forKey: "nickname")
             
-//            User.email = tfEmail.text!.trimmingCharacters(in: .whitespaces)
-//            User.access_token = data.access_token
-//            User.refresh_token = data.refresh_token
-//            User.name = data.name
-//            User.nickname = data.nickname
+            // 유저탭바는 맨 첨으로 돌려놓고나서 이동
+            // false 한 이유는 트루 해놓으면 밑의 알러트가 실행이 안 되더라
+            navigationController?.popViewController(animated: false)
             
+            // home tabbar로 이동
             myAlert.showMoveTabAlert(on: self, content: "로그인 성공.", index: 0)
         }
     }
