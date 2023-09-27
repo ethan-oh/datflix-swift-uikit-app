@@ -389,8 +389,19 @@ extension MovieDetailViewController: UITableViewDataSource {
         } else if tableView == Movie_Information_TableView {
             let cell = Movie_Information_TableView.dequeueReusableCell(withIdentifier: "MovieInformationCell", for: indexPath) as! MovieInformationCell
             if !Movie.isEmpty {
-                let content = Movie[0].summary
-                if content == "0"{
+                var content = Movie[0].summary
+                
+                // content 문자열의 마지막 글자가 "0"이면 제거
+                if content.last == "0" {
+                    content = String(content.dropLast())
+                }
+                
+                // content 문자열이 모두 "0"으로 이루어진 경우 처리
+                if content.allSatisfy({ $0 == "0" }) {
+                    content = ""
+                }
+                
+                if content.isEmpty {
                     cell.textLabel?.text = "기본정보가 없습니다."
                     cell.textLabel?.textAlignment = .center
                     cell.textLabel?.textColor = UIColor.white
@@ -399,7 +410,7 @@ extension MovieDetailViewController: UITableViewDataSource {
                         cell.backgroundColor = background
                         tableView.backgroundColor = background
                     }
-                }else{
+                } else {
                     cell.userContentLabel.text = content
                     cell.movie = Movie
                     if let background = UIColor(named: "background") {
