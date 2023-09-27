@@ -25,6 +25,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var CommentTableView: UITableView!
 
 
+    @IBOutlet weak var cvCastView: UICollectionView!
     @IBOutlet weak var cvRecommendView: UICollectionView!
 
 
@@ -71,19 +72,12 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         self.Movie_Information_TableView.estimatedRowHeight = 120
 
 
-        // 셀 리소스 파일 가져오기
-        let MovieCastCellNib = UINib(nibName: String(describing: MovieCastCell.self), bundle: nil)
-
-        // 셀에 리소스 등록
-        self.MovieCast_TableView.register(MovieCastCellNib, forCellReuseIdentifier: "MovieCastCell")
-
-        self.MovieCast_TableView.rowHeight = UITableView.automaticDimension
-        self.MovieCast_TableView.estimatedRowHeight = 120
 
         // 아주 중요
-        self.MovieCast_TableView.delegate = self
-        self.MovieCast_TableView.dataSource = self
-
+        self.cvRecommendView.delegate = self
+        self.cvRecommendView.dataSource = self
+        self.cvCastView.delegate = self
+        self.cvCastView.dataSource = self
 
 
         let CommentViewCellNib = UINib(nibName: String(describing: MyTableViewCell.self), bundle: nil)
@@ -106,10 +100,13 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
 
     override func viewWillAppear(_ animated: Bool) {
         // 네비게이션바, 탭바 스크롤 시에도 색상 유지하는 기능
+        setDelegateAndDataSource(cvCastView)
         setDelegateAndDataSource(cvRecommendView)
         // 컬렉션뷰 수평 스크롤 세팅
+        horizontalSetting(cvCastView)
         horizontalSetting(cvRecommendView)
         // 컬렉션뷰 배경 투명하게
+        clearBackGround(cvCastView)
         clearBackGround(cvRecommendView)
         readValues()
     }
@@ -123,7 +120,9 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         moviedetailcastQueryModel.delegate = self
         moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
         
-        
+        let cast = MovieCastQueryModel()
+        cast.delegate = self
+        cast.fetchDataFromAPI(seq: receivedid)
         
         
         self.reviewList.removeAll()
@@ -274,6 +273,10 @@ extension MovieDetailViewController: UITableViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == cvRecommendView {
             return recommendMovie.count
+        }else if collectionView == cvCastView {
+            if !MovieCast.isEmpty{
+                return MovieCast.count
+            }
         }
         return 0
     }
@@ -282,6 +285,12 @@ extension MovieDetailViewController: UITableViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: UICollectionViewCell
             switch collectionView {
+            case cvCastView:
+                cell = cvCastView.dequeueReusableCell(withReuseIdentifier: "CastCell", for: indexPath) as! CastCollectionViewCell
+                    configureCell(cell as! CastCollectionViewCell, withImageURL: MovieCast[indexPath.row].imgpath)
+                let castCell = cell as! CastCollectionViewCell
+                castCell.CastName.text = MovieCast[indexPath.row].name
+                castCell.CastRole.text = MovieCast[indexPath.row].role
             case cvRecommendView:
                 cell = cvRecommendView.dequeueReusableCell(withReuseIdentifier: "recommendCell", for: indexPath) as! RecommendCollectionViewCell
                 if !recommendMovie.isEmpty{
@@ -321,6 +330,9 @@ extension MovieDetailViewController: UITableViewDataSource {
                 DispatchQueue.main.async {
                     if let movieCell = cell as? RecommendCollectionViewCell {
                         movieCell.movieImage.image = image
+                    }else if let castCell = cell as? CastCollectionViewCell {
+                        castCell.movieImage.image = image
+                        print(image)
                     }
                 }
             }
@@ -422,38 +434,6 @@ extension MovieDetailViewController: UITableViewDataSource {
                     }
                 }
             return cell
-        } else if tableView == MovieCast_TableView {
-            let cell = MovieCast_TableView.dequeueReusableCell(withIdentifier: "MovieCastCell", for: indexPath) as! MovieCastCell
-            if !MovieCast.isEmpty {
-                cell.lblCastName.text = MovieCast[indexPath.row].name
-                cell.lblCastRole.text = MovieCast[indexPath.row].role
-                let imageUrlString = MovieCast[indexPath.row].imgpath
-                let trimmedImageUrlString = imageUrlString.trimmingCharacters(in: .whitespacesAndNewlines)
-                let imageUrl = URL(string: trimmedImageUrlString)
-
-                URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
-                    if let error = error {
-                        print("Error downloading image: \(error.localizedDescription)")
-                        return
-                    }
-
-                    if let data = data, let image = UIImage(data: data) {
-                        DispatchQueue.main.async {
-                            // 이미지 크기 조정
-                            let imageSize = CGSize(width: 200, height: 250) // 원하는 크기로 조절
-                            UIGraphicsBeginImageContext(imageSize)
-                            image.draw(in: CGRect(x: 0, y: 0, width: imageSize.width, height: imageSize.height))
-                            if let resizedImage = UIGraphicsGetImageFromCurrentImageContext() {
-                                cell.imgCast.image = resizedImage
-                            }
-                            UIGraphicsEndImageContext()
-                            //content.text = self.movieList[indexPath.row].title
-                            //                    content.secc = self.movieList[indexPath.row].genre
-                        }
-                    }
-                }.resume()
-                return cell
-            }
         }
         return UITableViewCell()
     }
@@ -468,6 +448,7 @@ extension MovieDetailViewController: MovieDetailQueryModelProtocol {
         let aiService = AiService()
         aiService.delegate = self
         aiService.searchTop(title: Movie[0].title)
+        
         DispatchQueue.main.async { [weak self] in
             self?.CommentTableView.reloadData()
             self?.Star_with_Comment_TableView.reloadData()
@@ -479,7 +460,8 @@ extension MovieDetailViewController: MovieCastProtocol {
     func itemDownloaded(item: [MovieCastModel]) {
         MovieCast = item
         DispatchQueue.main.async { [weak self] in
-            self?.MovieCast_TableView.reloadData()
+            self?.cvRecommendView.reloadData()
+            self?.cvCastView.reloadData()
         }
     }
 
