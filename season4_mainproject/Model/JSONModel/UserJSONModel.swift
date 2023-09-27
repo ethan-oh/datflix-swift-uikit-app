@@ -19,3 +19,8 @@ struct AuthJSON: Codable{
 struct ResultJSON: Codable{
     var message: String
 }
+
+struct PasswordJSON: Codable{
+    var current: String
+    var new: String
+}

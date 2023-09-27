@@ -55,7 +55,7 @@
 		325192012ABBD3C50027028E /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192002ABBD3C50027028E /* TheaterViewController.swift */; };
 		325192032ABBD3D20027028E /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192022ABBD3D20027028E /* UserViewController.swift */; };
 		325192092ABC31750027028E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325192082ABC31750027028E /* RegisterViewController.swift */; };
-		32E6D9932AC3D9740075F5E2 /* ChangeNickVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E6D9922AC3D9730075F5E2 /* ChangeNickVM.swift */; };
+		32E6D9932AC3D9740075F5E2 /* ChangeUserVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E6D9922AC3D9730075F5E2 /* ChangeUserVM.swift */; };
 		32EB063B2ABC343F00AECA3A /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB063A2ABC343F00AECA3A /* UserData.swift */; };
 		32EB063F2ABC65F000AECA3A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EB063E2ABC65F000AECA3A /* LoginViewController.swift */; };
 		32EBECAD2AC2F5F300E76A98 /* RomanceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32EBECA72AC2F5F300E76A98 /* RomanceCollectionViewCell.swift */; };
@@ -122,7 +122,7 @@
 		325192002ABBD3C50027028E /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		325192022ABBD3D20027028E /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		325192082ABC31750027028E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		32E6D9922AC3D9730075F5E2 /* ChangeNickVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNickVM.swift; sourceTree = "<group>"; };
+		32E6D9922AC3D9730075F5E2 /* ChangeUserVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserVM.swift; sourceTree = "<group>"; };
 		32EB063A2ABC343F00AECA3A /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		32EB063E2ABC65F000AECA3A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32EBECA72AC2F5F300E76A98 /* RomanceCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanceCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 				1E5A4C8F2AC12831009DBB5C /* JSONMovieModel.swift */,
 				1E42B4EB2AC286D600E01E70 /* MovieDetailJSONModel.swift */,
 				1A142CDA2AC2C82B00BEAF08 /* AIController.swift */,
-				32E6D9922AC3D9730075F5E2 /* ChangeNickVM.swift */,
+				32E6D9922AC3D9730075F5E2 /* ChangeUserVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -506,7 +506,7 @@
 				1A142CE52AC2D4F400BEAF08 /* MovieCastVM.swift in Sources */,
 				3206A6852AC1A77600C5B8A5 /* NickNameVM.swift in Sources */,
 				3206A6892AC1A7F800C5B8A5 /* MyAlert.swift in Sources */,
-				32E6D9932AC3D9740075F5E2 /* ChangeNickVM.swift in Sources */,
+				32E6D9932AC3D9740075F5E2 /* ChangeUserVM.swift in Sources */,
 				3206A6842AC1A77600C5B8A5 /* EmailVM.swift in Sources */,
 				325124A52AC1199A00CD856E /* UserJSONModel.swift in Sources */,
 				1E5A4CBC2AC1825F009DBB5C /* Star_with_CommentCell.swift in Sources */,
