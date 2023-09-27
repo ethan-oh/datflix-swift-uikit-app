@@ -139,7 +139,7 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
     }
 
     @IBAction func btnWrite(_ sender: UIButton) {
-        if User.access_token == "" {
+        if UserDefaults.standard.string(forKey: "access_token") == nil {
             // access_token이 없으면 로그인을 물어보는 Alert 표시
             let alert = UIAlertController(title: "로그인이 필요합니다", message: "로그인하시겠습니까?", preferredStyle: .alert)
             let OKAction = UIAlertAction(title: "예", style: .default) { _ in

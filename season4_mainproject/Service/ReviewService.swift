@@ -10,7 +10,7 @@ import Foundation
 class ReviewService {
     ///  review insert
     func insertModel(movie_id: Int, content: String, rating : Double) -> Bool {
-        let access_token : String = User.access_token // 언제든지 바꿀 수 있는다.
+        let access_token : String = UserDefaults.standard.string(forKey: "access_token")!
         let baseUrl = HOST + ":" + PORT + "/review/"
         
         let url: URL = URL(string: baseUrl)!
@@ -47,7 +47,7 @@ class ReviewService {
     
     /// Review Update
     func updateModel(movie_id: Int, content: String, rating : Double) -> Bool {
-        let access_token : String = User.access_token // 언제든지 바꿀 수 있는다.
+        let access_token : String = UserDefaults.standard.string(forKey: "access_token")!
         let baseUrl = HOST + ":" + PORT + "/review/" + String(movie_id)
         
         let url: URL = URL(string: baseUrl)!
@@ -129,7 +129,7 @@ class ReviewService {
     
     func deleteModel(movie_id: Int) -> Bool {
         var result: Bool = false
-        let access_token: String = User.access_token
+        let access_token: String = UserDefaults.standard.string(forKey: "access_token")!
         let baseUrl = HOST + ":" + PORT + "/review/" + String(movie_id)
         
         let url: URL = URL(string: baseUrl)!

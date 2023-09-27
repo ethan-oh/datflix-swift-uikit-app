@@ -9,7 +9,7 @@ import Foundation
 
 class AiService {
     func calcScore(review: String, completion: @escaping (Double?) -> Void) {
-        let access_token: String = User.access_token // 언제든지 바꿀 수 있는다.
+        let access_token: String = UserDefaults.standard.string(forKey: "access_token")!
         let baseUrl = HOST + ":" + PORT + "/ai/review"
         
         let url = URL(string: baseUrl)
