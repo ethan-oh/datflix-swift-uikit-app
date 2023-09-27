@@ -317,8 +317,8 @@ extension MovieDetailViewController: UITableViewDataSource {
 
     // 셀 이미지 담아주기. 바로 위 셀별 세팅에서 호출해서 사용한다.
     func configureCell(_ cell: UICollectionViewCell, withImageURL imageUrlString: String) {
-        let imageUrl = URL(string: imageUrlString)
-
+        let trimmedImageUrlString = imageUrlString.trimmingCharacters(in: .whitespacesAndNewlines)
+        let imageUrl = URL(string: trimmedImageUrlString)
         URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
             if let error = error {
                 print("Error downloading image: \(error.localizedDescription)")
