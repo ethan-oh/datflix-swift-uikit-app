@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Cosmos
 
 class MyTableViewCell: UITableViewCell {
     
@@ -17,9 +18,11 @@ class MyTableViewCell: UITableViewCell {
     @IBOutlet weak var star4: UIButton!
     @IBOutlet weak var star5: UIButton!
     var starCount = 0
-    
+    var review = 0.0
     @IBOutlet weak var nickname: UILabel!
     @IBOutlet weak var insertDate: UILabel!
+    @IBOutlet weak var cosmosOh: CosmosView!
+    
     
     @IBOutlet weak var userProfileImage: UIImageView!
     @IBOutlet weak var userContentLabel: UILabel!
@@ -28,6 +31,12 @@ class MyTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         userProfileImage.layer.cornerRadius = userProfileImage.frame.width / 2
+    }
+    func cosmosviewActivate(percentage: String){
+        let cosmosView = CosmosView()
+        cosmosView.settings.fillMode = .precise
+        cosmosView.settings.updateOnTouch = false
+        cosmosView.rating = Double(percentage)! / 20.0
     }
     
     func updateStarColor() {
