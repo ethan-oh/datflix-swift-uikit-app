@@ -20,7 +20,6 @@ class MovieDetailQueryModel{
             // API 엔드포인트 URL
             let apiUrl = "\(HOST):\(PORT)/movie/\(seq)"
             var locations: [MovieDetailModel] = []
-            print(seq)
             // task 변수를 클로저 외부에서 선언
             let task = URLSession.shared.dataTask(with: URL(string: apiUrl)!) { (data, response, error) in
                 if let error = error {

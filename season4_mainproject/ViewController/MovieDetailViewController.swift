@@ -123,9 +123,9 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
         moviedetailcastQueryModel.delegate = self
         moviedetailcastQueryModel.fetchDataFromAPI(seq: receivedid)
         
-//        let aiService = AiService()
-//        aiService.delegate = self
-//        aiService.searchTop(title: Movie[0])
+        let aiService = AiService()
+        aiService.delegate = self
+        aiService.searchTop(title: "잠")
         
         
         self.reviewList.removeAll()
@@ -210,9 +210,10 @@ class MovieDetailViewController: UIViewController, UICollectionViewDelegate, UIC
             print("Movie array is empty.")
             return
         }
-
+        
         let imageUrlString = Movie[0].imagepath
-        let imageUrl = URL(string: imageUrlString)
+        let trimmedImageUrlString = imageUrlString.trimmingCharacters(in: .whitespacesAndNewlines)
+        let imageUrl = URL(string: trimmedImageUrlString)
 
         // 이미지 다운로드는 백그라운드 스레드에서 수행
         DispatchQueue.global().async {
@@ -280,14 +281,15 @@ extension MovieDetailViewController: UITableViewDataSource {
     // 셀별 세팅
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var cell: UICollectionViewCell
-
-        switch collectionView {
-        case cvRecommendView:
-            cell = cvRecommendView.dequeueReusableCell(withReuseIdentifier: "recommendCell", for: indexPath) as! RecommendCollectionViewCell
-            configureCell(cell as! RecommendCollectionViewCell, withImageURL: recommendMovie[indexPath.row].imagepath)
-        default:
-            cell = UICollectionViewCell()
-        }
+            switch collectionView {
+            case cvRecommendView:
+                cell = cvRecommendView.dequeueReusableCell(withReuseIdentifier: "recommendCell", for: indexPath) as! RecommendCollectionViewCell
+                if !recommendMovie.isEmpty{
+                    configureCell(cell as! RecommendCollectionViewCell, withImageURL: recommendMovie[indexPath.row].imagepath)
+                }
+            default:
+                cell = UICollectionViewCell()
+            }
 
         return cell
     }
@@ -392,7 +394,8 @@ extension MovieDetailViewController: UITableViewDataSource {
                 cell.lblCastName.text = MovieCast[indexPath.row].name
                 cell.lblCastRole.text = MovieCast[indexPath.row].role
                 let imageUrlString = MovieCast[indexPath.row].imgpath
-                let imageUrl = URL(string: imageUrlString)
+                let trimmedImageUrlString = imageUrlString.trimmingCharacters(in: .whitespacesAndNewlines)
+                let imageUrl = URL(string: trimmedImageUrlString)
 
                 URLSession.shared.dataTask(with: imageUrl!) { (data, response, error) in
                     if let error = error {
