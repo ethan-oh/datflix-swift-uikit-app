@@ -9,8 +9,6 @@ import Foundation
 
 struct AuthJSON: Codable{
     var message: String
-    var access_token: String
-    var refresh_token: String
     var name: String
     var nickname: String
 
