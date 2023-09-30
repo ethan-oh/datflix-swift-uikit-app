@@ -89,7 +89,9 @@ class LoginCheckModel {
         let decoder = JSONDecoder()
         var location = tokenModel(message: "", name: "", nickname: "")
         do{
+            // JSON Array 형태이므로 배열에 맞게 인덱스별로 나누어 접근을 해야 한다.
             let result = try decoder.decode([AuthJSON].self, from: data) // json 풀기
+            // 배열이므로 첫번째 값을 주어야한다.
             location = tokenModel(message: result[0].message, name: result[0].name, nickname: result[0].nickname)
         }catch{
             print("Fail: \(error.localizedDescription)")
