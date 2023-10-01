@@ -15,6 +15,7 @@ protocol LoginProtocol {
     func loginCheck(item: tokenModel)
 }
 
+// MARK: Editted by Oh-Kang94
 class LoginCheckModel {
 
     var delegate: LoginProtocol!
