@@ -222,9 +222,7 @@
 		3251249A2AC1158300CD856E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3206A6812AC1A77600C5B8A5 /* EmailVM.swift */,
-				3206A6822AC1A77600C5B8A5 /* NickNameVM.swift */,
-				3206A6832AC1A77600C5B8A5 /* RegisterVM.swift */,
+				AA9504882ADBFBBB00D8C981 /* Register */,
 				3251249B2AC115A800CD856E /* LoginVM.swift */,
 				1A142CE42AC2D4F400BEAF08 /* MovieCastVM.swift */,
 				1AE9D2852AC1AD3A00CA506D /* ReviewController.swift */,
@@ -331,6 +329,16 @@
 				4E9F27612ABAC8F8003263FC /* Info.plist */,
 			);
 			path = season4_mainproject;
+			sourceTree = "<group>";
+		};
+		AA9504882ADBFBBB00D8C981 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				3206A6812AC1A77600C5B8A5 /* EmailVM.swift */,
+				3206A6822AC1A77600C5B8A5 /* NickNameVM.swift */,
+				3206A6832AC1A77600C5B8A5 /* RegisterVM.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 		C005D7924B83331FDFBAA6A0 /* Pods */ = {

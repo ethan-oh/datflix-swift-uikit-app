@@ -32,30 +32,29 @@ class ChangeUserVM{
         request.setValue("Bearer \(access_token)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
+        
         // URLSession 객체를 통해 전송, 응답값 처리
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse {
                 codeValue = httpResponse.statusCode
-                return
             }
             // 서버가 응답이 없거나 통신이 실패
             if let e = error {
                 NSLog("An error has occured: \(e.localizedDescription)")
-                return
             }
             // 응답 처리 로직
             print("comment post success")
+            DispatchQueue.main.async {
+                print("vm nickname code : \(codeValue)")
+                self.delegate.getNickNameResult(code: codeValue)
+            }
         }
         // POST 전송
         task.resume()
-        DispatchQueue.main.async {
-            self.delegate.getNickNameResult(code: codeValue)
-        }
+        
     }
     
     func updatePasswordModel(currentPW: String, newPW: String) {
-        
-        
         
         var codeValue = 0
         
@@ -80,22 +79,22 @@ class ChangeUserVM{
         let task = URLSession.shared.uploadTask(with: request, from: uploadData) { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse {
                 codeValue = httpResponse.statusCode
-                print("닉변 응답코드 : \(codeValue)")
-                return
             }
             // 서버가 응답이 없거나 통신이 실패
             if let e = error {
                 NSLog("An error has occured: \(e.localizedDescription)")
-                return
+                
             }
             // 응답 처리 로직
             print("comment post success")
+            DispatchQueue.main.async {
+                print("vm pw code : \(codeValue)")
+                self.delegate.getPwResult(code: codeValue)
+            }
         }
         // POST 전송
         task.resume()
-        DispatchQueue.main.async {
-            self.delegate.getPwResult(code: codeValue)
-        }
+        
         
     }
 }

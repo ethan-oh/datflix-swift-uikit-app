@@ -47,9 +47,6 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         clearBackGround(cvListView)
         clearBackGround(cvAnimeView)
         clearBackGround(cvRomanceView)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
         
         rankList = []
         ottList = []
@@ -57,7 +54,7 @@ class MovieViewController: UIViewController, UICollectionViewDelegate, UICollect
         animeList = []
         romanceList = []
 
-        btnUserName.title = UserDefaults.standard.string(forKey: "name") == nil ? "" : "\(UserDefaults.standard.string(forKey: "name")!) 님"
+        btnUserName.title = UserDefaults.standard.string(forKey: "name") == nil ? "" : "\(UserDefaults.standard.string(forKey: "nickname")!) 님"
         
         // 무비데이터 들고오기
         readValues()
