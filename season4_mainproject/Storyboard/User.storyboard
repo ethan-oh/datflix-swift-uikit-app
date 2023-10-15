@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y5a-P8-2Bo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y5a-P8-2Bo">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -95,6 +96,8 @@
                         <outlet property="lblEmail" destination="fOO-MW-e4E" id="T3c-5B-jN0"/>
                         <outlet property="lblName" destination="LxL-8w-sjU" id="eMD-Ah-RFS"/>
                         <outlet property="lblNickName" destination="wRQ-Jw-jcp" id="Qtr-3J-wZ4"/>
+                        <outlet property="tfName" destination="xfR-XR-6km" id="BZU-Pl-y4F"/>
+                        <outlet property="tfNickName" destination="p3S-yx-BRv" id="sVa-bh-roB"/>
                         <segue destination="Liu-GJ-IA7" kind="show" identifier="sgUserToLogin" id="1he-H7-qDc"/>
                         <segue destination="Wmg-EM-SnD" kind="show" identifier="sgToHome" id="0tc-Yc-qZY"/>
                     </connections>
@@ -106,10 +109,10 @@
         <!--MainView-->
         <scene sceneID="deA-jA-Whv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yyd-3p-UyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardName="Home" referencedIdentifier="MainView" id="Wmg-EM-SnD" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="cce-Wi-8O0"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyd-3p-UyG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1970" y="1143"/>
         </scene>

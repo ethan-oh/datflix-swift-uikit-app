@@ -9,11 +9,13 @@ import Foundation
 
 protocol PasswordProtocol {
     func getPwResult(code: Int)
+    func getNickNameResult(code: Int)
 }
 
 class ChangeUserVM{
     var delegate: PasswordProtocol!
-    func updateNickModel(nickname: String) -> Int {
+    
+    func updateNickModel(nickname: String){
         
         var codeValue = 0
         
@@ -34,7 +36,6 @@ class ChangeUserVM{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let httpResponse = response as? HTTPURLResponse {
                 codeValue = httpResponse.statusCode
-                print("닉변 응답코드 : \(codeValue)")
                 return
             }
             // 서버가 응답이 없거나 통신이 실패
@@ -47,9 +48,11 @@ class ChangeUserVM{
         }
         // POST 전송
         task.resume()
-
-        return codeValue
+        DispatchQueue.main.async {
+            self.delegate.getNickNameResult(code: codeValue)
+        }
     }
+    
     func updatePasswordModel(currentPW: String, newPW: String) {
         
         
